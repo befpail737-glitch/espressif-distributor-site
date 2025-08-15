@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESP-IDF Programming Guide | Comprehensive Development Framework | LiTong</title>
-    <meta name="description" content="Complete ESP-IDF programming guide covering APIs, libraries, and best practices for ESP32 development. Expert guidance from LiTong Technology FAE team.">
+    <title>ESP-IDF Programming Guide | ESP32 Development Framework | LiTong</title>
+    <meta name="description" content="Comprehensive guide to ESP-IDF development framework for ESP32. Learn APIs, libraries, toolchain setup, and best practices for professional IoT development.">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
 </head>
@@ -38,301 +38,44 @@
         <section class="page-header">
             <div class="container">
                 <h1>ESP-IDF Programming Guide</h1>
-                <p>Comprehensive development framework for ESP32 series microcontrollers</p>
+                <p>Master the official development framework for ESP32 series microcontrollers</p>
                 <nav class="breadcrumbs">
                     <a href="/">Home</a> <span class="separator">/</span> 
                     <a href="/support.html">Technical Support</a> <span class="separator">/</span> 
-                    <span>ESP-IDF Programming Guide</span>
+                    <span>ESP-IDF Guide</span>
                 </nav>
             </div>
         </section>
 
-        <!-- Article Content -->
+        <!-- Guide Overview -->
         <section class="section-padding">
             <div class="container">
                 <div class="solution-hero">
-                    <div class="article-content">
-                        <div class="news-meta">
-                            <span class="news-category">Documentation</span>
-                            <time datetime="2025-01-12">Updated January 12, 2025</time>
-                        </div>
+                    <div class="product-overview">
+                        <h2>ESP-IDF Development Framework</h2>
+                        <p>ESP-IDF (Espressif IoT Development Framework) is the official development framework for ESP32 series SoCs. It provides a comprehensive set of libraries, tools, and APIs for building robust IoT applications with advanced features like Wi-Fi, Bluetooth, security, and power management.</p>
                         
-                        <h2>Overview</h2>
-                        <p>ESP-IDF (Espressif IoT Development Framework) is the official development framework for the ESP32, ESP32-S, ESP32-C, and ESP32-H series of SoCs. This comprehensive guide covers everything from basic setup to advanced programming techniques, helping you maximize the potential of your ESP32-based projects.</p>
-                        
-                        <div class="feature-highlights" style="margin: 30px 0;">
+                        <div class="product-highlights">
                             <div class="feature-highlight">
-                                <img src="assets/icons/cpu.svg" alt="Multi-platform" class="feature-icon-small">
-                                <span>Cross-platform support (Windows, Linux, macOS)</span>
+                                <img src="assets/icons/cpu.svg" alt="Cross Platform" class="feature-icon-small">
+                                <span>Cross-Platform Support</span>
                             </div>
                             <div class="feature-highlight">
-                                <img src="assets/icons/wifi.svg" alt="Comprehensive APIs" class="feature-icon-small">
-                                <span>Rich set of APIs and libraries</span>
+                                <img src="assets/icons/shield-check.svg" alt="Professional" class="feature-icon-small">
+                                <span>Production-Ready</span>
                             </div>
                             <div class="feature-highlight">
-                                <img src="assets/icons/shield-check.svg" alt="Security" class="feature-icon-small">
-                                <span>Built-in security features</span>
+                                <img src="assets/icons/wifi.svg" alt="Complete APIs" class="feature-icon-small">
+                                <span>Complete API Set</span>
+                            </div>
+                            <div class="feature-highlight">
+                                <img src="assets/icons/check-circle.svg" alt="Open Source" class="feature-icon-small">
+                                <span>Open Source</span>
                             </div>
                         </div>
                     </div>
-                    <div class="article-image">
-                        <img src="assets/images/solutions/solution-gateway.jpg" alt="ESP-IDF Development" style="border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Getting Started -->
-        <section class="section-padding section-bg-light">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Getting Started with ESP-IDF</h2>
-                    <p>Step-by-step setup and your first ESP32 program</p>
-                </div>
-                
-                <div class="grid-2">
-                    <div class="spec-category">
-                        <h3>Installation Requirements</h3>
-                        <table class="specs-table">
-                            <tbody>
-                                <tr><td>Operating System</td><td>Windows 10+, Ubuntu 20.04+, macOS 10.15+</td></tr>
-                                <tr><td>Python</td><td>Python 3.8 or newer</td></tr>
-                                <tr><td>Git</td><td>Git 2.12 or newer</td></tr>
-                                <tr><td>CMake</td><td>CMake 3.16 or newer</td></tr>
-                                <tr><td>Ninja</td><td>Ninja build system</td></tr>
-                                <tr><td>Toolchain</td><td>ESP32 toolchain (auto-installed)</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    
-                    <div class="spec-category">
-                        <h3>Installation Steps</h3>
-                        <ol style="color: var(--text-light); line-height: 1.8; padding-left: 20px;">
-                            <li>Download ESP-IDF installer from Espressif website</li>
-                            <li>Run installer and select installation directory</li>
-                            <li>Choose ESP32 target and tools to install</li>
-                            <li>Wait for automatic toolchain download</li>
-                            <li>Set up environment variables</li>
-                            <li>Verify installation with hello_world example</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Core Components -->
-        <section class="section-padding">
-            <div class="container">
-                <div class="section-title">
-                    <h2>ESP-IDF Core Components</h2>
-                    <p>Essential libraries and APIs for ESP32 development</p>
-                </div>
-                
-                <div class="grid-3">
-                    <div class="news-card">
-                        <h3>FreeRTOS</h3>
-                        <p>Real-time operating system with task management, queues, semaphores, and timers for multitasking applications.</p>
-                        <div class="product-specs">
-                            <span class="spec-tag">Task Management</span>
-                            <span class="spec-tag">Memory Management</span>
-                            <span class="spec-tag">Synchronization</span>
-                        </div>
-                    </div>
-                    
-                    <div class="news-card">
-                        <h3>Wi-Fi & Networking</h3>
-                        <p>Complete Wi-Fi stack with station and access point modes, plus TCP/IP, HTTP, MQTT, and WebSocket protocols.</p>
-                        <div class="product-specs">
-                            <span class="spec-tag">Wi-Fi Station/AP</span>
-                            <span class="spec-tag">TCP/IP Stack</span>
-                            <span class="spec-tag">TLS/SSL</span>
-                        </div>
-                    </div>
-                    
-                    <div class="news-card">
-                        <h3>Bluetooth</h3>
-                        <p>Classic Bluetooth and Bluetooth Low Energy (BLE) support with GATT server/client and mesh capabilities.</p>
-                        <div class="product-specs">
-                            <span class="spec-tag">BLE GATT</span>
-                            <span class="spec-tag">Classic BT</span>
-                            <span class="spec-tag">Mesh Support</span>
-                        </div>
-                    </div>
-                    
-                    <div class="news-card">
-                        <h3>Peripheral Drivers</h3>
-                        <p>Hardware abstraction layer for GPIO, ADC, DAC, PWM, SPI, I2C, UART, and other ESP32 peripherals.</p>
-                        <div class="product-specs">
-                            <span class="spec-tag">GPIO/ADC/DAC</span>
-                            <span class="spec-tag">SPI/I2C/UART</span>
-                            <span class="spec-tag">Timer/PWM</span>
-                        </div>
-                    </div>
-                    
-                    <div class="news-card">
-                        <h3>Storage & File Systems</h3>
-                        <p>Flash storage, NVS (Non-Volatile Storage), SPIFFS, and FAT file system support for data persistence.</p>
-                        <div class="product-specs">
-                            <span class="spec-tag">NVS</span>
-                            <span class="spec-tag">SPIFFS</span>
-                            <span class="spec-tag">FAT FS</span>
-                        </div>
-                    </div>
-                    
-                    <div class="news-card">
-                        <h3>Security Features</h3>
-                        <p>Hardware security module, secure boot, flash encryption, and cryptographic APIs for secure applications.</p>
-                        <div class="product-specs">
-                            <span class="spec-tag">Secure Boot</span>
-                            <span class="spec-tag">Flash Encryption</span>
-                            <span class="spec-tag">Crypto APIs</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Programming Best Practices -->
-        <section class="section-padding section-bg-light">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Programming Best Practices</h2>
-                    <p>Expert recommendations for efficient and reliable ESP32 code</p>
-                </div>
-                
-                <div class="grid-2">
-                    <div class="service-card">
-                        <h3>Memory Management</h3>
-                        <ul>
-                            <li>Use heap_caps_malloc() for specific memory regions</li>
-                            <li>Monitor heap usage with esp_get_free_heap_size()</li>
-                            <li>Avoid memory fragmentation with proper allocation patterns</li>
-                            <li>Use static allocation for critical tasks when possible</li>
-                            <li>Implement proper error handling for malloc failures</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="service-card">
-                        <h3>Task Management</h3>
-                        <ul>
-                            <li>Set appropriate task priorities and stack sizes</li>
-                            <li>Use queues and semaphores for inter-task communication</li>
-                            <li>Avoid blocking operations in high-priority tasks</li>
-                            <li>Implement watchdog timers for critical tasks</li>
-                            <li>Use task notifications for efficient signaling</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="service-card">
-                        <h3>Power Optimization</h3>
-                        <ul>
-                            <li>Configure appropriate power modes for your application</li>
-                            <li>Use light sleep and deep sleep modes effectively</li>
-                            <li>Optimize Wi-Fi power save settings</li>
-                            <li>Disable unused peripherals and features</li>
-                            <li>Use ULP coprocessor for ultra-low power operations</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="service-card">
-                        <h3>Error Handling</h3>
-                        <ul>
-                            <li>Always check return values from ESP-IDF APIs</li>
-                            <li>Use ESP_ERROR_CHECK() macro for critical operations</li>
-                            <li>Implement proper exception handling and recovery</li>
-                            <li>Use logging system for debugging and monitoring</li>
-                            <li>Set up panic handlers for system failures</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Development Tools -->
-        <section class="section-padding">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Development Tools & Utilities</h2>
-                    <p>Essential tools for ESP32 development and debugging</p>
-                </div>
-                
-                <div class="grid-4">
-                    <div class="use-case-card">
-                        <h4>idf.py Build System</h4>
-                        <p>Command-line tool for building, flashing, and monitoring ESP32 applications with CMake integration.</p>
-                    </div>
-                    <div class="use-case-card">
-                        <h4>ESP-IDF Monitor</h4>
-                        <p>Serial monitor with automatic decoding of crash backtraces and real-time log filtering.</p>
-                    </div>
-                    <div class="use-case-card">
-                        <h4>Partition Tables</h4>
-                        <p>Flexible flash layout configuration for application, OTA updates, and data storage partitions.</p>
-                    </div>
-                    <div class="use-case-card">
-                        <h4>Unit Testing</h4>
-                        <p>Built-in unit testing framework with on-device test execution and automated test runners.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Advanced Topics -->
-        <section class="section-padding section-bg-light">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Advanced Programming Topics</h2>
-                    <p>Deep dive into sophisticated ESP32 development techniques</p>
-                </div>
-                
-                <div class="grid-3">
-                    <div class="feature-card">
-                        <img src="assets/icons/wifi.svg" alt="OTA Updates" class="feature-icon">
-                        <h3>Over-the-Air (OTA) Updates</h3>
-                        <p>Implement secure firmware updates over Wi-Fi with rollback protection, delta updates, and update verification mechanisms.</p>
-                    </div>
-                    <div class="feature-card">
-                        <img src="assets/icons/shield-check.svg" alt="Custom Bootloader" class="feature-icon">
-                        <h3>Custom Bootloader</h3>
-                        <p>Develop custom bootloader applications for specialized boot sequences, hardware initialization, and security implementations.</p>
-                    </div>
-                    <div class="feature-card">
-                        <img src="assets/icons/cpu.svg" alt="Multi-core Programming" class="feature-icon">
-                        <h3>Multi-core Programming</h3>
-                        <p>Leverage dual-core architecture with core pinning, inter-core communication, and load balancing strategies.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Support Resources -->
-        <section class="section-padding">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Additional Resources</h2>
-                    <p>Expand your ESP-IDF knowledge with these resources</p>
-                </div>
-                
-                <div class="grid-2">
-                    <div class="news-card">
-                        <h3>Official Documentation</h3>
-                        <p>Complete ESP-IDF API reference, programming guide, and hardware documentation from Espressif Systems.</p>
-                        <a href="https://docs.espressif.com/projects/esp-idf/" class="button button-small" target="_blank">Access Documentation</a>
-                    </div>
-                    <div class="news-card">
-                        <h3>Example Projects</h3>
-                        <p>Comprehensive collection of example projects covering all ESP-IDF features and common use cases.</p>
-                        <a href="/support-article-examples.html" class="button button-small">Browse Examples</a>
-                    </div>
-                    <div class="news-card">
-                        <h3>Community Forum</h3>
-                        <p>Connect with other developers, get help with technical questions, and share your ESP32 projects.</p>
-                        <a href="/support-article-community.html" class="button button-small">Join Community</a>
-                    </div>
-                    <div class="news-card">
-                        <h3>LiTong FAE Support</h3>
-                        <p>Get personalized technical support from our field application engineers for complex development challenges.</p>
-                        <a href="/contact.html" class="button button-small">Contact FAE Team</a>
+                    <div class="product-image-section">
+                        <img src="assets/images/solutions/solution-gateway.jpg" alt="ESP-IDF Development" style="width: 100%; max-width: 400px; border-radius: var(--border-radius);">
                     </div>
                 </div>
             </div>
@@ -341,11 +84,11 @@
         <!-- Contact CTA -->
         <section class="cta-section">
             <div class="container">
-                <h2>Need Expert ESP-IDF Development Support?</h2>
-                <p>Our technical team can help accelerate your ESP32 development with personalized guidance and best practices.</p>
+                <h2>Need ESP-IDF Development Support?</h2>
+                <p>Our FAE team provides comprehensive technical support for ESP-IDF development, from initial setup to production deployment.</p>
                 <div class="cta-buttons">
                     <a href="/contact.html" class="button button-primary button-lg">Contact Technical Support</a>
-                    <a href="/support.html" class="button button-outline">Browse More Resources</a>
+                    <a href="/support.html" class="button button-outline">More Resources</a>
                 </div>
             </div>
         </section>
