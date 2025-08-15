@@ -88,9 +88,9 @@
         <!-- Support Resources Grid -->
         <section class="section-padding section-bg-light">
             <div class="container">
-                <div class="grid-3">
+                <div class="grid-3" id="support-articles">
                     <!-- Documentation Resources -->
-                    <article class="news-card">
+                    <article class="news-card" data-category="documentation">
                         <div class="news-card-header">
                             <span class="news-category">Documentation</span>
                             <time datetime="2025-01-12">January 12, 2025</time>
@@ -100,7 +100,7 @@
                         <a href="/support-article-esp-idf.html" class="button button-small">Access Guide</a>
                     </article>
 
-                    <article class="news-card">
+                    <article class="news-card" data-category="development-tools">
                         <div class="news-card-header">
                             <span class="news-category">Development Tools</span>
                             <time datetime="2025-01-10">January 10, 2025</time>
@@ -110,7 +110,7 @@
                         <a href="/support-article-devkit-setup.html" class="button button-small">View Tutorial</a>
                     </article>
 
-                    <article class="news-card">
+                    <article class="news-card" data-category="fae-support">
                         <div class="news-card-header">
                             <span class="news-category">FAE Support</span>
                             <time datetime="2025-01-08">January 8, 2025</time>
@@ -120,7 +120,7 @@
                         <a href="/support-article-hardware-design.html" class="button button-small">Read Guidelines</a>
                     </article>
 
-                    <article class="news-card">
+                    <article class="news-card" data-category="training">
                         <div class="news-card-header">
                             <span class="news-category">Training</span>
                             <time datetime="2025-01-05">January 5, 2025</time>
@@ -130,7 +130,7 @@
                         <a href="/support-article-wifi-bluetooth.html" class="button button-small">Start Training</a>
                     </article>
 
-                    <article class="news-card">
+                    <article class="news-card" data-category="documentation">
                         <div class="news-card-header">
                             <span class="news-category">Documentation</span>
                             <time datetime="2025-01-03">January 3, 2025</time>
@@ -140,7 +140,7 @@
                         <a href="/support-article-ai-development.html" class="button button-small">Access Guide</a>
                     </article>
 
-                    <article class="news-card">
+                    <article class="news-card" data-category="community">
                         <div class="news-card-header">
                             <span class="news-category">Community</span>
                             <time datetime="2025-01-01">January 1, 2025</time>
@@ -150,7 +150,7 @@
                         <a href="/support-article-community.html" class="button button-small">Join Forum</a>
                     </article>
 
-                    <article class="news-card">
+                    <article class="news-card" data-category="development-tools">
                         <div class="news-card-header">
                             <span class="news-category">Development Tools</span>
                             <time datetime="2024-12-28">December 28, 2024</time>
@@ -160,7 +160,7 @@
                         <a href="/support-article-debugging.html" class="button button-small">Learn Debugging</a>
                     </article>
 
-                    <article class="news-card">
+                    <article class="news-card" data-category="fae-support">
                         <div class="news-card-header">
                             <span class="news-category">FAE Support</span>
                             <time datetime="2024-12-25">December 25, 2024</time>
@@ -170,7 +170,7 @@
                         <a href="/support-article-power-optimization.html" class="button button-small">View Strategies</a>
                     </article>
 
-                    <article class="news-card">
+                    <article class="news-card" data-category="training">
                         <div class="news-card-header">
                             <span class="news-category">Training</span>
                             <time datetime="2024-12-22">December 22, 2024</time>
@@ -178,6 +178,38 @@
                         <h3>Security Implementation Guide</h3>
                         <p>Learn to implement robust security features in ESP32 applications, including secure boot, flash encryption, and secure communication.</p>
                         <a href="/support-article-security.html" class="button button-small">Security Training</a>
+                    </article>
+
+                    <!-- Additional Documentation Articles -->
+                    <article class="news-card" data-category="documentation">
+                        <div class="news-card-header">
+                            <span class="news-category">Documentation</span>
+                            <time datetime="2025-01-15">January 15, 2025</time>
+                        </div>
+                        <h3>Matter Protocol Implementation</h3>
+                        <p>Comprehensive guide to implementing Matter protocol with ESP32-C6 for smart home device interoperability and connectivity.</p>
+                        <a href="/support-article-matter.html" class="button button-small">Read Guide</a>
+                    </article>
+
+                    <article class="news-card" data-category="documentation">
+                        <div class="news-card-header">
+                            <span class="news-category">Documentation</span>
+                            <time datetime="2025-01-15">January 15, 2025</time>
+                        </div>
+                        <h3>ESP32 Quick Start Guide</h3>
+                        <p>Your complete guide to getting started with ESP32 development, from toolchain setup to your first working application.</p>
+                        <a href="/support-article-quick-start.html" class="button button-small">Get Started</a>
+                    </article>
+
+                    <!-- Additional Development Tools Articles -->
+                    <article class="news-card" data-category="development-tools">
+                        <div class="news-card-header">
+                            <span class="news-category">Development Tools</span>
+                            <time datetime="2024-12-20">December 20, 2024</time>
+                        </div>
+                        <h3>Code Examples Library</h3>
+                        <p>Extensive collection of ready-to-use code examples for common ESP32 applications, sensors, and communication protocols.</p>
+                        <a href="/support-article-examples.html" class="button button-small">Browse Examples</a>
                     </article>
                 </div>
 
@@ -305,7 +337,54 @@
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
         
-        // Support navigation functionality
+        // Smooth fade animations for article filtering
+        function filterArticlesWithAnimation(category) {
+            const articles = document.querySelectorAll('#support-articles .news-card');
+            
+            // First fade out all articles
+            articles.forEach(article => {
+                article.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                article.style.opacity = '0';
+                article.style.transform = 'translateY(10px)';
+            });
+            
+            // After fade out, show/hide appropriate articles
+            setTimeout(() => {
+                articles.forEach((article, index) => {
+                    if (category === 'all' || article.getAttribute('data-category') === category) {
+                        article.style.display = 'block';
+                        // Trigger reflow
+                        article.offsetHeight;
+                        // Fade in with staggered animation
+                        setTimeout(() => {
+                            article.style.opacity = '1';
+                            article.style.transform = 'translateY(0)';
+                        }, index * 50);
+                    } else {
+                        article.style.display = 'none';
+                    }
+                });
+            }, 300);
+        }
+        
+        // Handle initial load and back/forward navigation
+        function handleHashChange() {
+            const hash = window.location.hash.replace('#', '') || 'all';
+            const activeTab = document.querySelector(`[href="#${hash}"]`);
+            
+            if (activeTab) {
+                // Remove active from all pills
+                document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
+                
+                // Add active to current tab
+                activeTab.classList.add('active');
+                
+                // Filter articles
+                filterArticlesWithAnimation(hash);
+            }
+        }
+        
+        // Initialize navigation pills
         document.querySelectorAll('.nav-pill').forEach(pill => {
             pill.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -315,7 +394,38 @@
                 
                 // Add active class to clicked pill
                 this.classList.add('active');
+                
+                // Get category from href attribute
+                const href = this.getAttribute('href');
+                const category = href.replace('#', '');
+                
+                // Filter articles with animation
+                filterArticlesWithAnimation(category);
+                
+                // Update URL hash
+                if (history.pushState) {
+                    history.pushState(null, null, href);
+                } else {
+                    location.hash = href;
+                }
             });
+        });
+        
+        // Listen for hash changes
+        window.addEventListener('hashchange', handleHashChange);
+        
+        // Handle initial page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize with proper styling
+            const articles = document.querySelectorAll('#support-articles .news-card');
+            articles.forEach(article => {
+                article.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                article.style.opacity = '1';
+                article.style.transform = 'translateY(0)';
+            });
+            
+            // Handle initial hash
+            handleHashChange();
         });
     </script>
 </body>
