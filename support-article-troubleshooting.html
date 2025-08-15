@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troubleshooting Common Wi-Fi Issues on ESP32 | LiTong</title>
+    <meta name="description" content="Diagnose and solve frequent problems like failed Wi-Fi connections, high latency, and random disconnects on your ESP32 projects with this practical FAE guide.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
+</head>
+<body>
+    <header class="site-header"><!-- ... Final Header Code ... --></header>
+    <main>
+        <section class="page-header"><div class="container"><div class="breadcrumbs"><a href="index.html">Home</a> &raquo; <a href="support.html">Technical Support</a> &raquo; <span>Wi-Fi Troubleshooting</span></div></div></section>
+        <section class="section-padding">
+            <div class="container content-layout">
+                <article class="main-content">
+                    <h1>Troubleshooting Common Wi-Fi Connectivity Issues on ESP32</h1>
+                    <div class="article-meta"><!-- ... Author Info & Tags ... --></div>
+                    <p>One of the most common support requests we receive involves Wi-Fi connectivity problems. This guide covers the top three issues our FAEs encounter and how to solve them.</p>
+                    <h3>1. The Device Fails to Connect to the AP</h3>
+                    <p>This is the most frequent starting problem. Follow these diagnostic steps in order:</p>
+                    <ul>
+                        <li><strong>Check Credentials:</strong> The simplest mistake is a typo in the SSID or password. Double-check them.</li>
+                        <li><strong>Get the Disconnect Reason:</strong> In your ESP-IDF code, register an event handler for `WIFI_EVENT_STA_DISCONNECTED`. The event data will contain a reason code. Codes like `WIFI_REASON_NO_AP_FOUND` or `WIFI_REASON_AUTH_FAIL` will tell you exactly what's wrong.</li>
+                        <li><strong>Check Your Antenna:</strong> Is the antenna connected properly? If using a PCB trace antenna, was its design (and the required keep-out area) followed exactly as specified in the module datasheet? A poor antenna is a very common hardware issue.</li>
+                    </ul>
+                    <h3>2. High Latency or Packet Loss</h3>
+                    <p>If the device connects but the connection is poor, investigate these causes:</p>
+                    <ul>
+                        <li><strong>Signal Strength (RSSI):</strong> Print the RSSI value. A value below -75dBm is considered a poor signal and can lead to instability. Try moving the device closer to the router.</li>
+                        <li><strong>RF Interference:</strong> Other 2.4GHz devices (microwaves, cordless phones, other Wi-Fi networks) can cause interference. Try changing the Wi-Fi channel on your router.</li>
+                        <li><strong>Power Supply Issues:</strong> Wi-Fi transmission is a power-intensive operation. A weak or unstable power supply can cause "brownouts" where the chip resets or the radio fails. Ensure your power supply can handle current spikes of 300-400mA. Add a large capacitor (e.g., 220uF) close to the module's power pins.</li>
+                    </ul>
+                    <h3>3. Device Disconnects Randomly</h3>
+                    <p>This is often the hardest problem to debug. Besides the power supply issues mentioned above, consider:</p>
+                    <ul>
+                        <li><strong>Software Bugs:</strong> A memory leak in your application could cause a crash and reset. Monitor free heap memory over time.</li>
+                        <li><strong>Router Behavior:</strong> Some routers may kick off devices they deem inactive. Ensure you are sending periodic traffic (e.g., a PING or MQTT keep-alive) to maintain the connection.</li>
+                    </ul>
+                </article>
+                <aside class="sidebar"><!-- ... Sidebar code ... --></aside>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"><!-- ... Final Footer Code ... --></footer>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact LiTong | Espressif Authorized Distributor</title>
+    <meta name="description" content="Contact LiTong Technology for sales inquiries, technical support, or to request a quote. We are ready to assist you with your Espressif project needs.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
+</head>
+<body>
+    <header class="site-header"><!-- ... Final Header ... --></header>
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>We're here to help. Reach out to our sales or technical teams.</p>
+                <div class="breadcrumbs">
+                    <a href="/">Home</a> &raquo; <span>Contact</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <p><strong>Sales Inquiries:</strong><br> sales@yourdomain.com</p>
+                        <p><strong>Technical Support:</strong><br> support@yourdomain.com</p>
+                        <p><strong>Phone:</strong><br> +1-800-555-0199</p>
+                        <p><strong>Address:</strong><br> 123 Tech Park, Silicon Valley,<br> CA 94000, USA</p>
+                        <!-- Google Maps Embed Placeholder -->
+                        <div class="map-placeholder">
+                           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.332338573135!2d-122.086278384695!3d37.422065979825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fba024251be6b%3A0x588c7512a8335fa0!2sGoogleplex!5e0!3m2!1sen!2sus!4v1660315214013!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                    <div class="contact-form-container">
+                        <h3>Send Us a Message</h3>
+                        <form action="#" method="POST" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                             <div class="form-group">
+                                <label for="company">Company</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+                            <div class="form-group">
+                                <label for="part-number">Part Number (Optional)</label>
+                                <input type="text" id="part-number" name="part_number">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+                            <button type="submit" class="button button-primary full-width">Submit Inquiry</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"><!-- ... Final Footer ... --></footer>
+    <script> document.getElementById('year').textContent = new Date().getFullYear(); </script>
+</body>
+</html>```
+
+#### **5. Final CSS Updates (`assets/css/style.css`)**
+
+**Add the following code to the end** of your existing `style.css` file.
+
+```css
+/* --- Styles for News, About, Contact Pages (Batch 4) --- */
+
+/* News Page */
+.news-category-section {
+    margin-bottom: 60px;
+}
+.news-category-section h2 {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.news-category-section > p {
+    margin-bottom: 30px;
+}
+.simple-news-list {
+    list-style: none;
+    padding-left: 0;
+}
+.simple-news-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.simple-news-list a {
+    text-decoration: none;
+    color: var(--dark-blue);
+    font-weight: 600;
+}
+.simple-news-list a:hover {
+    color: var(--primary-color);
+}
+
+/* About Us Page */
+.about-intro h2 {
+    font-size: 2rem;
+    line-height: 1.4;
+    max-width: 800px;
+    margin: 0 auto 1rem;
+    text-align: center;
+}
+.about-intro p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+.mt-60 { margin-top: 60px; }
+.team-card {
+    display: flex;
+    gap: 20px;
+    background: var(--white);
+    padding: 20px;
+    border-radius: var(--border-radius);
+}
+.team-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.team-card-info h4 { margin-bottom: 5px; }
+.team-card-info p { margin: 0; }
+.team-card-info strong { color: var(--text-color); }
+
+.certificate-image {
+    max-width: 100%;
+    width: 600px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s;
+}
+.certificate-image:hover {
+    transform: scale(1.02);
+}
+
+/* Contact Page */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+.contact-info p {
+    line-height: 1.8;
+}
+.map-placeholder {
+    margin-top: 2rem;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-family: 'Inter', sans-serif;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(230, 90, 45, 0.2);
+}
+
+/* Responsive Adjustments for Batch 4 */
+@media (max-width: 992px) {
+    .team-card { flex-direction: column; text-align: center; }
+    .contact-grid { grid-template-columns: 1fr; }
+}

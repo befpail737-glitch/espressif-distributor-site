@@ -1,0 +1,350 @@
+/* --- Google Font --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* --- CSS Variables --- */
+:root {
+    --primary-color: #E65A2D; /* Espressif Orange */
+    --dark-blue: #0A2840;
+    --text-color: #333;
+    --text-light: #666;
+    --background-light: #f8f9fa;
+    --border-color: #e0e0e0;
+    --white: #ffffff;
+    --container-width: 1200px;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* --- General Reset & Typography --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white);
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+    color: var(--dark-blue);
+    line-height: 1.2;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.5rem; }
+p { margin-bottom: 1rem; color: var(--text-light); }
+
+/* --- Header & Navigation --- */
+.site-header {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--dark-blue);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.logo img {
+    height: 40px;
+    margin-right: 12px;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.main-nav li {
+    margin-left: 25px;
+}
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Buttons --- */
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+.button-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+.button-primary:hover {
+    background-color: #c54a22;
+}
+.button-secondary {
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+.button-secondary:hover {
+    background-color: #071c2d;
+}
+.button-outline {
+    border-color: var(--white);
+    color: var(--white);
+}
+.button-outline:hover {
+    background-color: var(--white);
+    color: var(--dark-blue);
+}
+.button-lg {
+    padding: 16px 32px;
+    font-size: 1.1rem;
+}
+
+/* --- Hero Section --- */
+.hero {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 100px 0;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(10, 40, 64, 0.8);
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.hero h1 {
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+.hero p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+.hero-cta .button {
+    margin: 0 10px;
+}
+
+/* --- General Section Styling --- */
+.section-padding {
+    padding: 80px 0;
+}
+.section-bg-light {
+    background-color: var(--background-light);
+}
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.section-title h2 {
+    margin-bottom: 1rem;
+}
+.text-center { text-align: center; }
+.mt-40 { margin-top: 40px; }
+
+/* --- Grid System --- */
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+/* --- Feature Cards (Why Choose Us) --- */
+.feature-card {
+    text-align: center;
+    padding: 20px;
+}
+.feature-icon {
+    height: 50px;
+    margin-bottom: 1.5rem;
+}
+.feature-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+/* --- Product Category Cards --- */
+.product-category-card {
+    background-color: var(--white);
+    padding: 40px 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--dark-blue);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.product-category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Solution Cards --- */
+.solution-card {
+    display: block;
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s;
+}
+.solution-card:hover {
+    transform: translateY(-5px);
+}
+.solution-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.solution-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 30px 20px 20px;
+}
+.solution-card-content h3 {
+    color: var(--white);
+    margin: 0;
+}
+
+/* --- Final CTA Section --- */
+.cta-section {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 60px 0;
+    text-align: center;
+}
+.cta-section h2 {
+    color: var(--white);
+}
+.cta-section p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+}
+
+/* --- Footer --- */
+.site-footer {
+    background-color: var(--dark-blue);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 60px 0 20px;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+.footer-column h4 {
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+.footer-column p {
+    color: rgba(255, 255, 255, 0.7);
+}
+.footer-column ul {
+    list-style: none;
+}
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+.footer-column a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer-column a:hover {
+    color: var(--primary-color);
+}
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr; }
+    .main-nav { display: none; /* Add mobile menu logic here */ }
+}
+@media (max-width: 576px) {
+    .section-padding { padding: 60px 0; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    .grid-4 { grid-template-columns: 1fr; }
+    .hero { padding: 80px 0; }
+    .hero p { font-size: 1.1rem; }
+    .hero-cta {
+        display: flex;
+        flex-direction: column;
+    }
+    .hero-cta .button {
+        margin: 10px 0 0;
+        width: 100%;
+    }
+}```
+
+#### **3. SVG & Image Assets**
+
+These are the vector icons and placeholder images used on the homepage. Create the folders as specified in the structure above and save each file with its corresponding name.
+
+**`assets/icons/logo.svg`**
+```xml
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E65A2D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c54a22;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <path fill="url(#grad1)" d="M50,5 C74.85,5 95,25.15 95,50 C95,74.85 74.85,95 50,95 C25.15,95 5,74.85 5,50 C5,25.15 25.15,5 50,5 Z M50,15 C69.33,15 85,30.67 85,50 C85,69.33 69.33,85 50,85 C30.67,85 15,69.33 15,50 C15,30.67 30.67,15 50,15 Z" />
+  <text x="35" y="62" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#0A2840">LT</text>
+</svg>

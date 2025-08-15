@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wearable Health Monitor Solution | LiTong</title>
+    <meta name="description" content="An ultra-low-power reference design for health and fitness trackers based on the compact and efficient ESP32-C3, focusing on long battery life.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
+</head>
+<body>
+    <header class="site-header"><!-- ... Final Header Code ... --></header>
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a> &raquo; <a href="solutions.html">Solutions</a> &raquo; <span>Wearable Health Monitor</span>
+                </div>
+            </div>
+        </section>
+        <section class="section-padding">
+            <div class="container content-layout">
+                <article class="main-content">
+                    <h1>Wearable Health Monitor Solution</h1>
+                    <h2>Solution Overview</h2>
+                    <p>This reference design focuses on creating ultra-low-power wearable devices for health and fitness tracking. It uses the compact and power-efficient ESP32-C3 to gather data from various sensors (like heart rate and accelerometers) and transmit it via Bluetooth Low Energy (BLE) to a companion mobile app. The primary goal of this solution is to maximize battery life while maintaining reliable connectivity and accurate sensor readings.</p>
+                    <h2>Solution Block Diagram</h2>
+                    <div class="block-diagram">
+                        <img src="assets/images/solutions/block-diagram-generic.png" alt="Block diagram of a Wearable Health Monitor using ESP32-C3.">
+                    </div>
+                    <h2>Core Advantages</h2>
+                    <ul class="advantages-list">
+                        <li><strong>Ultra-Low Power:</strong> Leverages the ESP32-C3's deep-sleep modes and efficient RISC-V core to achieve weeks of battery life.</li>
+                        <li><strong>Compact Form Factor:</strong> Based on small footprint modules like the ESP32-C3-MINI-1, making it ideal for space-constrained wearable designs.</li>
+                        <li><strong>Reliable BLE 5 Connectivity:</strong> Utilizes the features of Bluetooth 5 for faster data transfer and more stable connections to smartphones.</li>
+                        <li><strong>Cost-Effective:</strong> The ESP32-C3 provides a highly integrated solution, reducing the overall Bill of Materials (BOM) cost.</li>
+                    </ul>
+                    <h2>Recommended Bill of Materials (BOM)</h2>
+                    <table class="specs-table">
+                         <thead>
+                            <tr><th>Part Number</th><th>Description</th><th>Role in Solution</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="product-detail-esp32c3.html">ESP32-C3-MINI-1</a></td>
+                                <td>Compact RISC-V Wi-Fi & BLE Module</td>
+                                <td>Main processor, handling sensor polling, data processing, and BLE communication.</td>
+                            </tr>
+                            <tr><td>(External IC)</td><td>PPG Sensor (e.g., MAX30102)</td><td>For measuring heart rate and blood oxygen saturation (SpO2).</td></tr>
+                            <tr><td>(External IC)</td><td>6-Axis IMU (Accelerometer + Gyro)</td><td>For step counting and activity tracking.</td></tr>
+                            <tr><td>(External IC)</td><td>LiPo Battery Charger IC</td><td>Manages the charging of the single-cell lithium battery.</td></tr>
+                        </tbody>
+                    </table>
+                    <h2>Application Scenarios</h2>
+                    <ul>
+                        <li>Fitness Trackers and Smart Bands</li>
+                        <li>Continuous Heart Rate Monitors</li>
+                        <li>Smart Rings and other compact wearables</li>
+                        <li>Elderly Care and Patient Monitoring Devices</li>
+                    </ul>
+                </article>
+                <aside class="sidebar"><!-- ... Sidebar code ... --></aside>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"><!-- ... Final Footer Code ... --></footer>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

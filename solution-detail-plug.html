@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial IoT Gateway Solution | LiTong</title>
+    <meta name="description" content="A robust IIoT Gateway solution using the ESP32-S3. Bridge Modbus/CAN with cloud platforms like AWS IoT or Azure. Includes block diagram and BOM.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
+</head>
+<body>
+    <header class="site-header"><!-- ... Final Header Code ... --></header>
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a> &raquo; <a href="solutions.html">Solutions</a> &raquo; <span>Industrial IoT Gateway</span>
+                </div>
+            </div>
+        </section>
+        <section class="section-padding">
+            <div class="container content-layout">
+                <article class="main-content">
+                    <h1>Industrial IoT (IIoT) Gateway Solution</h1>
+                    <h2>Solution Overview</h2>
+                    <p>This solution provides a powerful and flexible IIoT gateway designed to bridge legacy industrial equipment with modern cloud services. It leverages the high-performance ESP32-S3 to handle multiple communication protocols simultaneously, perform edge data processing, and ensure secure data transmission to platforms like AWS IoT, Azure IoT Hub, or a private MQTT broker.</p>
+                    <h2>Solution Block Diagram</h2>
+                    <div class="block-diagram">
+                        <img src="assets/images/solutions/block-diagram-generic.png" alt="Block diagram of an IIoT Gateway using an ESP32-S3.">
+                    </div>
+                    <h2>Core Advantages</h2>
+                    <ul class="advantages-list">
+                        <li><strong>Protocol Bridging:</strong> Simultaneously supports Wi-Fi, Ethernet, RS485 (Modbus), and CAN bus (via TWAI controller).</li>
+                        <li><strong>Edge Computing:</strong> The dual-core 240MHz processor on the ESP32-S3 allows for local data filtering, aggregation, and analysis to reduce cloud costs.</li>
+                        <li><strong>Robust Security:</strong> Implements secure boot, flash encryption, and TLS 1.2 for secure connections to the cloud.</li>
+                        <li><strong>Flexible Connectivity:</strong> Offers both Wi-Fi and wired Ethernet options for reliable network integration in industrial environments.</li>
+                    </ul>
+                    <h2>Recommended Bill of Materials (BOM)</h2>
+                    <table class="specs-table">
+                         <thead>
+                            <tr><th>Part Number</th><th>Description</th><th>Role in Solution</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="product-detail-esp32s3.html">ESP32-S3-WROOM-1U</a></td>
+                                <td>High-Performance AIoT Module</td>
+                                <td>Core processor for the gateway, running all logic and communication stacks.</td>
+                            </tr>
+                            <tr><td>(External IC)</td><td>Ethernet PHY (e.g., LAN8720)</td><td>Provides the physical layer for wired Ethernet connectivity.</td></tr>
+                            <tr><td>(External IC)</td><td>RS485 Transceiver</td><td>Interface for connecting to Modbus RTU devices.</td></tr>
+                            <tr><td>(External IC)</td><td>CAN Transceiver</td><td>Interface for connecting to CAN bus networks.</td></tr>
+                        </tbody>
+                    </table>
+                    <h2>Application Scenarios</h2>
+                    <ul>
+                        <li>Factory Automation Data Collection</li>
+                        <li>Building Management Systems (BMS)</li>
+                        <li>Smart Agriculture Sensor Hubs</li>
+                        <li>Remote Equipment Monitoring and Predictive Maintenance</li>
+                    </ul>
+                </article>
+                <aside class="sidebar"><!-- ... Sidebar code ... --></aside>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"><!-- ... Final Footer Code ... --></footer>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

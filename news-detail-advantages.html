@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Lighting & Matter Solution | Espressif Distributor LiTong</title>
+    <meta name="description" content="A complete Matter-over-Thread reference design for smart lighting, featuring the ESP32-C6 and ESP32-H2. Includes block diagram and recommended BOM.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
+</head>
+<body>
+    <header class="site-header"><!-- ... Header ... --></header>
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="breadcrumbs">
+                    <a href="/">Home</a> &raquo; <a href="/solutions.html">Solutions</a> &raquo; <span>Smart Lighting & Matter</span>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section-padding">
+            <div class="container content-layout">
+                <article class="main-content">
+                    <h1>Smart Lighting & Matter Solution</h1>
+                    
+                    <h2>Solution Overview</h2>
+                    <p>This reference design provides a comprehensive blueprint for developing smart lighting products (bulbs, switches, controllers) that are fully compliant with the new Matter standard. By leveraging Matter over Thread, this solution ensures seamless interoperability with major smart home ecosystems like Apple Home, Google Home, and Amazon Alexa. The design is optimized for reliability, low power consumption, and fast time-to-market.</p>
+
+                    <h2>Solution Block Diagram</h2>
+                    <div class="block-diagram">
+                        <img src="assets/images/solutions/block-diagram-generic.png" alt="Block diagram of a Matter smart light using an ESP32-C6 for control and connectivity.">
+                    </div>
+                    
+                    <h2>Core Advantages</h2>
+                    <ul class="advantages-list">
+                        <li><strong>Future-Proof Connectivity:</strong> Utilizes Wi-Fi 6, Bluetooth 5, and Thread via the ESP32-C6 for maximum compatibility.</li>
+                        <li><strong>Seamless Interoperability:</strong> Built for the Matter standard, ensuring "it just works" across different smart home platforms.</li>
+                        <li><strong>Low-Power Standby:</strong> Optimized firmware and hardware design for minimal power consumption when idle.</li>
+                        <li><strong>Robust Security:</strong> Leverages Espressif's advanced security features like Secure Boot and Flash Encryption.</li>
+                    </ul>
+
+                    <h2>Recommended Bill of Materials (BOM)</h2>
+                    <p>The following core components are recommended for this solution. Click on a part number to view detailed specifications.</p>
+                    <table class="specs-table">
+                        <thead>
+                            <tr>
+                                <th>Part Number</th>
+                                <th>Description</th>
+                                <th>Role in Solution</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="product-detail-esp32c6.html">ESP32-C6-WROOM-1</a></td>
+                                <td>Wi-Fi 6 + BLE 5 + 802.15.4 Module</td>
+                                <td>Main controller, handling Matter application logic and Thread/Wi-Fi communication.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="product-detail-esp32h2.html">ESP32-H2-MINI-1</a></td>
+                                <td>BLE 5 + 802.15.4 Module</td>
+                                <td>Alternative low-power option for Thread-only end devices (e.g., battery-powered sensors).</td>
+                            </tr>
+                            <tr>
+                                <td>(External IC)</td>
+                                <td>PWM LED Driver IC</td>
+                                <td>Controls the brightness and color temperature of the LEDs.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>Application Scenarios</h2>
+                    <p>This versatile solution can be adapted for a wide range of products, including:</p>
+                    <ul>
+                        <li>Dimmable and Tunable White Smart Bulbs (A19, BR30)</li>
+                        <li>RGBW LED Strips and Controllers</li>
+                        <li>Smart Wall Switches and Dimmers</li>
+                        <li>Connected Ceiling Fixtures</li>
+                    </ul>
+
+                </article>
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Need Help?</h3>
+                        <p>Our FAE team can help you adapt this solution to your specific needs.</p>
+                        <a href="/contact.html" class="button button-primary full-width">Consult an Engineer</a>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"><!-- ... Footer ... --></footer>
+    <script> document.getElementById('year').textContent = new Date().getFullYear(); /* Header/Footer copy-paste */ </script>
+</body>
+</html>

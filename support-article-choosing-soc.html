@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with ESP-IDF | LiTong</title>
+    <meta name="description" content="A beginner's guide to setting up the Espressif IoT Development Framework (ESP-IDF), building, and flashing your first 'Hello World' application to an ESP32 board.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
+</head>
+<body>
+    <header class="site-header"><!-- ... Final Header Code ... --></header>
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a> &raquo; <a href="support.html">Technical Support</a> &raquo; <span>ESP-IDF Guide</span>
+                </div>
+            </div>
+        </section>
+        <section class="section-padding">
+            <div class="container content-layout">
+                <article class="main-content">
+                    <h1>Getting Started with the ESP-IDF: A Beginner's Guide</h1>
+                    <div class="article-meta"><!-- ... Author Info & Tags ... --></div>
+                    <p>The Espressif IoT Development Framework (ESP-IDF) is the official development framework for the ESP32, ESP32-S and ESP32-C series of SoCs. It provides a toolchain, libraries, and examples to create sophisticated IoT applications. This guide will walk you through the basic setup.</p>
+                    <h2>Step 1: Install the Prerequisites</h2>
+                    <p>Before installing ESP-IDF, you need to install the necessary tools. Espressif provides an all-in-one installer for Windows and instructions for Linux/macOS.</p>
+                    <ul>
+                        <li><strong>Windows:</strong> Download the ESP-IDF Tools Installer from the Espressif website. This is the easiest method.</li>
+                        <li><strong>macOS & Linux:</strong> You'll need to install CMake, Python 3, and Git using your system's package manager (e.g., `brew` or `apt-get`).</li>
+                    </ul>
+                    <h2>Step 2: Get ESP-IDF from GitHub</h2>
+                    <p>Open your terminal or command prompt and clone the ESP-IDF repository. It's recommended to use a specific release branch for stability.</p>
+                    <pre><code>git clone --recursive -b v5.1 https://github.com/espressif/esp-idf.git</code></pre>
+                    <h2>Step 3: Install and Configure the Tools</h2>
+                    <p>Navigate into the `esp-idf` directory and run the install script. This script will download the required compilers, debuggers, and other tools.</p>
+                    <pre><code>cd esp-idf
+./install.sh esp32,esp32c3 # or install.bat on Windows
+</code></pre>
+                    <p>After installation, you need to set up the environment variables in your current terminal session by running the export script.</p>
+                    <pre><code>. ./export.sh # or export.bat on Windows</code></pre>
+                    <h2>Step 4: Build and Flash Your First Project</h2>
+                    <p>Copy an example project, configure it for your board, build, and flash.</p>
+                    <pre><code>cd ~/
+cp -r $IDF_PATH/examples/get-started/hello_world .
+cd hello_world
+
+# Set your target chip
+idf.py set-target esp32c3
+
+# Configure the project (e.g., set serial port)
+idf.py menuconfig
+
+# Build, flash, and monitor
+idf.py flash monitor
+</code></pre>
+                    <p>If all goes well, you should see "Hello world!" printed repeatedly in your terminal. You've successfully started your journey with ESP-IDF!</p>
+                </article>
+                <aside class="sidebar"><!-- ... Sidebar code ... --></aside>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"><!-- ... Final Footer Code ... --></footer>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

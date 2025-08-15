@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Plug with Energy Monitoring Solution | LiTong</title>
+    <meta name="description" content="A cost-effective and feature-rich smart plug design using the ESP8266 or ESP32-C3 for mass-market applications, with optional energy monitoring.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
+</head>
+<body>
+    <header class="site-header"><!-- ... Paste Final Header Code Here ... --></header>
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a> &raquo; <a href="solutions.html">Solutions</a> &raquo; <span>Smart Plug with Energy Monitoring</span>
+                </div>
+            </div>
+        </section>
+        <section class="section-padding">
+            <div class="container content-layout">
+                <article class="main-content">
+                    <h1>Smart Plug with Energy Monitoring Solution</h1>
+                    <h2>Solution Overview</h2>
+                    <p>This solution provides a cost-effective and highly reliable design for a mass-market smart plug. Using the proven ESP8266EX for ultimate cost-effectiveness or the modern ESP32-C3 for enhanced features and security, it offers simple Wi-Fi control via a mobile app or cloud service. An optional energy monitoring feature can be added using a dedicated metering IC, providing users with valuable insight into their power consumption and enabling smart energy-saving automations.</p>
+                    <h2>Solution Block Diagram</h2>
+                    <div class="block-diagram">
+                        <img src="assets/images/solutions/block-diagram-generic.png" alt="Block diagram of a Smart Plug using ESP32-C3.">
+                    </div>
+                    <h2>Core Advantages</h2>
+                    <ul class="advantages-list">
+                        <li><strong>Highly Cost-Effective:</strong> The design is optimized for a low BOM cost, making it suitable for high-volume consumer products.</li>
+                        <li><strong>Flexible Core Options:</strong> Choose the ultra-low-cost <a href="product-detail-esp8266.html">ESP8266EX</a> or the secure, feature-rich <a href="product-detail-esp32c3.html">ESP32-C3</a> with BLE.</li>
+                        <li><strong>Optional Energy Monitoring:</strong> Easily add value by integrating a metering IC to provide users with real-time power data (W, V, A).</li>
+                        <li><strong>Compact and Safe:</strong> The design prioritizes a small form factor and includes considerations for electrical safety and compliance.</li>
+                    </ul>
+                    <h2>Recommended Bill of Materials (BOM)</h2>
+                    <table class="specs-table">
+                         <thead>
+                            <tr><th>Part Number</th><th>Description</th><th>Role in Solution</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="product-detail-esp32c3.html">ESP32-C3-MINI-1</a></td>
+                                <td>Modern RISC-V Wi-Fi & BLE Module</td>
+                                <td>Recommended core for new designs, offering better security and BLE.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="product-detail-esp8266.html">ESP8266EX (SoC)</a></td>
+                                <td>Ultra Low-Cost Wi-Fi SoC</td>
+                                <td>The most cost-effective option for simple Wi-Fi control.</td>
+                            </tr>
+                            <tr><td>(External IC)</td><td>Metering IC (e.g., BL0937)</td><td>Measures voltage, current, and power, communicating data via a UART interface.</td></tr>
+                            <tr><td>(Component)</td><td>High-Power Relay (10A/16A)</td><td>Safely switches the high-voltage load on and off.</td></tr>
+                        </tbody>
+                    </table>
+                    <h2>Application Scenarios</h2>
+                    <ul>
+                        <li>Consumer Smart Plugs</li>
+                        <li>Smart Power Strips</li>
+                        <li>In-wall Smart Outlets</li>
+                        <li>Appliance Control Modules</li>
+                    </ul>
+                </article>
+                <aside class="sidebar"><!-- ... Sidebar code ... --></aside>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"><!-- ... Paste Final Footer Code Here ... --></footer>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
