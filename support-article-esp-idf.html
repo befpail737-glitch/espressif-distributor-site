@@ -47,36 +47,265 @@
             </div>
         </section>
 
-        <!-- Guide Overview -->
+        <!-- Article Content -->
         <section class="section-padding">
             <div class="container">
-                <div class="solution-hero">
-                    <div class="product-overview">
-                        <h2>ESP-IDF Development Framework</h2>
-                        <p>ESP-IDF (Espressif IoT Development Framework) is the official development framework for ESP32 series SoCs. It provides a comprehensive set of libraries, tools, and APIs for building robust IoT applications with advanced features like Wi-Fi, Bluetooth, security, and power management.</p>
+                <div class="news-article">
+                    <div class="article-header">
+                        <div class="article-meta">
+                            <span class="article-category">Development Guide</span>
+                            <time datetime="2025-01-12">Updated January 12, 2025</time>
+                            <span class="article-read-time">15 min read</span>
+                        </div>
+                        <img src="assets/images/solutions/solution-gateway.jpg" alt="ESP-IDF Development Framework" class="article-hero-image">
+                    </div>
+
+                    <div class="article-content">
+                        <div class="lead-paragraph">
+                            <p>ESP-IDF (Espressif IoT Development Framework) is the official development framework for ESP32 series SoCs, providing a comprehensive suite of libraries, tools, and APIs for building professional IoT applications. Based on FreeRTOS, ESP-IDF offers advanced features including Wi-Fi, Bluetooth, security protocols, and power management optimizations.</p>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>What is ESP-IDF?</h2>
+                            <p>ESP-IDF is a comprehensive development platform that enables developers to create robust, scalable IoT applications for ESP32 microcontrollers. It provides everything from low-level hardware access to high-level protocol implementations, making it the preferred choice for professional development.</p>
+                            
+                            <div class="feature-highlights">
+                                <div class="feature-highlight">
+                                    <img src="assets/icons/cpu.svg" alt="Cross Platform" class="feature-icon-small">
+                                    <span>Cross-Platform Support</span>
+                                </div>
+                                <div class="feature-highlight">
+                                    <img src="assets/icons/shield-check.svg" alt="Professional" class="feature-icon-small">
+                                    <span>Production-Ready</span>
+                                </div>
+                                <div class="feature-highlight">
+                                    <img src="assets/icons/wifi.svg" alt="Complete APIs" class="feature-icon-small">
+                                    <span>Complete API Set</span>
+                                </div>
+                                <div class="feature-highlight">
+                                    <img src="assets/icons/check-circle.svg" alt="Open Source" class="feature-icon-small">
+                                    <span>Open Source</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Core Components and Architecture</h2>
+                            <p>ESP-IDF follows a modular architecture that provides flexibility and efficiency for different application requirements:</p>
+                            
+                            <div class="specs-comparison">
+                                <div class="spec-category">
+                                    <h3>System Components</h3>
+                                    <table class="specs-table">
+                                        <tbody>
+                                            <tr><td><strong>FreeRTOS Kernel</strong></td><td>Real-time operating system with task scheduling and memory management</td></tr>
+                                            <tr><td><strong>ESP32 HAL</strong></td><td>Hardware Abstraction Layer for direct peripheral access</td></tr>
+                                            <tr><td><strong>Component System</strong></td><td>Modular architecture for selective feature inclusion</td></tr>
+                                            <tr><td><strong>Build System</strong></td><td>CMake-based build system with dependency management</td></tr>
+                                            <tr><td><strong>Bootloader</strong></td><td>Secure boot and OTA update support</td></tr>
+                                            <tr><td><strong>Application Framework</strong></td><td>High-level APIs for common IoT functionalities</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Development Environment Setup</h2>
+                            <p>Setting up your ESP-IDF development environment is the first step toward professional ESP32 development:</p>
+                            
+                            <div class="application-grid">
+                                <div class="application-item">
+                                    <h4>1. Prerequisites Installation</h4>
+                                    <p>Install Python 3.7+, Git, and platform-specific tools. ESP-IDF installer handles most dependencies automatically.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>2. ESP-IDF Installation</h4>
+                                    <p>Download and install ESP-IDF using the official installer or manual Git clone. Set up environment variables.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>3. Toolchain Setup</h4>
+                                    <p>Install Xtensa and RISC-V toolchains for compilation. Configure paths and verify installation.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>4. IDE Integration</h4>
+                                    <p>Set up VS Code with ESP-IDF extension or Eclipse CDT for integrated development experience.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Key Libraries and APIs</h2>
+                            <p>ESP-IDF provides extensive libraries covering all aspects of IoT development:</p>
+                            
+                            <div class="market-opportunities">
+                                <div class="opportunity-card">
+                                    <h4>Networking APIs</h4>
+                                    <p>Wi-Fi, Bluetooth, Ethernet, and TCP/IP stack implementation with comprehensive protocol support including HTTP, HTTPS, WebSocket, and MQTT.</p>
+                                </div>
+                                <div class="opportunity-card">
+                                    <h4>Peripheral Drivers</h4>
+                                    <p>Complete driver support for GPIO, SPI, I2C, UART, ADC, DAC, PWM, and other peripherals with interrupt and DMA support.</p>
+                                </div>
+                                <div class="opportunity-card">
+                                    <h4>Security Framework</h4>
+                                    <p>Hardware security features, cryptographic libraries, secure boot, flash encryption, and certificate management for enterprise security.</p>
+                                </div>
+                                <div class="opportunity-card">
+                                    <h4>Storage Systems</h4>
+                                    <p>NVS (Non-Volatile Storage), SPIFFS, FAT filesystem, and wear leveling for reliable data storage and configuration management.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Essential Development Concepts</h2>
+                            <p>Understanding these core concepts is crucial for effective ESP-IDF development:</p>
+                            
+                            <div class="technical-advantages">
+                                <li><strong>Task Management:</strong> Create and manage FreeRTOS tasks for concurrent execution, inter-task communication using queues, semaphores, and mutexes.</li>
+                                <li><strong>Memory Management:</strong> Understand DRAM, IRAM, and PSRAM allocation, stack management, and heap monitoring for optimal memory usage.</li>
+                                <li><strong>Interrupt Handling:</strong> Implement efficient interrupt service routines, GPIO interrupts, and timer interrupts with proper priority management.</li>
+                                <li><strong>Power Management:</strong> Configure sleep modes, CPU frequency scaling, and peripheral power management for battery-powered applications.</li>
+                                <li><strong>Component Configuration:</strong> Use menuconfig system to customize build configuration and enable/disable features based on application needs.</li>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Project Structure and Build System</h2>
+                            <p>ESP-IDF uses a structured approach to project organization and building:</p>
+                            
+                            <div class="support-resources">
+                                <div class="resource-item">
+                                    <h4>Project Organization</h4>
+                                    <p>Standard directory structure with main/, components/, and build/ folders for organized development and reusable components.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>CMake Build System</h4>
+                                    <p>Modern CMake-based build system with dependency resolution, component management, and cross-compilation support.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Configuration Management</h4>
+                                    <p>Kconfig-based configuration system with menuconfig interface for flexible project customization and feature selection.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Custom Components</h4>
+                                    <p>Create reusable components with proper dependency management, version control, and distribution through component manager.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Debugging and Development Tools</h2>
+                            <p>ESP-IDF provides comprehensive debugging and development tools:</p>
+                            
+                            <div class="specs-comparison">
+                                <div class="spec-category">
+                                    <h3>Development and Debug Tools</h3>
+                                    <table class="specs-table">
+                                        <tbody>
+                                            <tr><td>JTAG Debugging</td><td>Hardware debugging with GDB and OpenOCD</td></tr>
+                                            <tr><td>ESP Monitor</td><td>Serial monitor with automatic reset and flash</td></tr>
+                                            <tr><td>Core Dump Analysis</td><td>Post-mortem debugging with stack trace analysis</td></tr>
+                                            <tr><td>Application Tracing</td><td>Real-time application behavior analysis</td></tr>
+                                            <tr><td>Unit Testing</td><td>Comprehensive unit test framework</td></tr>
+                                            <tr><td>Performance Profiling</td><td>CPU usage and memory profiling tools</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Best Practices for ESP-IDF Development</h2>
+                            <p>Follow these best practices for professional-grade ESP32 development:</p>
+                            
+                            <div class="technical-advantages">
+                                <li><strong>Error Handling:</strong> Implement comprehensive error checking using ESP_ERROR_CHECK and custom error handling for robust applications.</li>
+                                <li><strong>Logging System:</strong> Use ESP_LOG macros with appropriate log levels for debugging and monitoring in production environments.</li>
+                                <li><strong>Resource Management:</strong> Properly manage memory allocation, file handles, and peripheral resources to prevent leaks and ensure reliability.</li>
+                                <li><strong>Task Design:</strong> Design tasks with appropriate priorities, stack sizes, and communication mechanisms for efficient multitasking.</li>
+                                <li><strong>Security Implementation:</strong> Enable secure boot, flash encryption, and use secure communication protocols for production deployments.</li>
+                                <li><strong>OTA Updates:</strong> Implement robust over-the-air update mechanisms with rollback capability and signature verification.</li>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Getting Started with Your First Project</h2>
+                            <p>Begin your ESP-IDF development journey with these practical steps:</p>
+                            
+                            <ol class="technical-advantages">
+                                <li><strong>Environment Setup:</strong> Install ESP-IDF, configure your IDE, and verify the installation with a simple blink example.</li>
+                                <li><strong>Hello World Application:</strong> Create, build, and flash your first ESP-IDF application to understand the basic development workflow.</li>
+                                <li><strong>Peripheral Integration:</strong> Experiment with GPIO, UART, and other peripherals using provided examples and driver documentation.</li>
+                                <li><strong>Wi-Fi Connectivity:</strong> Implement Wi-Fi station mode, scan networks, and establish internet connectivity for IoT applications.</li>
+                                <li><strong>Protocol Implementation:</strong> Add HTTP client/server, MQTT, or other protocols based on your application requirements.</li>
+                                <li><strong>Production Preparation:</strong> Implement proper error handling, logging, OTA updates, and security features for deployment readiness.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="article-footer">
+                        <div class="article-tags">
+                            <span class="tag">ESP-IDF</span>
+                            <span class="tag">ESP32</span>
+                            <span class="tag">FreeRTOS</span>
+                            <span class="tag">Development</span>
+                            <span class="tag">IoT Framework</span>
+                            <span class="tag">Programming</span>
+                        </div>
                         
-                        <div class="product-highlights">
-                            <div class="feature-highlight">
-                                <img src="assets/icons/cpu.svg" alt="Cross Platform" class="feature-icon-small">
-                                <span>Cross-Platform Support</span>
-                            </div>
-                            <div class="feature-highlight">
-                                <img src="assets/icons/shield-check.svg" alt="Professional" class="feature-icon-small">
-                                <span>Production-Ready</span>
-                            </div>
-                            <div class="feature-highlight">
-                                <img src="assets/icons/wifi.svg" alt="Complete APIs" class="feature-icon-small">
-                                <span>Complete API Set</span>
-                            </div>
-                            <div class="feature-highlight">
-                                <img src="assets/icons/check-circle.svg" alt="Open Source" class="feature-icon-small">
-                                <span>Open Source</span>
+                        <div class="article-share">
+                            <h4>Share this guide</h4>
+                            <div class="share-buttons">
+                                <a href="#" class="share-btn">LinkedIn</a>
+                                <a href="#" class="share-btn">Twitter</a>
+                                <a href="#" class="share-btn">Email</a>
                             </div>
                         </div>
                     </div>
-                    <div class="product-image-section">
-                        <img src="assets/images/solutions/solution-gateway.jpg" alt="ESP-IDF Development" style="width: 100%; max-width: 400px; border-radius: var(--border-radius);">
-                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Resources -->
+        <section class="section-padding section-bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Related Development Resources</h2>
+                    <p>Additional guides and tools for ESP-IDF development</p>
+                </div>
+                
+                <div class="grid-3">
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Technical Guide</span>
+                            <time datetime="2025-01-15">January 15, 2025</time>
+                        </div>
+                        <h3>Understanding Matter Protocol</h3>
+                        <p>Comprehensive guide to implementing Matter protocol with ESP32-C6 for smart home interoperability.</p>
+                        <a href="/support-article-matter.html" class="button button-small">Read Guide</a>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Development Guide</span>
+                            <time datetime="2025-01-10">January 10, 2025</time>
+                        </div>
+                        <h3>ESP32 Hardware Design</h3>
+                        <p>Best practices for ESP32 hardware design, PCB layout, antenna design, and power management optimization.</p>
+                        <a href="/support-article-hardware-design.html" class="button button-small">View Guide</a>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Tutorial</span>
+                            <time datetime="2025-01-08">January 8, 2025</time>
+                        </div>
+                        <h3>Power Optimization Strategies</h3>
+                        <p>Comprehensive techniques for optimizing power consumption in ESP32 applications and extending battery life.</p>
+                        <a href="/support-article-power-optimization.html" class="button button-small">Learn More</a>
+                    </article>
                 </div>
             </div>
         </section>

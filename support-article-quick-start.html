@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 Quick Start Guide | Getting Started with ESP32 Development | LiTong</title>
+    <meta name="description" content="Complete quick start guide for ESP32 development. Learn toolchain setup, first program compilation, and debugging for Windows, Linux, and macOS.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="assets/icons/logo.svg" alt="LiTong Technology Logo">
+                    <span>LiTong Technology</span>
+                </a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/products.html">Products</a></li>
+                        <li><a href="/solutions.html">Solutions</a></li>
+                        <li><a href="/support.html" class="active">Technical Support</a></li>
+                        <li><a href="/news.html">News</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/contact.html" class="button button-secondary">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>ESP32 Quick Start Guide</h1>
+                <p>Your complete guide to getting started with ESP32 development</p>
+                <nav class="breadcrumbs">
+                    <a href="/">Home</a> <span class="separator">/</span> 
+                    <a href="/support.html">Technical Support</a> <span class="separator">/</span> 
+                    <span>Quick Start Guide</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Article Content -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="news-article">
+                    <div class="article-header">
+                        <div class="article-meta">
+                            <span class="article-category">Getting Started</span>
+                            <time datetime="2025-01-15">Updated January 15, 2025</time>
+                            <span class="article-read-time">20 min read</span>
+                        </div>
+                        <img src="assets/images/solutions/solution-gateway.jpg" alt="ESP32 Quick Start" class="article-hero-image">
+                    </div>
+
+                    <div class="article-content">
+                        <div class="lead-paragraph">
+                            <p>This comprehensive quick start guide will take you from zero to your first working ESP32 application. Whether you're a beginner or experienced developer new to ESP32, this guide covers toolchain setup, development environment configuration, and creating your first program across Windows, Linux, and macOS platforms.</p>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>What You'll Need</h2>
+                            <p>Before starting ESP32 development, ensure you have these essential components:</p>
+                            
+                            <div class="specs-comparison">
+                                <div class="spec-category">
+                                    <h3>Hardware Requirements</h3>
+                                    <table class="specs-table">
+                                        <tbody>
+                                            <tr><td><strong>ESP32 Development Board</strong></td><td>ESP32-DevKitC, NodeMCU-32S, or compatible board</td></tr>
+                                            <tr><td><strong>USB Cable</strong></td><td>Micro-USB or USB-C cable (depending on your board)</td></tr>
+                                            <tr><td><strong>Computer</strong></td><td>Windows 10+, Ubuntu 18.04+, or macOS 10.15+</td></tr>
+                                            <tr><td><strong>Breadboard & Components</strong></td><td>For building circuits and connecting peripherals</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Step 1: Install ESP-IDF</h2>
+                            <p>ESP-IDF is the official development framework for ESP32. Follow the installation process for your operating system:</p>
+                            
+                            <div class="application-grid">
+                                <div class="application-item">
+                                    <h4>Windows Installation</h4>
+                                    <p>Download ESP-IDF installer from Espressif website. Run installer and follow setup wizard for automatic configuration.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>Linux/macOS Installation</h4>
+                                    <p>Use package manager or manual installation. Install prerequisites: Python 3.7+, Git, CMake, and Ninja build system.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>Environment Variables</h4>
+                                    <p>Set IDF_PATH and add ESP-IDF tools to PATH. Source the export script in your shell configuration.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>Verification</h4>
+                                    <p>Run 'idf.py --version' to verify installation. Check toolchain with 'xtensa-esp32-elf-gcc --version'.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Step 2: Set Up Development Environment</h2>
+                            <p>Configure your preferred development environment for ESP32 programming:</p>
+                            
+                            <div class="market-opportunities">
+                                <div class="opportunity-card">
+                                    <h4>VS Code + ESP-IDF Extension</h4>
+                                    <p>Recommended IDE with syntax highlighting, IntelliSense, debugging support, and integrated terminal for ESP-IDF commands.</p>
+                                </div>
+                                <div class="opportunity-card">
+                                    <h4>Command Line Interface</h4>
+                                    <p>Direct command-line development using idf.py build system with your favorite text editor for lightweight development.</p>
+                                </div>
+                                <div class="opportunity-card">
+                                    <h4>Eclipse CDT</h4>
+                                    <p>Full-featured C/C++ IDE with ESP-IDF plugin support for advanced debugging and project management capabilities.</p>
+                                </div>
+                                <div class="opportunity-card">
+                                    <h4>CLion or Other IDEs</h4>
+                                    <p>Professional IDEs with ESP-IDF integration through plugins or configuration for advanced development workflows.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Step 3: Create Your First Project</h2>
+                            <p>Build your first ESP32 application using the classic "Hello World" example:</p>
+                            
+                            <div class="technical-advantages">
+                                <li><strong>Copy Example Project:</strong> Use 'idf.py create-project' or copy from ESP-IDF examples directory to create a new project structure.</li>
+                                <li><strong>Project Structure:</strong> Understand main/ directory for application code, CMakeLists.txt for build configuration, and sdkconfig for project settings.</li>
+                                <li><strong>Main Application:</strong> Edit main/hello_world_main.c to customize your application with basic GPIO control or serial output.</li>
+                                <li><strong>Configuration:</strong> Run 'idf.py menuconfig' to configure project settings, target chip, and compilation options.</li>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Step 4: Build and Flash Your Project</h2>
+                            <p>Compile your project and upload it to the ESP32 development board:</p>
+                            
+                            <div class="support-resources">
+                                <div class="resource-item">
+                                    <h4>Build Process</h4>
+                                    <p>Run 'idf.py build' to compile your project. Check for compilation errors and warnings in the output.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Connect Hardware</h4>
+                                    <p>Connect ESP32 board to computer via USB. Check device manager or system logs for COM port assignment.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Flash Firmware</h4>
+                                    <p>Use 'idf.py -p COMx flash' (Windows) or 'idf.py -p /dev/ttyUSB0 flash' (Linux) to upload firmware.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Monitor Output</h4>
+                                    <p>Run 'idf.py monitor' to view serial output and debug information from your running application.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Step 5: Basic GPIO Control Example</h2>
+                            <p>Create a simple LED blink program to understand GPIO control:</p>
+                            
+                            <div class="specs-comparison">
+                                <div class="spec-category">
+                                    <h3>GPIO Functions and Setup</h3>
+                                    <table class="specs-table">
+                                        <tbody>
+                                            <tr><td>gpio_config()</td><td>Configure GPIO pin mode, pull-up/down, and interrupt</td></tr>
+                                            <tr><td>gpio_set_level()</td><td>Set GPIO output to high (1) or low (0)</td></tr>
+                                            <tr><td>gpio_get_level()</td><td>Read current GPIO input level</td></tr>
+                                            <tr><td>vTaskDelay()</td><td>FreeRTOS delay function for timing control</td></tr>
+                                            <tr><td>ESP_LOGI()</td><td>Logging function for debug output</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Step 6: Wi-Fi Connectivity</h2>
+                            <p>Add Wi-Fi connectivity to connect your ESP32 to the internet:</p>
+                            
+                            <div class="application-grid">
+                                <div class="application-item">
+                                    <h4>Wi-Fi Station Mode</h4>
+                                    <p>Configure ESP32 as Wi-Fi client to connect to existing networks. Set SSID and password in project configuration.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>Network Scanning</h4>
+                                    <p>Scan for available Wi-Fi networks and display signal strength, encryption type, and network names.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>Connection Management</h4>
+                                    <p>Handle connection events, reconnection logic, and network status monitoring for reliable connectivity.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>IP Configuration</h4>
+                                    <p>Configure DHCP or static IP, obtain network information, and test internet connectivity with ping or HTTP requests.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Common Issues and Troubleshooting</h2>
+                            <p>Solutions to common problems encountered during ESP32 development:</p>
+                            
+                            <div class="specs-comparison">
+                                <div class="spec-category">
+                                    <h3>Common Problems and Solutions</h3>
+                                    <table class="specs-table">
+                                        <tbody>
+                                            <tr><td><strong>Flash Failed</strong></td><td>Check COM port, USB cable, and hold BOOT button during flashing</td></tr>
+                                            <tr><td><strong>Compilation Errors</strong></td><td>Verify ESP-IDF version compatibility and check include paths</td></tr>
+                                            <tr><td><strong>No Serial Output</strong></td><td>Check baud rate (115200), serial port, and monitor command</td></tr>
+                                            <tr><td><strong>Wi-Fi Connection Issues</strong></td><td>Verify SSID/password, check signal strength, and review network configuration</td></tr>
+                                            <tr><td><strong>Memory Issues</strong></td><td>Monitor heap usage, reduce stack sizes, or optimize memory allocation</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Next Steps in ESP32 Development</h2>
+                            <p>Continue your ESP32 learning journey with these recommended next steps:</p>
+                            
+                            <ol class="technical-advantages">
+                                <li><strong>Explore More Examples:</strong> Study ESP-IDF example projects for sensors, displays, networking, and protocols.</li>
+                                <li><strong>Learn FreeRTOS:</strong> Understand task management, queues, semaphores for multithreading applications.</li>
+                                <li><strong>Master Peripherals:</strong> Work with SPI, I2C, UART, ADC, PWM, and other ESP32 peripherals.</li>
+                                <li><strong>Add Protocols:</strong> Implement HTTP servers, MQTT clients, Bluetooth, or custom protocols.</li>
+                                <li><strong>Security Implementation:</strong> Enable secure boot, flash encryption, and secure communication.</li>
+                                <li><strong>Power Optimization:</strong> Learn sleep modes and power management for battery-powered projects.</li>
+                            </ol>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Essential Resources for Continued Learning</h2>
+                            <p>Key resources to accelerate your ESP32 development skills:</p>
+                            
+                            <div class="technical-advantages">
+                                <li><strong>ESP-IDF Documentation:</strong> Official API reference and programming guide with detailed explanations and examples.</li>
+                                <li><strong>ESP32 Technical Reference:</strong> Comprehensive hardware documentation covering all peripherals and system features.</li>
+                                <li><strong>Community Forums:</strong> Active developer community for troubleshooting, project sharing, and technical discussions.</li>
+                                <li><strong>GitHub Examples:</strong> Extensive collection of example projects and community contributions for various applications.</li>
+                                <li><strong>YouTube Tutorials:</strong> Video tutorials covering specific topics, projects, and advanced development techniques.</li>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="article-footer">
+                        <div class="article-tags">
+                            <span class="tag">Quick Start</span>
+                            <span class="tag">ESP32</span>
+                            <span class="tag">Getting Started</span>
+                            <span class="tag">ESP-IDF</span>
+                            <span class="tag">Tutorial</span>
+                            <span class="tag">Development</span>
+                        </div>
+                        
+                        <div class="article-share">
+                            <h4>Share this guide</h4>
+                            <div class="share-buttons">
+                                <a href="#" class="share-btn">LinkedIn</a>
+                                <a href="#" class="share-btn">Twitter</a>
+                                <a href="#" class="share-btn">Email</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Resources -->
+        <section class="section-padding section-bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Related Getting Started Resources</h2>
+                    <p>Additional guides to accelerate your ESP32 development journey</p>
+                </div>
+                
+                <div class="grid-3">
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Development Guide</span>
+                            <time datetime="2025-01-12">January 12, 2025</time>
+                        </div>
+                        <h3>ESP-IDF Programming Guide</h3>
+                        <p>Comprehensive programming guide for ESP-IDF framework, covering APIs, libraries, and best practices.</p>
+                        <a href="/support-article-esp-idf.html" class="button button-small">Read Guide</a>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Technical Guide</span>
+                            <time datetime="2025-01-15">January 15, 2025</time>
+                        </div>
+                        <h3>Understanding Matter Protocol</h3>
+                        <p>Learn how to implement Matter protocol with ESP32-C6 for smart home device interoperability.</p>
+                        <a href="/support-article-matter.html" class="button button-small">Learn More</a>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Hardware Guide</span>
+                            <time datetime="2025-01-10">January 10, 2025</time>
+                        </div>
+                        <h3>Hardware Design Guidelines</h3>
+                        <p>Expert recommendations for ESP32 hardware design, PCB layout, and antenna optimization.</p>
+                        <a href="/support-article-hardware-design.html" class="button button-small">View Guidelines</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Need Help Getting Started?</h2>
+                <p>Our technical experts provide personalized support to help you succeed with your first ESP32 project. From hardware selection to firmware development, we're here to help.</p>
+                <div class="cta-buttons">
+                    <a href="/contact.html" class="button button-primary button-lg">Get Expert Support</a>
+                    <a href="/support.html" class="button button-outline">More Resources</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>LiTong Technology</h4>
+                    <p><strong>Official Authorized Distributor of Espressif Systems</strong></p>
+                    <p>Your trusted partner for IoT components and solutions.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/products.html">Products</a></li>
+                        <li><a href="/solutions.html">Solutions</a></li>
+                        <li><a href="/support.html">Technical Support</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Email: hk@litong-group.com</li>
+                        <li>Phone: +852-24248227</li>
+                        <li>Address: Hong Kong Science Park</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> LiTong Technology. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
