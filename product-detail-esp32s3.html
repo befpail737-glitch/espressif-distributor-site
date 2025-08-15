@@ -1,21 +1,346 @@
-<header class="site-header">
-    <div class="container">
-        <div class="header-content">
-            <a href="index.html" class="logo">
-                <img src="assets/icons/logo.svg" alt="LiTong Technology Logo">
-                <span>LiTong Technology</span>
-            </a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="solutions.html">Solutions</a></li>
-                    <li><a href="support.html">Technical Support</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html" class="button button-secondary">Contact</a></li>
-                </ul>
-            </nav>
-            <!-- Add a mobile menu button here in a real project -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32-S3 Product Details | High-Performance MCU with AI | LiTong</title>
+    <meta name="description" content="ESP32-S3 detailed specifications, features, and technical information. High-performance dual-core MCU with AI acceleration, Wi-Fi & Bluetooth 5 connectivity.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="assets/icons/logo.svg" alt="LiTong Technology Logo">
+                    <span>LiTong Technology</span>
+                </a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/products.html" class="active">Products</a></li>
+                        <li><a href="/solutions.html">Solutions</a></li>
+                        <li><a href="/support.html">Technical Support</a></li>
+                        <li><a href="/news.html">News</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/contact.html" class="button button-secondary">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>ESP32-S3</h1>
+                <p>High-Performance MCU with AI Acceleration and Advanced Connectivity</p>
+                <nav class="breadcrumbs">
+                    <a href="/">Home</a> <span class="separator">/</span> 
+                    <a href="/products.html">Products</a> <span class="separator">/</span> 
+                    <span>ESP32-S3</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Product Overview -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="solution-hero">
+                    <div class="product-overview">
+                        <h2>Product Overview</h2>
+                        <p>The ESP32-S3 is a highly integrated, low-power, 2.4 GHz Wi-Fi and Bluetooth 5 (LE) system-on-chip (SoC) solution that integrates advanced AI acceleration capabilities. It features a dual-core Xtensa LX7 CPU, vector instructions for AI acceleration, and a rich set of peripherals.</p>
+                        
+                        <div class="product-highlights">
+                            <div class="feature-highlight">
+                                <img src="assets/icons/cpu.svg" alt="Dual Core" class="feature-icon-small">
+                                <span>Dual-Core Xtensa LX7 up to 240 MHz</span>
+                            </div>
+                            <div class="feature-highlight">
+                                <img src="assets/icons/wifi.svg" alt="Connectivity" class="feature-icon-small">
+                                <span>Wi-Fi 4 + Bluetooth 5 (LE)</span>
+                            </div>
+                            <div class="feature-highlight">
+                                <img src="assets/icons/shield-check.svg" alt="AI Acceleration" class="feature-icon-small">
+                                <span>AI Acceleration with Vector Instructions</span>
+                            </div>
+                            <div class="feature-highlight">
+                                <img src="assets/icons/globe.svg" alt="Memory" class="feature-icon-small">
+                                <span>Up to 8.5 MB PSRAM + 384 KB ROM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-image-section">
+                        <img src="assets/images/products/esp32-s3.png" alt="ESP32-S3 Chip" style="width: 100%; max-width: 400px; border-radius: var(--border-radius);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Specifications -->
+        <section class="section-padding section-bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Technical Specifications</h2>
+                    <p>Comprehensive technical details and performance characteristics</p>
+                </div>
+                
+                <div class="grid-2">
+                    <div class="spec-category">
+                        <h3>Processing & Memory</h3>
+                        <table class="specs-table">
+                            <tbody>
+                                <tr><td>CPU</td><td>Dual-core Xtensa LX7, up to 240 MHz</td></tr>
+                                <tr><td>SRAM</td><td>512 KB internal SRAM</td></tr>
+                                <tr><td>ROM</td><td>384 KB ROM</td></tr>
+                                <tr><td>Flash</td><td>Up to 1 GB external flash</td></tr>
+                                <tr><td>PSRAM</td><td>Up to 8.5 MB external PSRAM</td></tr>
+                                <tr><td>AI Acceleration</td><td>Vector instructions for neural network computing</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="spec-category">
+                        <h3>Connectivity</h3>
+                        <table class="specs-table">
+                            <tbody>
+                                <tr><td>Wi-Fi</td><td>802.11 b/g/n (Wi-Fi 4), up to 150 Mbps</td></tr>
+                                <tr><td>Bluetooth</td><td>Bluetooth 5.0 LE, mesh networking</td></tr>
+                                <tr><td>Range</td><td>100+ meters (line of sight)</td></tr>
+                                <tr><td>Antenna</td><td>PCB antenna, external antenna connector</td></tr>
+                                <tr><td>Security</td><td>WPA3, WPA2/WPA2-Enterprise</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="spec-category">
+                        <h3>Peripherals & Interfaces</h3>
+                        <table class="specs-table">
+                            <tbody>
+                                <tr><td>GPIO</td><td>45 programmable GPIOs</td></tr>
+                                <tr><td>ADC</td><td>2 × 12-bit SAR ADCs, up to 20 channels</td></tr>
+                                <tr><td>DAC</td><td>2 × 8-bit DACs</td></tr>
+                                <tr><td>Touch Sensor</td><td>14 touch sensing IOs</td></tr>
+                                <tr><td>SPI</td><td>4 × SPI</td></tr>
+                                <tr><td>I2C</td><td>2 × I2C</td></tr>
+                                <tr><td>UART</td><td>3 × UART</td></tr>
+                                <tr><td>USB</td><td>USB OTG full-speed</td></tr>
+                                <tr><td>Camera</td><td>DVP 8/16-bit camera interface</td></tr>
+                                <tr><td>LCD</td><td>LCD interface (8-bit ~16-bit parallel RGB, I8080/M68)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="spec-category">
+                        <h3>Power & Operating Conditions</h3>
+                        <table class="specs-table">
+                            <tbody>
+                                <tr><td>Operating Voltage</td><td>3.0V ~ 3.6V</td></tr>
+                                <tr><td>Active Power</td><td>~180 mA (Wi-Fi), ~130 mA (BLE)</td></tr>
+                                <tr><td>Deep Sleep</td><td>7 μA (ULP co-processor on)</td></tr>
+                                <tr><td>Operating Temperature</td><td>-40°C ~ +85°C</td></tr>
+                                <tr><td>Package</td><td>QFN56 (7×7 mm)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Key Features & Capabilities</h2>
+                    <p>What makes ESP32-S3 ideal for advanced IoT applications</p>
+                </div>
+                
+                <div class="grid-3">
+                    <div class="feature-card">
+                        <img src="assets/icons/cpu.svg" alt="AI Acceleration" class="feature-icon">
+                        <h3>AI Acceleration</h3>
+                        <p>Vector instructions for accelerating neural network computing and signal processing applications, enabling on-device AI inference with improved performance.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="assets/icons/wifi.svg" alt="Rich Connectivity" class="feature-icon">
+                        <h3>Rich Connectivity</h3>
+                        <p>Complete connectivity solution with Wi-Fi 4 and Bluetooth 5 LE, supporting mesh networking and various IoT protocols for versatile applications.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="assets/icons/shield-check.svg" alt="Advanced Security" class="feature-icon">
+                        <h3>Advanced Security</h3>
+                        <p>Comprehensive security features including secure boot, flash encryption, digital signature, and hardware random number generator for robust protection.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Applications -->
+        <section class="section-padding section-bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Target Applications</h2>
+                    <p>Perfect for applications requiring high performance and AI capabilities</p>
+                </div>
+                
+                <div class="grid-4">
+                    <div class="use-case-card">
+                        <h4>Smart Voice Assistants</h4>
+                        <p>AI-powered voice recognition and natural language processing for smart speakers and voice-controlled devices.</p>
+                    </div>
+                    <div class="use-case-card">
+                        <h4>Computer Vision</h4>
+                        <p>Image recognition, object detection, and facial recognition applications with camera interface support.</p>
+                    </div>
+                    <div class="use-case-card">
+                        <h4>Human-Machine Interface</h4>
+                        <p>Advanced touch interfaces, gesture recognition, and interactive displays with LCD controller support.</p>
+                    </div>
+                    <div class="use-case-card">
+                        <h4>IoT Gateway Devices</h4>
+                        <p>High-performance edge computing for industrial IoT gateways and smart home hubs with multiple protocol support.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Development Resources -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Development Resources</h2>
+                    <p>Everything you need to get started with ESP32-S3 development</p>
+                </div>
+                
+                <div class="grid-3">
+                    <div class="news-card">
+                        <h3>ESP-IDF Framework</h3>
+                        <p>Official development framework with comprehensive APIs, libraries, and tools for ESP32-S3 development.</p>
+                        <a href="/support-article-esp-idf.html" class="button button-small">Access Framework</a>
+                    </div>
+                    <div class="news-card">
+                        <h3>Development Boards</h3>
+                        <p>ESP32-S3-DevKitC and ESP32-S3-DevKitM development boards for prototyping and evaluation.</p>
+                        <a href="/support-article-devkit-setup.html" class="button button-small">View DevKits</a>
+                    </div>
+                    <div class="news-card">
+                        <h3>Technical Documentation</h3>
+                        <p>Complete datasheets, application notes, and reference designs for ESP32-S3 implementation.</p>
+                        <a href="/support-article-documentation.html" class="button button-small">Download Docs</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ordering Information -->
+        <section class="section-padding section-bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Ordering Information</h2>
+                    <p>Available variants and modules for your specific requirements</p>
+                </div>
+                
+                <table class="specs-table" style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Part Number</th>
+                            <th>Flash</th>
+                            <th>PSRAM</th>
+                            <th>Package</th>
+                            <th>Temperature Range</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>ESP32-S3</strong></td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>QFN56</td>
+                            <td>-40°C ~ +85°C</td>
+                            <td><span class="spec-tag" style="background-color: #22c55e;">In Stock</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>ESP32-S3-WROOM-1</strong></td>
+                            <td>4MB/8MB/16MB</td>
+                            <td>-</td>
+                            <td>Module</td>
+                            <td>-40°C ~ +85°C</td>
+                            <td><span class="spec-tag" style="background-color: #22c55e;">In Stock</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>ESP32-S3-WROOM-2</strong></td>
+                            <td>16MB/32MB</td>
+                            <td>8MB</td>
+                            <td>Module</td>
+                            <td>-40°C ~ +85°C</td>
+                            <td><span class="spec-tag" style="background-color: #22c55e;">In Stock</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>ESP32-S3-MINI-1</strong></td>
+                            <td>8MB</td>
+                            <td>-</td>
+                            <td>Compact Module</td>
+                            <td>-40°C ~ +85°C</td>
+                            <td><span class="spec-tag" style="background-color: #22c55e;">In Stock</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Start Your ESP32-S3 Project?</h2>
+                <p>Contact our technical experts for product selection guidance, samples, and development support.</p>
+                <div class="cta-buttons">
+                    <a href="/contact.html" class="button button-primary button-lg">Request Quote & Samples</a>
+                    <a href="/support.html" class="button button-outline">Technical Support</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>LiTong Technology</h4>
+                    <p><strong>Official Authorized Distributor of Espressif Systems</strong></p>
+                    <p>Your trusted partner for IoT components and solutions.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/products.html">Products</a></li>
+                        <li><a href="/solutions.html">Solutions</a></li>
+                        <li><a href="/support.html">Technical Support</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Email: hk@litong-group.com</li>
+                        <li>Phone: +852-24248227</li>
+                        <li>Address: Hong Kong Science Park</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> LiTong Technology. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

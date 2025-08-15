@@ -774,6 +774,48 @@ p { margin-bottom: 1rem; color: var(--text-light); }
     font-size: 0.9rem;
 }
 
+/* --- Product Detail Page Styles --- */
+.spec-category {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 20px;
+}
+.spec-category h3 {
+    color: var(--dark-blue);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+}
+.specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+.specs-table th,
+.specs-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+.specs-table th {
+    background-color: var(--background-light);
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+.specs-table td:first-child {
+    font-weight: 500;
+    color: var(--dark-blue);
+    width: 30%;
+}
+.product-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
 /* --- About Page Styles --- */
 .service-card, .advantage-card {
     background-color: var(--white);

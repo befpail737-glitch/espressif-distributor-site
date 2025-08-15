@@ -3,83 +3,388 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Lighting & Matter Solution | Espressif Distributor LiTong</title>
-    <meta name="description" content="A complete Matter-over-Thread reference design for smart lighting, featuring the ESP32-C6 and ESP32-H2. Includes block diagram and recommended BOM.">
+    <title>Smart Home & Matter Solution | ESP32-C6 & ESP32-H2 | LiTong</title>
+    <meta name="description" content="Complete Matter-compliant smart home solution using ESP32-C6 and ESP32-H2. Build interoperable smart lighting, switches, and IoT devices with Thread and Wi-Fi 6.">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
 </head>
 <body>
-    <header class="site-header"><!-- ... Final Header Code ... --></header>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="assets/icons/logo.svg" alt="LiTong Technology Logo">
+                    <span>LiTong Technology</span>
+                </a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/products.html">Products</a></li>
+                        <li><a href="/solutions.html" class="active">Solutions</a></li>
+                        <li><a href="/support.html">Technical Support</a></li>
+                        <li><a href="/news.html">News</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/contact.html" class="button button-secondary">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
     <main>
+        <!-- Page Header -->
         <section class="page-header">
             <div class="container">
-                <div class="breadcrumbs">
-                    <a href="index.html">Home</a> &raquo; <a href="solutions.html">Solutions</a> &raquo; <span>Smart Lighting & Matter</span>
+                <h1>Smart Home & Matter Solution</h1>
+                <p>Next-generation interoperable smart home devices with Matter over Thread</p>
+                <nav class="breadcrumbs">
+                    <a href="/">Home</a> <span class="separator">/</span> 
+                    <a href="/solutions.html">Solutions</a> <span class="separator">/</span> 
+                    <span>Smart Home & Matter</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Solution Overview -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="solution-hero">
+                    <div class="solution-content">
+                        <h2>Solution Overview</h2>
+                        <p>Build next-generation smart home devices that seamlessly work across all major ecosystems. Our Matter-compliant solution leverages ESP32-C6 and ESP32-H2 to create future-proof devices compatible with Apple HomeKit, Google Home, Amazon Alexa, and Samsung SmartThings out of the box.</p>
+                        
+                        <div class="solution-features">
+                            <div class="feature-highlight">
+                                <img src="assets/icons/wifi.svg" alt="Wi-Fi 6" class="feature-icon-small">
+                                <span>Wi-Fi 6 + Thread Connectivity</span>
+                            </div>
+                            <div class="feature-highlight">
+                                <img src="assets/icons/shield-check.svg" alt="Matter Certified" class="feature-icon-small">
+                                <span>Matter 1.3 Certified</span>
+                            </div>
+                            <div class="feature-highlight">
+                                <img src="assets/icons/globe.svg" alt="Universal Compatibility" class="feature-icon-small">
+                                <span>Universal Ecosystem Compatibility</span>
+                            </div>
+                            <div class="feature-highlight">
+                                <img src="assets/icons/cpu.svg" alt="Low Power" class="feature-icon-small">
+                                <span>Ultra-Low Power Design</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="solution-image">
+                        <img src="assets/images/solutions/solution-gateway.jpg" alt="Smart Home Matter Solution" style="border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                    </div>
                 </div>
             </div>
         </section>
-        
+
+        <!-- Technical Architecture -->
+        <section class="section-padding section-bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Technical Architecture</h2>
+                    <p>Comprehensive system design for Matter-enabled smart home devices</p>
+                </div>
+                
+                <div class="grid-2">
+                    <div class="spec-category">
+                        <h3>System Components</h3>
+                        <table class="specs-table">
+                            <tbody>
+                                <tr><td>Main Controller</td><td>ESP32-C6 (Wi-Fi 6 + Thread + BLE)</td></tr>
+                                <tr><td>End Devices</td><td>ESP32-H2 (Thread + BLE)</td></tr>
+                                <tr><td>Protocol Stack</td><td>Matter 1.3 over Thread/Wi-Fi</td></tr>
+                                <tr><td>Security</td><td>Thread credentials + Matter certificates</td></tr>
+                                <tr><td>Power Management</td><td>Sleepy End Device (SED) support</td></tr>
+                                <tr><td>OTA Updates</td><td>Secure firmware updates over Thread</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="spec-category">
+                        <h3>Matter Device Types</h3>
+                        <table class="specs-table">
+                            <tbody>
+                                <tr><td>Lighting</td><td>On/Off Light, Dimmable Light, Color Light</td></tr>
+                                <tr><td>Switches</td><td>Light Switch, Dimmer Switch, Scene Controller</td></tr>
+                                <tr><td>Sensors</td><td>Occupancy, Temperature, Humidity, Contact</td></tr>
+                                <tr><td>HVAC</td><td>Thermostat, Fan Control</td></tr>
+                                <tr><td>Window Covering</td><td>Blinds, Shades, Curtains</td></tr>
+                                <tr><td>Security</td><td>Door Lock, Alarm System</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features -->
         <section class="section-padding">
-            <div class="container content-layout">
-                <article class="main-content">
-                    <h1>Smart Lighting & Matter Solution</h1>
-                    
-                    <h2>Solution Overview</h2>
-                    <p>This reference design provides a comprehensive blueprint for developing smart lighting products (bulbs, switches, controllers) that are fully compliant with the new Matter standard. By leveraging Matter over Thread, this solution ensures seamless interoperability with major smart home ecosystems like Apple Home, Google Home, and Amazon Alexa. The design is optimized for reliability, low power consumption, and fast time-to-market.</p>
+            <div class="container">
+                <div class="section-title">
+                    <h2>Key Solution Features</h2>
+                    <p>Advanced capabilities that set this solution apart</p>
+                </div>
+                
+                <div class="grid-3">
+                    <div class="feature-card">
+                        <img src="assets/icons/wifi.svg" alt="Universal Interoperability" class="feature-icon">
+                        <h3>Universal Interoperability</h3>
+                        <p>One device works with all major smart home platforms. No more vendor lock-in - devices automatically discover and connect across ecosystems.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="assets/icons/shield-check.svg" alt="Enterprise Security" class="feature-icon">
+                        <h3>Enterprise-Grade Security</h3>
+                        <p>Built-in PKI-based security with device attestation, encrypted communications, and secure commissioning process.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="assets/icons/cpu.svg" alt="Future Proof" class="feature-icon">
+                        <h3>Future-Proof Architecture</h3>
+                        <p>Wi-Fi 6 and Thread connectivity ensure long-term compatibility with evolving smart home standards and IoT protocols.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <h2>Solution Block Diagram</h2>
-                    <div class="block-diagram">
-                        <img src="assets/images/solutions/block-diagram-generic.png" alt="Block diagram of a Matter smart light using an ESP32-C6 for control and connectivity.">
+        <!-- Product Configurations -->
+        <section class="section-padding section-bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Reference Implementations</h2>
+                    <p>Ready-to-use designs for common smart home devices</p>
+                </div>
+                
+                <div class="grid-2">
+                    <div class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Hub/Bridge Device</span>
+                        </div>
+                        <h3>Matter Thread Border Router</h3>
+                        <p>ESP32-C6 based border router that bridges Thread networks to Wi-Fi/Internet, enabling remote access and cloud connectivity.</p>
+                        <div class="product-specs">
+                            <span class="spec-tag">ESP32-C6</span>
+                            <span class="spec-tag">Wi-Fi 6 + Thread</span>
+                            <span class="spec-tag">Border Router</span>
+                        </div>
+                        <a href="/support-article-border-router.html" class="button button-small">Implementation Guide</a>
                     </div>
                     
-                    <h2>Core Advantages</h2>
-                    <ul class="advantages-list">
-                        <li><strong>Future-Proof Connectivity:</strong> Utilizes Wi-Fi 6, Bluetooth 5, and Thread via the ESP32-C6 for maximum compatibility.</li>
-                        <li><strong>Seamless Interoperability:</strong> Built for the Matter standard, ensuring "it just works" across different smart home platforms.</li>
-                        <li><strong>Low-Power Standby:</strong> Optimized firmware and hardware design for minimal power consumption when idle.</li>
-                        <li><strong>Robust Security:</strong> Leverages Espressif's advanced security features like Secure Boot and Flash Encryption.</li>
-                    </ul>
-
-                    <h2>Recommended Bill of Materials (BOM)</h2>
-                    <p>The following core components are recommended for this solution. Click on a part number to view detailed specifications.</p>
-                    <table class="specs-table">
-                        <thead>
-                            <tr><th>Part Number</th><th>Description</th><th>Role in Solution</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><a href="product-detail-esp32c6.html">ESP32-C6-WROOM-1</a></td>
-                                <td>Wi-Fi 6 + BLE 5 + 802.15.4 Module</td>
-                                <td>Main controller, handling Matter application logic and Thread/Wi-Fi communication.</td>
-                            </tr>
-                            <tr>
-                                <td><a href="product-detail-esp32h2.html">ESP32-H2-MINI-1</a></td>
-                                <td>BLE 5 + 802.15.4 Module</td>
-                                <td>Alternative low-power option for Thread-only end devices (e.g., battery-powered sensors).</td>
-                            </tr>
-                            <tr><td>(External IC)</td><td>PWM LED Driver IC</td><td>Controls the brightness and color temperature of the LEDs.</td></tr>
-                        </tbody>
-                    </table>
-
-                    <h2>Application Scenarios</h2>
-                    <ul>
-                        <li>Dimmable and Tunable White Smart Bulbs (A19, BR30)</li>
-                        <li>RGBW LED Strips and Controllers</li>
-                        <li>Smart Wall Switches and Dimmers</li>
-                        <li>Connected Ceiling Fixtures</li>
-                    </ul>
-                </article>
-                <aside class="sidebar">
-                    <div class="sidebar-widget">
-                        <h3>Need Help?</h3>
-                        <p>Our FAE team can help you adapt this solution to your specific needs.</p>
-                        <a href="contact.html" class="button button-primary full-width">Consult an Engineer</a>
+                    <div class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Lighting Control</span>
+                        </div>
+                        <h3>Smart Dimmable Light Bulb</h3>
+                        <p>Thread-enabled LED bulb with dimming, color temperature control, and energy monitoring capabilities.</p>
+                        <div class="product-specs">
+                            <span class="spec-tag">ESP32-H2</span>
+                            <span class="spec-tag">Thread Only</span>
+                            <span class="spec-tag">Ultra Low Power</span>
+                        </div>
+                        <a href="/support-article-smart-bulb.html" class="button button-small">Design Files</a>
                     </div>
-                </aside>
+                    
+                    <div class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Wall Switch</span>
+                        </div>
+                        <h3>Matter Light Switch</h3>
+                        <p>In-wall light switch with local and remote control, scene support, and energy monitoring.</p>
+                        <div class="product-specs">
+                            <span class="spec-tag">ESP32-C6</span>
+                            <span class="spec-tag">Mains Powered</span>
+                            <span class="spec-tag">Scene Control</span>
+                        </div>
+                        <a href="/support-article-wall-switch.html" class="button button-small">PCB Design</a>
+                    </div>
+                    
+                    <div class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Sensor Device</span>
+                        </div>
+                        <h3>Multi-Sensor Node</h3>
+                        <p>Battery-powered sensor combining occupancy, temperature, humidity, and light level sensing.</p>
+                        <div class="product-specs">
+                            <span class="spec-tag">ESP32-H2</span>
+                            <span class="spec-tag">Battery Powered</span>
+                            <span class="spec-tag">Multi-Sensor</span>
+                        </div>
+                        <a href="/support-article-sensor-node.html" class="button button-small">Sensor Integration</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Development Resources -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Development Resources</h2>
+                    <p>Everything you need to build Matter-enabled smart home devices</p>
+                </div>
+                
+                <div class="grid-4">
+                    <div class="use-case-card">
+                        <h4>Matter SDK Integration</h4>
+                        <p>Complete ESP-Matter SDK with examples, tools, and documentation for rapid development.</p>
+                    </div>
+                    <div class="use-case-card">
+                        <h4>Thread Network Setup</h4>
+                        <p>Comprehensive guide for Thread network configuration, commissioning, and mesh topology.</p>
+                    </div>
+                    <div class="use-case-card">
+                        <h4>Certification Support</h4>
+                        <p>Pre-certified modules and guidance for Matter certification and Thread compliance testing.</p>
+                    </div>
+                    <div class="use-case-card">
+                        <h4>Production Tools</h4>
+                        <p>Manufacturing test tools, provisioning utilities, and quality assurance procedures.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bill of Materials -->
+        <section class="section-padding section-bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Recommended Components</h2>
+                    <p>Essential Espressif components for your Matter smart home solution</p>
+                </div>
+                
+                <table class="specs-table" style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>Part Number</th>
+                            <th>Application</th>
+                            <th>Key Features</th>
+                            <th>Availability</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Border Router</strong></td>
+                            <td><a href="/product-detail-esp32c6.html">ESP32-C6-WROOM-1</a></td>
+                            <td>Thread Border Router, Wi-Fi devices</td>
+                            <td>Wi-Fi 6, Thread, Bluetooth 5, IEEE 802.15.4</td>
+                            <td><span class="spec-tag" style="background-color: #22c55e;">In Stock</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>End Devices</strong></td>
+                            <td><a href="/product-detail-esp32h2.html">ESP32-H2-MINI-1</a></td>
+                            <td>Battery-powered sensors, actuators</td>
+                            <td>Thread, Bluetooth 5.2, Ultra-low power</td>
+                            <td><span class="spec-tag" style="background-color: #22c55e;">In Stock</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Development Kit</strong></td>
+                            <td>ESP32-C6-DevKitC-1</td>
+                            <td>Prototyping and development</td>
+                            <td>USB-C, RGB LED, sensors</td>
+                            <td><span class="spec-tag" style="background-color: #22c55e;">In Stock</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Thread DevKit</strong></td>
+                            <td>ESP32-H2-DevKitM-1</td>
+                            <td>Thread development and testing</td>
+                            <td>Compact form factor, external antenna</td>
+                            <td><span class="spec-tag" style="background-color: #22c55e;">In Stock</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Use Cases -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Target Applications</h2>
+                    <p>Real-world smart home applications powered by this solution</p>
+                </div>
+                
+                <div class="use-cases">
+                    <div class="grid-3">
+                        <div class="use-case-card">
+                            <h4>Residential Smart Lighting</h4>
+                            <p>Complete home lighting automation with dimming, color control, scheduling, and energy monitoring across all rooms.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <h4>Security & Access Control</h4>
+                            <p>Smart locks, door sensors, security cameras, and alarm systems with centralized monitoring and control.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <h4>Climate & HVAC Control</h4>
+                            <p>Intelligent temperature control, humidity management, and air quality monitoring with energy optimization.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <h4>Entertainment Systems</h4>
+                            <p>Multi-room audio, smart TVs, streaming devices, and home theater automation with voice control.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <h4>Window & Shade Control</h4>
+                            <p>Automated blinds, curtains, and window coverings with light-based scheduling and manual override.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <h4>Elderly Care & Monitoring</h4>
+                            <p>Health monitoring sensors, emergency alerts, medication reminders, and family notification systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support & Services -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Build Your Matter Smart Home Solution?</h2>
+                <p>Our expert team provides comprehensive support from concept to mass production, including design review, certification assistance, and manufacturing guidance.</p>
+                <div class="cta-buttons">
+                    <a href="/contact.html" class="button button-primary button-lg">Request Design Consultation</a>
+                    <a href="/support.html" class="button button-outline">Access Development Resources</a>
+                </div>
             </div>
         </section>
     </main>
-    <footer class="site-footer"><!-- ... Final Footer Code ... --></footer>
-    <script src="assets/js/main.js"></script>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>LiTong Technology</h4>
+                    <p><strong>Official Authorized Distributor of Espressif Systems</strong></p>
+                    <p>Your trusted partner for IoT components and solutions.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/products.html">Products</a></li>
+                        <li><a href="/solutions.html">Solutions</a></li>
+                        <li><a href="/support.html">Technical Support</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Email: hk@litong-group.com</li>
+                        <li>Phone: +852-24248227</li>
+                        <li>Address: Hong Kong Science Park</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> LiTong Technology. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
