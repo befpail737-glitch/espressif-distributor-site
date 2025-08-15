@@ -3,78 +3,320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IoT Solutions by LiTong | Espressif Distributor</title>
-    <meta name="description" content="Leverage our expertise with pre-designed solutions for Smart Homes, IIoT, Wearables, and more, all based on powerful Espressif technology.">
+    <title>Technical Support & Resources | Espressif Development | LiTong</title>
+    <meta name="description" content="Access comprehensive technical support, documentation, FAE services, and development resources for Espressif ESP32 and ESP8266 products from LiTong Technology.">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
 </head>
 <body>
-    <header class="site-header"><!-- ... Header ... --></header>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="assets/icons/logo.svg" alt="LiTong Technology Logo">
+                    <span>LiTong Technology</span>
+                </a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/products.html">Products</a></li>
+                        <li><a href="/solutions.html">Solutions</a></li>
+                        <li><a href="/support.html" class="active">Technical Support</a></li>
+                        <li><a href="/news.html">News</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/contact.html" class="button button-secondary">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
     <main>
         <!-- Page Header -->
         <section class="page-header">
             <div class="container">
-                <h1>Turnkey IoT Solutions</h1>
-                <p>Accelerate your time-to-market with our proven reference designs and expert guidance.</p>
-                <div class="breadcrumbs">
-                    <a href="/">Home</a> &raquo; <span>Solutions</span>
+                <h1>Technical Support & Resources</h1>
+                <p>Expert guidance and comprehensive resources for your Espressif development journey</p>
+                <nav class="breadcrumbs">
+                    <a href="/">Home</a> <span class="separator">/</span> <span>Technical Support</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Support Categories Navigation -->
+        <section class="news-nav">
+            <div class="container">
+                <div class="nav-pills">
+                    <a href="#all" class="nav-pill active">All Resources</a>
+                    <a href="#documentation" class="nav-pill">Documentation</a>
+                    <a href="#development-tools" class="nav-pill">Development Tools</a>
+                    <a href="#fae-support" class="nav-pill">FAE Support</a>
+                    <a href="#training" class="nav-pill">Training</a>
+                    <a href="#community" class="nav-pill">Community</a>
                 </div>
             </div>
         </section>
 
-        <!-- Solutions Listing -->
+        <!-- Featured Support Resource -->
         <section class="section-padding">
             <div class="container">
                 <div class="section-title">
-                    <h2>Application Areas</h2>
-                    <p>We provide comprehensive solutions for today's most demanding IoT sectors.</p>
+                    <h2>Featured Support Resource</h2>
+                    <p>Your starting point for Espressif development success</p>
                 </div>
-                <div class="grid-2-col">
-                    <!-- Solution Card 1 -->
-                    <a href="solution-detail-lighting.html" class="content-card">
-                        <div class="content-card-body">
-                            <h3>Smart Lighting & Matter</h3>
-                            <p>Build next-generation, interoperable smart lighting products with our Matter-ready solutions using the ESP32-C6 and ESP32-H2.</p>
-                            <span class="button-link">View Solution &raquo;</span>
+                <div class="featured-news">
+                    <article class="news-hero">
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="news-category">Documentation</span>
+                                <time datetime="2025-01-15">Updated January 15, 2025</time>
+                            </div>
+                            <h3>ESP32 Quick Start Guide</h3>
+                            <p>Complete getting started guide for ESP32 development, covering toolchain setup, first program compilation, and debugging. Includes step-by-step instructions for Windows, Linux, and macOS environments.</p>
+                            <a href="/support-article-quick-start.html" class="button button-primary">Access Guide</a>
                         </div>
-                    </a>
-                    <!-- Solution Card 2 -->
-                    <a href="solution-detail-iiot.html" class="content-card">
-                        <div class="content-card-body">
-                            <h3>Industrial IoT Gateway</h3>
-                            <p>A robust and secure gateway solution using the powerful ESP32-S3 to bridge industrial protocols with cloud services.</p>
-                            <span class="button-link">View Solution &raquo;</span>
+                        <div class="news-image">
+                            <img src="assets/images/solutions/solution-gateway.jpg" alt="ESP32 Development">
                         </div>
-                    </a>
-                    <!-- Solution Card 3 -->
-                    <a href="solution-detail-wearable.html" class="content-card">
-                        <div class="content-card-body">
-                            <h3>Wearable Health Monitor</h3>
-                            <p>An ultra-low-power reference design for health and fitness trackers based on the compact and efficient ESP32-C3.</p>
-                            <span class="button-link">View Solution &raquo;</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Resources Grid -->
+        <section class="section-padding section-bg-light">
+            <div class="container">
+                <div class="grid-3">
+                    <!-- Documentation Resources -->
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Documentation</span>
+                            <time datetime="2025-01-12">January 12, 2025</time>
                         </div>
-                    </a>
-                    <!-- Solution Card 4 -->
-                    <a href="solution-detail-audio.html" class="content-card">
-                        <div class="content-card-body">
-                            <h3>Connected Audio Player</h3>
-                            <p>Develop Wi-Fi and Bluetooth streaming audio products with Espressif's versatile ESP-ADF framework and the ESP32 series.</p>
-                            <span class="button-link">View Solution &raquo;</span>
+                        <h3>ESP-IDF Programming Guide</h3>
+                        <p>Comprehensive programming guide for ESP-IDF framework, covering APIs, libraries, and best practices for ESP32 development.</p>
+                        <a href="/support-article-esp-idf.html" class="button button-small">Access Guide</a>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Development Tools</span>
+                            <time datetime="2025-01-10">January 10, 2025</time>
                         </div>
-                    </a>
-                    <!-- Solution Card 5 -->
-                    <a href="solution-detail-plug.html" class="content-card">
-                        <div class="content-card-body">
-                            <h3>Smart Plug with Energy Monitoring</h3>
-                            <p>A cost-effective and feature-rich smart plug design using the ESP8266 or ESP32-C3 for mass-market applications.</p>
-                            <span class="button-link">View Solution &raquo;</span>
+                        <h3>ESP32 DevKit Setup Tutorial</h3>
+                        <p>Step-by-step tutorial for setting up ESP32 development environment with VS Code, ESP-IDF extension, and debugging tools.</p>
+                        <a href="/support-article-devkit-setup.html" class="button button-small">View Tutorial</a>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">FAE Support</span>
+                            <time datetime="2025-01-08">January 8, 2025</time>
                         </div>
-                    </a>
+                        <h3>Hardware Design Guidelines</h3>
+                        <p>Expert recommendations for ESP32 hardware design, including PCB layout, antenna design, and power management optimization.</p>
+                        <a href="/support-article-hardware-design.html" class="button button-small">Read Guidelines</a>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Training</span>
+                            <time datetime="2025-01-05">January 5, 2025</time>
+                        </div>
+                        <h3>Wi-Fi & Bluetooth Configuration</h3>
+                        <p>Complete training module covering Wi-Fi and Bluetooth configuration, connection management, and troubleshooting techniques.</p>
+                        <a href="/support-article-wifi-bluetooth.html" class="button button-small">Start Training</a>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Documentation</span>
+                            <time datetime="2025-01-03">January 3, 2025</time>
+                        </div>
+                        <h3>ESP32-S3 AI Development Guide</h3>
+                        <p>Specialized guide for AI development on ESP32-S3, covering TensorFlow Lite integration, model optimization, and performance tuning.</p>
+                        <a href="/support-article-ai-development.html" class="button button-small">Access Guide</a>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Community</span>
+                            <time datetime="2025-01-01">January 1, 2025</time>
+                        </div>
+                        <h3>ESP32 Community Forum</h3>
+                        <p>Join thousands of developers in our community forum. Get answers to technical questions, share projects, and connect with experts.</p>
+                        <a href="/support-article-community.html" class="button button-small">Join Forum</a>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Development Tools</span>
+                            <time datetime="2024-12-28">December 28, 2024</time>
+                        </div>
+                        <h3>ESP32 Debugging Techniques</h3>
+                        <p>Master debugging techniques for ESP32 applications using JTAG, GDB, and built-in debugging features of ESP-IDF.</p>
+                        <a href="/support-article-debugging.html" class="button button-small">Learn Debugging</a>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">FAE Support</span>
+                            <time datetime="2024-12-25">December 25, 2024</time>
+                        </div>
+                        <h3>Power Optimization Strategies</h3>
+                        <p>Comprehensive guide to optimizing power consumption in ESP32 applications, including sleep modes and energy-efficient coding practices.</p>
+                        <a href="/support-article-power-optimization.html" class="button button-small">View Strategies</a>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Training</span>
+                            <time datetime="2024-12-22">December 22, 2024</time>
+                        </div>
+                        <h3>Security Implementation Guide</h3>
+                        <p>Learn to implement robust security features in ESP32 applications, including secure boot, flash encryption, and secure communication.</p>
+                        <a href="/support-article-security.html" class="button button-small">Security Training</a>
+                    </article>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="text-center mt-40">
+                    <button class="button button-outline">Load More Resources</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAE Support Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Field Application Engineer (FAE) Support</h2>
+                    <p>Direct access to our expert engineering team for personalized technical assistance</p>
+                </div>
+                <div class="grid-3">
+                    <div class="feature-card">
+                        <img src="assets/icons/cpu.svg" alt="Design Consultation" class="feature-icon">
+                        <h3>Design Consultation</h3>
+                        <p>Get expert advice on chip selection, system architecture, and design optimization for your specific application requirements.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="assets/icons/shield-check.svg" alt="Technical Review" class="feature-icon">
+                        <h3>Technical Review</h3>
+                        <p>Professional review of your schematics, PCB layout, and firmware code to ensure optimal performance and reliability.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="assets/icons/wifi.svg" alt="Integration Support" class="feature-icon">
+                        <h3>Integration Support</h3>
+                        <p>Hands-on assistance with ESP-IDF integration, third-party library compatibility, and custom firmware development.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-40">
+                    <a href="/contact.html" class="button button-primary button-lg">Request FAE Support</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Links Section -->
+        <section class="section-padding section-bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Quick Access Resources</h2>
+                    <p>Essential tools and resources for ESP32 development</p>
+                </div>
+                <div class="grid-4">
+                    <div class="product-category-card">
+                        <img src="assets/icons/esp32-chip.svg" alt="Download Tools" class="category-icon">
+                        <h3>Development Tools</h3>
+                        <p>Download ESP-IDF, toolchains, and development environments for all supported platforms.</p>
+                        <a href="/support-article-downloads.html" class="button button-outline">Download Tools</a>
+                    </div>
+                    <div class="product-category-card">
+                        <img src="assets/icons/risc-v.svg" alt="Code Examples" class="category-icon">
+                        <h3>Code Examples</h3>
+                        <p>Ready-to-use code examples for common ESP32 applications and use cases.</p>
+                        <a href="/support-article-examples.html" class="button button-outline">Browse Examples</a>
+                    </div>
+                    <div class="product-category-card">
+                        <img src="assets/icons/module.svg" alt="Reference Designs" class="category-icon">
+                        <h3>Reference Designs</h3>
+                        <p>Complete reference designs with schematics, PCB files, and firmware for various applications.</p>
+                        <a href="/support-article-reference.html" class="button button-outline">View Designs</a>
+                    </div>
+                    <div class="product-category-card">
+                        <img src="assets/icons/globe.svg" alt="Certification" class="category-icon">
+                        <h3>Certification Guide</h3>
+                        <p>Guidance for regulatory certification including FCC, CE, IC, and other regional requirements.</p>
+                        <a href="/support-article-certification.html" class="button button-outline">Certification Info</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Support CTA -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Need Personalized Support?</h2>
+                    <p>Our technical experts are ready to help with your specific development challenges</p>
+                    <div class="cta-buttons">
+                        <a href="/contact.html" class="button button-primary button-lg">Contact Technical Support</a>
+                        <a href="mailto:support@litong-group.com" class="button button-outline">Email Support Team</a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
-    <footer class="site-footer"><!-- ... Footer ... --></footer>
-    <script> document.getElementById('year').textContent = new Date().getFullYear(); /* Header/Footer copy-paste */ </script>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>LiTong Technology</h4>
+                    <p><strong>Official Authorized Distributor of Espressif Systems</strong></p>
+                    <p>Your trusted partner for IoT components and solutions.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/products.html">Products</a></li>
+                        <li><a href="/solutions.html">Solutions</a></li>
+                        <li><a href="/support.html">Technical Support</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Email: hk@litong-group.com</li>
+                        <li>Phone: +852-24248227</li>
+                        <li>Address: Hong Kong Science Park</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> LiTong Technology. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Support navigation functionality
+        document.querySelectorAll('.nav-pill').forEach(pill => {
+            pill.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all pills
+                document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
+                
+                // Add active class to clicked pill
+                this.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
