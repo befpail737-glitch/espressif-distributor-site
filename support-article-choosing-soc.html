@@ -3,65 +3,385 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Getting Started with ESP-IDF | LiTong</title>
-    <meta name="description" content="A beginner's guide to setting up the Espressif IoT Development Framework (ESP-IDF), building, and flashing your first 'Hello World' application to an ESP32 board.">
+    <title>Choosing the Right ESP32 SoC for Your Project | ESP32 Selection Guide | LiTong</title>
+    <meta name="description" content="Comprehensive guide to selecting the optimal ESP32 SoC for your IoT project. Compare ESP32, ESP32-S3, ESP32-C3, ESP32-C6, and ESP8266 features and capabilities.">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
 </head>
 <body>
-    <header class="site-header"><!-- ... Final Header Code ... --></header>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="assets/icons/logo.svg" alt="LiTong Technology Logo">
+                    <span>LiTong Technology</span>
+                </a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/products.html">Products</a></li>
+                        <li><a href="/solutions.html">Solutions</a></li>
+                        <li><a href="/support.html" class="active">Technical Support</a></li>
+                        <li><a href="/news.html">News</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/contact.html" class="button button-secondary">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
     <main>
+        <!-- Page Header -->
         <section class="page-header">
             <div class="container">
-                <div class="breadcrumbs">
-                    <a href="index.html">Home</a> &raquo; <a href="support.html">Technical Support</a> &raquo; <span>ESP-IDF Guide</span>
+                <h1>Choosing the Right ESP32 SoC for Your Project</h1>
+                <p>A comprehensive selection guide for ESP32 family microcontrollers</p>
+                <nav class="breadcrumbs">
+                    <a href="/">Home</a> <span class="separator">/</span> 
+                    <a href="/support.html">Technical Support</a> <span class="separator">/</span> 
+                    <span>SoC Selection Guide</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Article Content -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="news-article">
+                    <div class="article-header">
+                        <div class="article-meta">
+                            <span class="article-category">Selection Guide</span>
+                            <time datetime="2025-01-15">Updated January 15, 2025</time>
+                            <span class="article-read-time">18 min read</span>
+                        </div>
+                        <img src="assets/images/solutions/solution-gateway.jpg" alt="ESP32 SoC Selection" class="article-hero-image">
+                    </div>
+
+                    <div class="article-content">
+                        <div class="lead-paragraph">
+                            <p>Selecting the optimal ESP32 SoC for your project is crucial for achieving the right balance of performance, features, power consumption, and cost. This comprehensive guide walks through the ESP32 family ecosystem and provides practical decision-making frameworks to help you choose the perfect microcontroller for your specific application requirements.</p>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>ESP32 Family Overview</h2>
+                            <p>The ESP32 family offers a diverse range of microcontrollers, each optimized for different use cases and market segments:</p>
+                            
+                            <div class="specs-comparison">
+                                <div class="spec-category">
+                                    <h3>ESP32 Family Comparison</h3>
+                                    <table class="specs-table">
+                                        <thead>
+                                            <tr><th>SoC</th><th>CPU</th><th>Connectivity</th><th>Key Features</th><th>Best For</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td><strong>ESP32</strong></td><td>Dual-core Xtensa</td><td>Wi-Fi + Bluetooth</td><td>Mature, proven platform</td><td>General IoT applications</td></tr>
+                                            <tr><td><strong>ESP32-S3</strong></td><td>Dual-core Xtensa</td><td>Wi-Fi + Bluetooth 5</td><td>AI acceleration, Camera</td><td>AI/ML, multimedia projects</td></tr>
+                                            <tr><td><strong>ESP32-C3</strong></td><td>Single-core RISC-V</td><td>Wi-Fi + Bluetooth 5</td><td>Cost-effective, secure</td><td>Simple IoT devices</td></tr>
+                                            <tr><td><strong>ESP32-C6</strong></td><td>Dual-core RISC-V</td><td>Wi-Fi 6 + Bluetooth 5 + Thread</td><td>Matter support, latest protocols</td><td>Smart home, Thread networks</td></tr>
+                                            <tr><td><strong>ESP8266</strong></td><td>Single-core Xtensa</td><td>Wi-Fi only</td><td>Ultra low cost</td><td>Basic Wi-Fi connectivity</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Decision Framework: Key Selection Criteria</h2>
+                            <p>Consider these critical factors when choosing your ESP32 SoC:</p>
+                            
+                            <div class="application-grid">
+                                <div class="application-item">
+                                    <h4>1. Connectivity Requirements</h4>
+                                    <p>Determine which wireless protocols you need: Wi-Fi only, Bluetooth, BLE, Thread, or combinations thereof.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>2. Processing Power</h4>
+                                    <p>Assess computational requirements: simple sensor readings vs. AI processing, multimedia, or complex algorithms.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>3. Power Consumption</h4>
+                                    <p>Consider power source: mains-powered, battery-operated, or energy harvesting applications have different requirements.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>4. Cost Constraints</h4>
+                                    <p>Balance features with target BOM cost, considering both unit cost and development complexity.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>ESP32 Classic: The Proven Workhorse</h2>
+                            <p>The original ESP32 remains an excellent choice for many applications with its balanced feature set:</p>
+                            
+                            <div class="market-opportunities">
+                                <div class="opportunity-card">
+                                    <h4>Technical Strengths</h4>
+                                    <p>Dual-core Xtensa architecture, extensive peripheral set, mature ecosystem with thousands of projects and extensive documentation.</p>
+                                </div>
+                                <div class="opportunity-card">
+                                    <h4>Connectivity Options</h4>
+                                    <p>Wi-Fi 802.11 b/g/n with comprehensive protocol support, Bluetooth Classic and BLE for versatile device connections.</p>
+                                </div>
+                                <div class="opportunity-card">
+                                    <h4>Development Advantages</h4>
+                                    <p>Largest community, most examples, proven in production, extensive third-party library support and comprehensive tooling.</p>
+                                </div>
+                                <div class="opportunity-card">
+                                    <h4>Best Use Cases</h4>
+                                    <p>General IoT applications, home automation, industrial monitoring, prototyping, and projects requiring maximum compatibility.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>ESP32-S3: AI and Multimedia Powerhouse</h2>
+                            <p>The ESP32-S3 excels in applications requiring advanced processing capabilities:</p>
+                            
+                            <div class="technical-advantages">
+                                <li><strong>AI Acceleration:</strong> Vector instructions and AI acceleration for TensorFlow Lite, machine learning inference, and neural network processing.</li>
+                                <li><strong>Camera Interface:</strong> Direct camera interface with image signal processing capabilities for computer vision applications.</li>
+                                <li><strong>Advanced Connectivity:</strong> Bluetooth 5.0 with enhanced range and data throughput, improved Wi-Fi performance.</li>
+                                <li><strong>Memory Flexibility:</strong> Support for external PSRAM up to 32MB for memory-intensive applications and large model storage.</li>
+                                <li><strong>Security Features:</strong> Hardware security module, secure boot, flash encryption, and digital signature verification.</li>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>ESP32-C3: Cost-Effective RISC-V Solution</h2>
+                            <p>The ESP32-C3 offers modern features at an attractive price point:</p>
+                            
+                            <div class="support-resources">
+                                <div class="resource-item">
+                                    <h4>RISC-V Architecture</h4>
+                                    <p>Open-source RISC-V processor with modern instruction set, efficient power management, and future-proof architecture.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Enhanced Security</h4>
+                                    <p>Hardware-based security features including secure boot, flash encryption, and digital signature support.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Bluetooth 5.0 LE</h4>
+                                    <p>Latest Bluetooth standard with improved range, speed, and power efficiency for modern IoT applications.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Cost Optimization</h4>
+                                    <p>Simplified architecture reduces silicon area and cost while maintaining essential connectivity and processing capabilities.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>ESP32-C6: Next-Generation Smart Home</h2>
+                            <p>The ESP32-C6 brings cutting-edge connectivity for future-ready applications:</p>
+                            
+                            <div class="specs-comparison">
+                                <div class="spec-category">
+                                    <h3>ESP32-C6 Advanced Features</h3>
+                                    <table class="specs-table">
+                                        <tbody>
+                                            <tr><td><strong>Wi-Fi 6 (802.11ax)</strong></td><td>Latest Wi-Fi standard with improved efficiency and performance</td></tr>
+                                            <tr><td><strong>Thread/Zigbee 3.0</strong></td><td>IEEE 802.15.4 radio for mesh networking and Thread border router capability</td></tr>
+                                            <tr><td><strong>Matter Protocol</strong></td><td>Native support for Matter smart home interoperability standard</td></tr>
+                                            <tr><td><strong>Dual-Core RISC-V</strong></td><td>High-performance and low-power core combination for optimal efficiency</td></tr>
+                                            <tr><td><strong>Advanced Security</strong></td><td>Hardware security engine with PKI acceleration and secure storage</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>ESP8266: Ultra-Low-Cost Wi-Fi</h2>
+                            <p>The ESP8266 continues to serve budget-conscious applications requiring basic Wi-Fi connectivity:</p>
+                            
+                            <div class="application-grid">
+                                <div class="application-item">
+                                    <h4>Cost Leadership</h4>
+                                    <p>Lowest-cost Wi-Fi solution in the Espressif portfolio, ideal for price-sensitive applications and mass production.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>Proven Reliability</h4>
+                                    <p>Mature platform with years of field deployment, extensive community support and well-understood characteristics.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>Simple Integration</h4>
+                                    <p>Minimal external components required, straightforward development, and extensive documentation and examples.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>Ideal Applications</h4>
+                                    <p>Basic IoT sensors, simple automation, retrofit projects, and applications requiring only Wi-Fi connectivity.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Selection Decision Tree</h2>
+                            <p>Use this decision framework to narrow down your optimal ESP32 choice:</p>
+                            
+                            <ol class="technical-advantages">
+                                <li><strong>Need Thread/Matter Support?</strong> → Choose ESP32-C6 for smart home applications requiring Thread mesh networking or Matter interoperability.</li>
+                                <li><strong>Require AI/ML Processing?</strong> → Choose ESP32-S3 for applications needing neural network inference, computer vision, or advanced signal processing.</li>
+                                <li><strong>Budget Extremely Tight?</strong> → Choose ESP8266 for basic Wi-Fi connectivity where cost is the primary concern.</li>
+                                <li><strong>Need Bluetooth + Cost Efficiency?</strong> → Choose ESP32-C3 for modern IoT applications requiring BLE connectivity at competitive pricing.</li>
+                                <li><strong>Mature Platform Required?</strong> → Choose ESP32 classic for projects requiring maximum compatibility and extensive community resources.</li>
+                                <li><strong>Future-Proofing Important?</strong> → Choose ESP32-C6 or ESP32-S3 for long-term projects requiring latest connectivity standards.</li>
+                            </ol>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Common Selection Mistakes to Avoid</h2>
+                            <p>Learn from common pitfalls in ESP32 SoC selection:</p>
+                            
+                            <div class="technical-advantages">
+                                <li><strong>Over-Engineering:</strong> Don't choose ESP32-S3 for simple sensor applications that ESP32-C3 can handle more cost-effectively.</li>
+                                <li><strong>Under-Specifying:</strong> Don't select ESP8266 for applications that will later require Bluetooth or additional processing power.</li>
+                                <li><strong>Ignoring Power Requirements:</strong> Consider sleep mode capabilities for battery-powered applications - not all ESP32 variants are equal.</li>
+                                <li><strong>Overlooking Development Ecosystem:</strong> Consider library availability, community support, and toolchain maturity for your specific use case.</li>
+                                <li><strong>Neglecting Future Scalability:</strong> Plan for feature expansion - upgrading SoC mid-project is expensive and time-consuming.</li>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Getting Started with Your Chosen SoC</h2>
+                            <p>Once you've selected your ESP32 SoC, follow these next steps:</p>
+                            
+                            <div class="support-resources">
+                                <div class="resource-item">
+                                    <h4>Development Kit Selection</h4>
+                                    <p>Choose appropriate development board and ensure you have necessary accessories like USB cables and breadboards.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Development Environment</h4>
+                                    <p>Set up ESP-IDF or Arduino IDE based on your project requirements and team expertise level.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Reference Designs</h4>
+                                    <p>Study relevant example projects and reference designs that match your application requirements.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Hardware Design Planning</h4>
+                                    <p>Review antenna requirements, power supply design, and PCB layout guidelines for your chosen SoC.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="article-footer">
+                        <div class="article-tags">
+                            <span class="tag">ESP32</span>
+                            <span class="tag">Selection Guide</span>
+                            <span class="tag">SoC Comparison</span>
+                            <span class="tag">ESP32-C3</span>
+                            <span class="tag">ESP32-S3</span>
+                            <span class="tag">ESP32-C6</span>
+                        </div>
+                        
+                        <div class="article-share">
+                            <h4>Share this guide</h4>
+                            <div class="share-buttons">
+                                <a href="#" class="share-btn">LinkedIn</a>
+                                <a href="#" class="share-btn">Twitter</a>
+                                <a href="#" class="share-btn">Email</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <section class="section-padding">
-            <div class="container content-layout">
-                <article class="main-content">
-                    <h1>Getting Started with the ESP-IDF: A Beginner's Guide</h1>
-                    <div class="article-meta"><!-- ... Author Info & Tags ... --></div>
-                    <p>The Espressif IoT Development Framework (ESP-IDF) is the official development framework for the ESP32, ESP32-S and ESP32-C series of SoCs. It provides a toolchain, libraries, and examples to create sophisticated IoT applications. This guide will walk you through the basic setup.</p>
-                    <h2>Step 1: Install the Prerequisites</h2>
-                    <p>Before installing ESP-IDF, you need to install the necessary tools. Espressif provides an all-in-one installer for Windows and instructions for Linux/macOS.</p>
-                    <ul>
-                        <li><strong>Windows:</strong> Download the ESP-IDF Tools Installer from the Espressif website. This is the easiest method.</li>
-                        <li><strong>macOS & Linux:</strong> You'll need to install CMake, Python 3, and Git using your system's package manager (e.g., `brew` or `apt-get`).</li>
-                    </ul>
-                    <h2>Step 2: Get ESP-IDF from GitHub</h2>
-                    <p>Open your terminal or command prompt and clone the ESP-IDF repository. It's recommended to use a specific release branch for stability.</p>
-                    <pre><code>git clone --recursive -b v5.1 https://github.com/espressif/esp-idf.git</code></pre>
-                    <h2>Step 3: Install and Configure the Tools</h2>
-                    <p>Navigate into the `esp-idf` directory and run the install script. This script will download the required compilers, debuggers, and other tools.</p>
-                    <pre><code>cd esp-idf
-./install.sh esp32,esp32c3 # or install.bat on Windows
-</code></pre>
-                    <p>After installation, you need to set up the environment variables in your current terminal session by running the export script.</p>
-                    <pre><code>. ./export.sh # or export.bat on Windows</code></pre>
-                    <h2>Step 4: Build and Flash Your First Project</h2>
-                    <p>Copy an example project, configure it for your board, build, and flash.</p>
-                    <pre><code>cd ~/
-cp -r $IDF_PATH/examples/get-started/hello_world .
-cd hello_world
 
-# Set your target chip
-idf.py set-target esp32c3
+        <!-- Related Resources -->
+        <section class="section-padding section-bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Related Selection Resources</h2>
+                    <p>Additional guides to help with your ESP32 development journey</p>
+                </div>
+                
+                <div class="grid-3">
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Getting Started</span>
+                            <time datetime="2025-01-15">January 15, 2025</time>
+                        </div>
+                        <h3>ESP32 Quick Start Guide</h3>
+                        <p>Complete beginner's guide to getting started with ESP32 development from toolchain setup to first application.</p>
+                        <a href="/support-article-quick-start.html" class="button button-small">Get Started</a>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Development Guide</span>
+                            <time datetime="2025-01-12">January 12, 2025</time>
+                        </div>
+                        <h3>ESP-IDF Programming Guide</h3>
+                        <p>Comprehensive programming guide for ESP-IDF framework covering APIs, libraries, and development best practices.</p>
+                        <a href="/support-article-esp-idf.html" class="button button-small">Read Guide</a>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Power Management</span>
+                            <time datetime="2025-01-10">January 10, 2025</time>
+                        </div>
+                        <h3>Low Power Design Strategies</h3>
+                        <p>Optimize power consumption in ESP32 applications with advanced sleep modes and power management techniques.</p>
+                        <a href="/support-article-low-power.html" class="button button-small">Learn More</a>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-# Configure the project (e.g., set serial port)
-idf.py menuconfig
-
-# Build, flash, and monitor
-idf.py flash monitor
-</code></pre>
-                    <p>If all goes well, you should see "Hello world!" printed repeatedly in your terminal. You've successfully started your journey with ESP-IDF!</p>
-                </article>
-                <aside class="sidebar"><!-- ... Sidebar code ... --></aside>
+        <!-- Contact CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Need Help Choosing the Right ESP32?</h2>
+                <p>Our technical experts can help you select the optimal ESP32 SoC for your specific application requirements, considering performance, cost, and development complexity.</p>
+                <div class="cta-buttons">
+                    <a href="/contact.html" class="button button-primary button-lg">Consult Our Experts</a>
+                    <a href="/products.html" class="button button-outline">Browse Products</a>
+                </div>
             </div>
         </section>
     </main>
-    <footer class="site-footer"><!-- ... Final Footer Code ... --></footer>
-    <script src="assets/js/main.js"></script>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>LiTong Technology</h4>
+                    <p><strong>Official Authorized Distributor of Espressif Systems</strong></p>
+                    <p>Your trusted partner for IoT components and solutions.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/products.html">Products</a></li>
+                        <li><a href="/solutions.html">Solutions</a></li>
+                        <li><a href="/support.html">Technical Support</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Email: hk@litong-group.com</li>
+                        <li>Phone: +852-24248227</li>
+                        <li>Address: Hong Kong Science Park</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> LiTong Technology. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

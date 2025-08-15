@@ -3,47 +3,456 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Troubleshooting Common Wi-Fi Issues on ESP32 | LiTong</title>
-    <meta name="description" content="Diagnose and solve frequent problems like failed Wi-Fi connections, high latency, and random disconnects on your ESP32 projects with this practical FAE guide.">
+    <title>ESP32 Troubleshooting Guide | Common Issues & Solutions | LiTong</title>
+    <meta name="description" content="Comprehensive troubleshooting guide for ESP32 development. Solve Wi-Fi connectivity issues, compilation errors, hardware problems, and common development challenges.">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
 </head>
 <body>
-    <header class="site-header"><!-- ... Final Header Code ... --></header>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="assets/icons/logo.svg" alt="LiTong Technology Logo">
+                    <span>LiTong Technology</span>
+                </a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/products.html">Products</a></li>
+                        <li><a href="/solutions.html">Solutions</a></li>
+                        <li><a href="/support.html" class="active">Technical Support</a></li>
+                        <li><a href="/news.html">News</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/contact.html" class="button button-secondary">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
     <main>
-        <section class="page-header"><div class="container"><div class="breadcrumbs"><a href="index.html">Home</a> &raquo; <a href="support.html">Technical Support</a> &raquo; <span>Wi-Fi Troubleshooting</span></div></div></section>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>ESP32 Troubleshooting Guide</h1>
+                <p>Comprehensive solutions for common ESP32 development issues and challenges</p>
+                <nav class="breadcrumbs">
+                    <a href="/">Home</a> <span class="separator">/</span> 
+                    <a href="/support.html">Technical Support</a> <span class="separator">/</span> 
+                    <span>Troubleshooting Guide</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Article Content -->
         <section class="section-padding">
-            <div class="container content-layout">
-                <article class="main-content">
-                    <h1>Troubleshooting Common Wi-Fi Connectivity Issues on ESP32</h1>
-                    <div class="article-meta"><!-- ... Author Info & Tags ... --></div>
-                    <p>One of the most common support requests we receive involves Wi-Fi connectivity problems. This guide covers the top three issues our FAEs encounter and how to solve them.</p>
-                    <h3>1. The Device Fails to Connect to the AP</h3>
-                    <p>This is the most frequent starting problem. Follow these diagnostic steps in order:</p>
-                    <ul>
-                        <li><strong>Check Credentials:</strong> The simplest mistake is a typo in the SSID or password. Double-check them.</li>
-                        <li><strong>Get the Disconnect Reason:</strong> In your ESP-IDF code, register an event handler for `WIFI_EVENT_STA_DISCONNECTED`. The event data will contain a reason code. Codes like `WIFI_REASON_NO_AP_FOUND` or `WIFI_REASON_AUTH_FAIL` will tell you exactly what's wrong.</li>
-                        <li><strong>Check Your Antenna:</strong> Is the antenna connected properly? If using a PCB trace antenna, was its design (and the required keep-out area) followed exactly as specified in the module datasheet? A poor antenna is a very common hardware issue.</li>
-                    </ul>
-                    <h3>2. High Latency or Packet Loss</h3>
-                    <p>If the device connects but the connection is poor, investigate these causes:</p>
-                    <ul>
-                        <li><strong>Signal Strength (RSSI):</strong> Print the RSSI value. A value below -75dBm is considered a poor signal and can lead to instability. Try moving the device closer to the router.</li>
-                        <li><strong>RF Interference:</strong> Other 2.4GHz devices (microwaves, cordless phones, other Wi-Fi networks) can cause interference. Try changing the Wi-Fi channel on your router.</li>
-                        <li><strong>Power Supply Issues:</strong> Wi-Fi transmission is a power-intensive operation. A weak or unstable power supply can cause "brownouts" where the chip resets or the radio fails. Ensure your power supply can handle current spikes of 300-400mA. Add a large capacitor (e.g., 220uF) close to the module's power pins.</li>
-                    </ul>
-                    <h3>3. Device Disconnects Randomly</h3>
-                    <p>This is often the hardest problem to debug. Besides the power supply issues mentioned above, consider:</p>
-                    <ul>
-                        <li><strong>Software Bugs:</strong> A memory leak in your application could cause a crash and reset. Monitor free heap memory over time.</li>
-                        <li><strong>Router Behavior:</strong> Some routers may kick off devices they deem inactive. Ensure you are sending periodic traffic (e.g., a PING or MQTT keep-alive) to maintain the connection.</li>
-                    </ul>
-                </article>
-                <aside class="sidebar"><!-- ... Sidebar code ... --></aside>
+            <div class="container">
+                <div class="news-article">
+                    <div class="article-header">
+                        <div class="article-meta">
+                            <span class="article-category">Troubleshooting</span>
+                            <time datetime="2025-01-15">Updated January 15, 2025</time>
+                            <span class="article-read-time">25 min read</span>
+                        </div>
+                        <img src="assets/images/solutions/solution-gateway.jpg" alt="ESP32 Troubleshooting" class="article-hero-image">
+                    </div>
+
+                    <div class="article-content">
+                        <div class="lead-paragraph">
+                            <p>This comprehensive troubleshooting guide addresses the most common issues encountered during ESP32 development. From Wi-Fi connectivity problems to compilation errors and hardware design challenges, find practical solutions and diagnostic techniques used by our Field Application Engineers to resolve complex ESP32 issues.</p>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Wi-Fi Connectivity Issues</h2>
+                            <p>Wi-Fi connectivity problems are among the most frequently reported issues. Here's a systematic approach to diagnosis and resolution:</p>
+                            
+                            <div class="application-grid">
+                                <div class="application-item">
+                                    <h4>1. Connection Failure</h4>
+                                    <p>Device fails to connect to access point. Check credentials, signal strength, and disconnect reason codes.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>2. High Latency/Packet Loss</h4>
+                                    <p>Poor connection quality with intermittent connectivity. Investigate RSSI, interference, and power supply issues.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>3. Random Disconnections</h4>
+                                    <p>Unexpected connection drops during operation. Check for memory leaks, power supply stability, and router behavior.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>4. Slow Connection Establishment</h4>
+                                    <p>Long delays during Wi-Fi connection process. Optimize connection parameters and antenna design.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Wi-Fi Connection Failure Diagnosis</h2>
+                            <p>Follow this systematic approach when devices fail to connect to Wi-Fi networks:</p>
+                            
+                            <div class="technical-advantages">
+                                <li><strong>Verify Credentials:</strong> Double-check SSID and password for typos. Ensure special characters are properly escaped in code.</li>
+                                <li><strong>Check Disconnect Reason:</strong> Register event handler for WIFI_EVENT_STA_DISCONNECTED to get specific reason codes like WIFI_REASON_NO_AP_FOUND or WIFI_REASON_AUTH_FAIL.</li>
+                                <li><strong>Antenna Assessment:</strong> Verify antenna connection, PCB trace antenna design compliance, and required keep-out areas per datasheet specifications.</li>
+                                <li><strong>Signal Strength Analysis:</strong> Measure RSSI values - readings below -75dBm indicate poor signal requiring closer proximity to router.</li>
+                                <li><strong>Network Compatibility:</strong> Ensure router settings are compatible - some routers have issues with certain security modes or channel widths.</li>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Power Supply Related Issues</h2>
+                            <p>Power supply problems are often overlooked but cause many connectivity and stability issues:</p>
+                            
+                            <div class="support-resources">
+                                <div class="resource-item">
+                                    <h4>Current Spike Management</h4>
+                                    <p>Wi-Fi transmission requires 300-400mA current spikes. Ensure power supply can handle these bursts without voltage drops.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Decoupling Capacitors</h4>
+                                    <p>Add large capacitors (220μF) close to ESP32 power pins to handle current spikes and maintain stable voltage during RF transmission.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Voltage Regulation</h4>
+                                    <p>Use proper voltage regulators with low dropout and adequate current rating. Monitor for brownout conditions during operation.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Ground Plane Design</h4>
+                                    <p>Implement proper ground plane design with minimal impedance paths and adequate copper area for current return paths.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Compilation and Build Errors</h2>
+                            <p>Common compilation issues and their solutions:</p>
+                            
+                            <div class="specs-comparison">
+                                <div class="spec-category">
+                                    <h3>Common Build Error Solutions</h3>
+                                    <table class="specs-table">
+                                        <thead>
+                                            <tr><th>Error Type</th><th>Common Cause</th><th>Solution</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td><strong>Include Path Errors</strong></td><td>Missing or incorrect header paths</td><td>Check CMakeLists.txt and component dependencies</td></tr>
+                                            <tr><td><strong>Linker Errors</strong></td><td>Missing libraries or symbols</td><td>Verify component configuration and library linking</td></tr>
+                                            <tr><td><strong>Memory Allocation</strong></td><td>Insufficient partition sizes</td><td>Adjust partition table for app and data requirements</td></tr>
+                                            <tr><td><strong>Version Conflicts</strong></td><td>ESP-IDF version incompatibility</td><td>Check component version compatibility matrix</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Flash and Programming Issues</h2>
+                            <p>Resolve common problems with firmware flashing and programming:</p>
+                            
+                            <div class="market-opportunities">
+                                <div class="opportunity-card">
+                                    <h4>Flash Failed Errors</h4>
+                                    <p>Check COM port assignment, USB cable quality, and try holding BOOT button during flash process. Verify correct target chip selection.</p>
+                                </div>
+                                <div class="opportunity-card">
+                                    <h4>Brownout Detection</h4>
+                                    <p>Disable brownout detector if power supply is marginal, or improve power supply design to prevent voltage drops during operation.</p>
+                                </div>
+                                <div class="opportunity-card">
+                                    <h4>Partition Table Issues</h4>
+                                    <p>Adjust partition sizes for OTA updates, NVS storage, or custom data partitions. Ensure alignment requirements are met.</p>
+                                </div>
+                                <div class="opportunity-card">
+                                    <h4>Boot Loop Problems</h4>
+                                    <p>Check for stack overflow, memory corruption, or initialization issues in early boot code. Use core dump analysis for debugging.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Hardware Design Issues</h2>
+                            <p>Common hardware design problems and their impacts:</p>
+                            
+                            <div class="technical-advantages">
+                                <li><strong>Crystal Oscillator Problems:</strong> Ensure proper crystal loading capacitors (typically 10-22pF) and minimize trace length to crystal pins.</li>
+                                <li><strong>Reset Circuit Design:</strong> Implement proper reset circuit with pull-up resistor and debouncing capacitor for reliable startup.</li>
+                                <li><strong>GPIO Pin Conflicts:</strong> Avoid using strapping pins (GPIO0, GPIO2, GPIO15) for general I/O unless necessary, as they affect boot mode.</li>
+                                <li><strong>Antenna Placement:</strong> Maintain proper antenna placement with adequate ground plane and clearance from metal objects or high-speed signals.</li>
+                                <li><strong>EMI/EMC Issues:</strong> Implement proper shielding and filtering for high-speed digital signals to prevent interference with RF performance.</li>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Memory and Performance Issues</h2>
+                            <p>Diagnose and resolve memory-related problems:</p>
+                            
+                            <div class="application-grid">
+                                <div class="application-item">
+                                    <h4>Stack Overflow</h4>
+                                    <p>Monitor stack usage with uxTaskGetStackHighWaterMark() and increase stack sizes for tasks that approach limits.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>Heap Memory Leaks</h4>
+                                    <p>Use heap debugging tools and monitor free heap with esp_get_free_heap_size() to identify memory leaks.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>Watchdog Timer Resets</h4>
+                                    <p>Feed watchdog timer in long-running loops or disable for debugging. Check for blocking operations in critical tasks.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>PSRAM Configuration</h4>
+                                    <p>Properly configure external PSRAM settings and verify compatibility with your specific PSRAM chip and board design.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Bluetooth Connectivity Issues</h2>
+                            <p>Common Bluetooth and BLE problems and solutions:</p>
+                            
+                            <div class="support-resources">
+                                <div class="resource-item">
+                                    <h4>Pairing Failures</h4>
+                                    <p>Check security requirements, pairing mode configuration, and ensure proper event handling for pairing requests.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Connection Stability</h4>
+                                    <p>Optimize connection intervals, supervision timeout, and handle connection events properly to maintain stable connections.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Data Transmission Issues</h4>
+                                    <p>Verify MTU settings, characteristic properties, and handle flow control for reliable data transfer over BLE.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Coexistence Problems</h4>
+                                    <p>Configure Wi-Fi and Bluetooth coexistence properly to avoid interference when using both radios simultaneously.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Serial Communication Problems</h2>
+                            <p>Troubleshoot UART, I2C, and SPI communication issues:</p>
+                            
+                            <div class="specs-comparison">
+                                <div class="spec-category">
+                                    <h3>Communication Interface Diagnostics</h3>
+                                    <table class="specs-table">
+                                        <tbody>
+                                            <tr><td><strong>No Serial Output</strong></td><td>Check baud rate (115200), COM port, and monitor command configuration</td></tr>
+                                            <tr><td><strong>I2C Bus Errors</strong></td><td>Verify pull-up resistors (4.7kΩ), bus speed, and device addresses</td></tr>
+                                            <tr><td><strong>SPI Communication Failure</strong></td><td>Check clock polarity, phase, frequency, and chip select timing</td></tr>
+                                            <tr><td><strong>Garbled UART Data</strong></td><td>Verify baud rate match, parity settings, and stop bit configuration</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Deep Sleep and Power Issues</h2>
+                            <p>Resolve problems with sleep modes and power management:</p>
+                            
+                            <div class="technical-advantages">
+                                <li><strong>High Sleep Current:</strong> Check for floating GPIO pins, enabled pull-ups, and external component power consumption.</li>
+                                <li><strong>Wake-up Failures:</strong> Verify wake-up source configuration, RTC memory usage, and proper sleep mode selection.</li>
+                                <li><strong>Time Drift in Sleep:</strong> Calibrate RTC clock source and account for temperature variations affecting crystal accuracy.</li>
+                                <li><strong>ULP Programming Issues:</strong> Debug ULP code with proper assembly syntax and register usage following ULP programming guidelines.</li>
+                                <li><strong>Power Supply Noise:</strong> Add filtering capacitors and proper grounding to eliminate power supply noise affecting sleep current.</li>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Debugging Tools and Techniques</h2>
+                            <p>Essential debugging tools and methodologies for ESP32 development:</p>
+                            
+                            <div class="market-opportunities">
+                                <div class="opportunity-card">
+                                    <h4>ESP-IDF Monitor</h4>
+                                    <p>Use idf.py monitor for real-time log output, automatic decoding of panic backtraces, and interactive debugging.</p>
+                                </div>
+                                <div class="opportunity-card">
+                                    <h4>JTAG Debugging</h4>
+                                    <p>Set up OpenOCD and GDB for hardware-level debugging with breakpoints, variable inspection, and memory analysis.</p>
+                                </div>
+                                <div class="opportunity-card">
+                                    <h4>Core Dump Analysis</h4>
+                                    <p>Enable core dump to flash and analyze crash dumps with espcoredump.py for post-mortem debugging.</p>
+                                </div>
+                                <div class="opportunity-card">
+                                    <h4>Application Tracing</h4>
+                                    <p>Use app_trace for real-time application behavior analysis and performance profiling without affecting timing.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Advanced Troubleshooting Techniques</h2>
+                            <p>Professional debugging strategies for complex issues:</p>
+                            
+                            <div class="application-grid">
+                                <div class="application-item">
+                                    <h4>Logic Analyzer Usage</h4>
+                                    <p>Capture digital signals for timing analysis, protocol debugging, and verification of communication interfaces.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>Oscilloscope Analysis</h4>
+                                    <p>Measure analog signals, power supply ripple, crystal oscillator operation, and RF signal characteristics.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>Spectrum Analyzer</h4>
+                                    <p>Analyze RF emissions, identify interference sources, and verify compliance with regulatory requirements.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>Current Measurement</h4>
+                                    <p>Precisely measure current consumption to identify power issues and validate low-power design implementations.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Preventive Measures and Best Practices</h2>
+                            <p>Avoid common issues through proper design and development practices:</p>
+                            
+                            <ol class="technical-advantages">
+                                <li><strong>Hardware Design Review:</strong> Conduct thorough design reviews covering power supply, signal integrity, and thermal considerations before prototyping.</li>
+                                <li><strong>Comprehensive Testing:</strong> Test under various environmental conditions including temperature, humidity, and supply voltage variations.</li>
+                                <li><strong>Code Quality Assurance:</strong> Implement proper error handling, memory management, and follow ESP-IDF coding guidelines consistently.</li>
+                                <li><strong>Documentation Maintenance:</strong> Keep detailed records of issues, solutions, and design decisions for future reference and team knowledge sharing.</li>
+                                <li><strong>Regular Updates:</strong> Stay current with ESP-IDF releases, security patches, and component updates to benefit from bug fixes and improvements.</li>
+                            </ol>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>When to Contact Support</h2>
+                            <p>Recognize when professional technical support is needed:</p>
+                            
+                            <div class="technical-advantages">
+                                <li><strong>Hardware Design Issues:</strong> Complex PCB layout problems, signal integrity issues, or regulatory compliance concerns.</li>
+                                <li><strong>Performance Optimization:</strong> Applications requiring specialized optimization for memory usage, power consumption, or processing performance.</li>
+                                <li><strong>Custom Protocol Implementation:</strong> Development of proprietary communication protocols or integration with legacy systems.</li>
+                                <li><strong>Production Issues:</strong> Manufacturing test failures, yield optimization, or field deployment problems requiring expert analysis.</li>
+                                <li><strong>Certification Support:</strong> Assistance with regulatory testing, certification processes, and compliance documentation.</li>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="article-footer">
+                        <div class="article-tags">
+                            <span class="tag">Troubleshooting</span>
+                            <span class="tag">ESP32</span>
+                            <span class="tag">Wi-Fi Issues</span>
+                            <span class="tag">Debugging</span>
+                            <span class="tag">Hardware Problems</span>
+                            <span class="tag">Development</span>
+                        </div>
+                        
+                        <div class="article-share">
+                            <h4>Share this guide</h4>
+                            <div class="share-buttons">
+                                <a href="#" class="share-btn">LinkedIn</a>
+                                <a href="#" class="share-btn">Twitter</a>
+                                <a href="#" class="share-btn">Email</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Resources -->
+        <section class="section-padding section-bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Related Troubleshooting Resources</h2>
+                    <p>Additional support resources for ESP32 development</p>
+                </div>
+                
+                <div class="grid-3">
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Getting Started</span>
+                            <time datetime="2025-01-15">January 15, 2025</time>
+                        </div>
+                        <h3>ESP32 Quick Start Guide</h3>
+                        <p>Comprehensive beginner's guide to avoid common setup issues and ensure smooth development start.</p>
+                        <a href="/support-article-quick-start.html" class="button button-small">Get Started</a>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Development Guide</span>
+                            <time datetime="2025-01-12">January 12, 2025</time>
+                        </div>
+                        <h3>ESP-IDF Programming Guide</h3>
+                        <p>Master ESP-IDF framework to prevent common programming errors and implementation issues.</p>
+                        <a href="/support-article-esp-idf.html" class="button button-small">Learn More</a>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Power Management</span>
+                            <time datetime="2025-01-10">January 10, 2025</time>
+                        </div>
+                        <h3>Low Power Design Strategies</h3>
+                        <p>Comprehensive power optimization guide to resolve battery life and power consumption issues.</p>
+                        <a href="/support-article-low-power.html" class="button button-small">Optimize Power</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Can't Find the Solution You Need?</h2>
+                <p>Our Field Application Engineers provide expert troubleshooting support for complex ESP32 issues. Get personalized assistance from hardware design to software optimization.</p>
+                <div class="cta-buttons">
+                    <a href="/contact.html" class="button button-primary button-lg">Contact FAE Support</a>
+                    <a href="/support.html" class="button button-outline">Browse All Resources</a>
+                </div>
             </div>
         </section>
     </main>
-    <footer class="site-footer"><!-- ... Final Footer Code ... --></footer>
-    <script src="assets/js/main.js"></script>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>LiTong Technology</h4>
+                    <p><strong>Official Authorized Distributor of Espressif Systems</strong></p>
+                    <p>Your trusted partner for IoT components and solutions.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/products.html">Products</a></li>
+                        <li><a href="/solutions.html">Solutions</a></li>
+                        <li><a href="/support.html">Technical Support</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Email: hk@litong-group.com</li>
+                        <li>Phone: +852-24248227</li>
+                        <li>Address: Hong Kong Science Park</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> LiTong Technology. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

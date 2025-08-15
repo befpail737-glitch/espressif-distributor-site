@@ -3,71 +3,447 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Plug with Energy Monitoring Solution | LiTong</title>
-    <meta name="description" content="A cost-effective and feature-rich smart plug design using the ESP8266 or ESP32-C3 for mass-market applications, with optional energy monitoring.">
+    <title>ESP32 Low Power Design Strategies | Power Optimization Guide | LiTong</title>
+    <meta name="description" content="Comprehensive guide to optimizing power consumption in ESP32 applications. Learn sleep modes, power management techniques, and battery life optimization strategies.">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
 </head>
 <body>
-    <header class="site-header"><!-- ... Paste Final Header Code Here ... --></header>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="assets/icons/logo.svg" alt="LiTong Technology Logo">
+                    <span>LiTong Technology</span>
+                </a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/products.html">Products</a></li>
+                        <li><a href="/solutions.html">Solutions</a></li>
+                        <li><a href="/support.html" class="active">Technical Support</a></li>
+                        <li><a href="/news.html">News</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/contact.html" class="button button-secondary">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
     <main>
+        <!-- Page Header -->
         <section class="page-header">
             <div class="container">
-                <div class="breadcrumbs">
-                    <a href="index.html">Home</a> &raquo; <a href="solutions.html">Solutions</a> &raquo; <span>Smart Plug with Energy Monitoring</span>
+                <h1>ESP32 Low Power Design Strategies</h1>
+                <p>Comprehensive power optimization techniques for battery-powered applications</p>
+                <nav class="breadcrumbs">
+                    <a href="/">Home</a> <span class="separator">/</span> 
+                    <a href="/support.html">Technical Support</a> <span class="separator">/</span> 
+                    <span>Low Power Design</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Article Content -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="news-article">
+                    <div class="article-header">
+                        <div class="article-meta">
+                            <span class="article-category">Power Management</span>
+                            <time datetime="2025-01-15">Updated January 15, 2025</time>
+                            <span class="article-read-time">22 min read</span>
+                        </div>
+                        <img src="assets/images/solutions/solution-gateway.jpg" alt="ESP32 Low Power Design" class="article-hero-image">
+                    </div>
+
+                    <div class="article-content">
+                        <div class="lead-paragraph">
+                            <p>Designing low-power ESP32 applications is essential for battery-operated IoT devices, extending operational lifetime from days to years. This comprehensive guide covers sleep modes, power management APIs, hardware considerations, and real-world optimization techniques to achieve ultra-low power consumption in your ESP32 projects.</p>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Understanding ESP32 Power Consumption</h2>
+                            <p>ESP32 power consumption varies dramatically based on operational mode and peripheral usage:</p>
+                            
+                            <div class="specs-comparison">
+                                <div class="spec-category">
+                                    <h3>ESP32 Power Consumption by Mode</h3>
+                                    <table class="specs-table">
+                                        <thead>
+                                            <tr><th>Operating Mode</th><th>Current Draw</th><th>Wake-up Time</th><th>RAM Retention</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td><strong>Active (Wi-Fi TX)</strong></td><td>160-260 mA</td><td>N/A</td><td>Full</td></tr>
+                                            <tr><td><strong>Active (CPU only)</strong></td><td>80-120 mA</td><td>N/A</td><td>Full</td></tr>
+                                            <tr><td><strong>Modem Sleep</strong></td><td>15-25 mA</td><td>Instant</td><td>Full</td></tr>
+                                            <tr><td><strong>Light Sleep</strong></td><td>0.8-1.1 mA</td><td>1-3 ms</td><td>Full</td></tr>
+                                            <tr><td><strong>Deep Sleep</strong></td><td>10-150 μA</td><td>100-1000 ms</td><td>RTC memory only</td></tr>
+                                            <tr><td><strong>Hibernation</strong></td><td>2.5-5 μA</td><td>~1 second</td><td>None</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>ESP32 Sleep Modes Deep Dive</h2>
+                            <p>Each sleep mode offers different power savings and wake-up capabilities:</p>
+                            
+                            <div class="market-opportunities">
+                                <div class="opportunity-card">
+                                    <h4>Modem Sleep</h4>
+                                    <p>CPU continues running while Wi-Fi/Bluetooth radios are disabled. Ideal for processing-intensive tasks without wireless communication needs.</p>
+                                </div>
+                                <div class="opportunity-card">
+                                    <h4>Light Sleep</h4>
+                                    <p>CPU is paused but full RAM content is preserved. Wake-up sources include timers, GPIO, UART, and other peripherals with minimal latency.</p>
+                                </div>
+                                <div class="opportunity-card">
+                                    <h4>Deep Sleep</h4>
+                                    <p>Most power-efficient mode with only RTC and ULP coprocessor active. Main memory is powered off, requiring application restart after wake-up.</p>
+                                </div>
+                                <div class="opportunity-card">
+                                    <h4>Hibernation Mode</h4>
+                                    <p>Ultra-low power mode with minimal circuitry active. Only external reset or RTC timer can wake the system, requiring full system restart.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Deep Sleep Implementation</h2>
+                            <p>Deep sleep is the most commonly used power-saving mode for battery applications:</p>
+                            
+                            <div class="technical-advantages">
+                                <li><strong>Timer Wake-up:</strong> Use esp_sleep_enable_timer_wakeup() to wake after specified time interval, ideal for periodic sensor readings.</li>
+                                <li><strong>GPIO Wake-up:</strong> Configure external GPIO pins as wake-up sources using esp_sleep_enable_ext1_wakeup() for user input or sensor interrupts.</li>
+                                <li><strong>Touch Wake-up:</strong> Enable touch sensor wake-up with esp_sleep_enable_touchpad_wakeup() for capacitive touch interfaces.</li>
+                                <li><strong>ULP Wake-up:</strong> Program Ultra Low Power coprocessor to monitor sensors and wake main CPU only when needed.</li>
+                                <li><strong>RTC Memory:</strong> Store critical data in RTC memory (8KB) that survives deep sleep for state preservation.</li>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Power Optimization Code Examples</h2>
+                            <p>Practical code implementations for different power optimization scenarios:</p>
+                            
+                            <div class="application-grid">
+                                <div class="application-item">
+                                    <h4>Basic Deep Sleep Timer</h4>
+                                    <p>Configure periodic wake-up for sensor readings with configurable sleep duration and wake-up source detection.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>GPIO Wake-up Configuration</h4>
+                                    <p>Set up external interrupt-based wake-up with proper pin configuration and wake-up reason identification.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>RTC Memory Data Persistence</h4>
+                                    <p>Store sensor data, configuration, and counters in RTC memory to maintain state across deep sleep cycles.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>ULP Coprocessor Programming</h4>
+                                    <p>Implement simple sensor monitoring and threshold detection using the ultra-low power coprocessor.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Advanced Power Management Techniques</h2>
+                            <p>Sophisticated strategies for maximum power efficiency:</p>
+                            
+                            <div class="support-resources">
+                                <div class="resource-item">
+                                    <h4>Dynamic Frequency Scaling</h4>
+                                    <p>Adjust CPU frequency based on workload requirements using esp_pm_configure() for optimal power-performance balance.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Peripheral Power Management</h4>
+                                    <p>Selectively disable unused peripherals and manage clock gating to reduce overall system power consumption.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Wi-Fi Power Saving</h4>
+                                    <p>Configure Wi-Fi power saving modes including DTIM intervals, listen intervals, and connection keep-alive optimization.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Bluetooth LE Optimization</h4>
+                                    <p>Optimize BLE connection intervals, advertising parameters, and sleep modes for minimal power consumption.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Hardware Design Considerations</h2>
+                            <p>Hardware design choices significantly impact power consumption:</p>
+                            
+                            <div class="specs-comparison">
+                                <div class="spec-category">
+                                    <h3>Power Supply Design Guidelines</h3>
+                                    <table class="specs-table">
+                                        <tbody>
+                                            <tr><td><strong>LDO Efficiency</strong></td><td>Choose high-efficiency LDOs with low quiescent current (&lt;10 μA)</td></tr>
+                                            <tr><td><strong>Switching Regulators</strong></td><td>Use buck converters for battery voltages above 4V for better efficiency</td></tr>
+                                            <tr><td><strong>Power Switches</strong></td><td>Add load switches to disconnect external peripherals during sleep</td></tr>
+                                            <tr><td><strong>Decoupling Capacitors</strong></td><td>Proper capacitor placement for stable power during RF transmission bursts</td></tr>
+                                            <tr><td><strong>Battery Selection</strong></td><td>Consider self-discharge rates and voltage curves for chosen battery chemistry</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>External Component Power Management</h2>
+                            <p>Manage power consumption of external sensors and peripherals:</p>
+                            
+                            <div class="technical-advantages">
+                                <li><strong>Sensor Power Control:</strong> Use GPIO-controlled MOSFETs or load switches to completely power off sensors during sleep periods.</li>
+                                <li><strong>Pull-up Resistor Optimization:</strong> Use higher value pull-up resistors (47kΩ-100kΩ) or disable internal pull-ups to reduce leakage current.</li>
+                                <li><strong>LED and Display Management:</strong> Implement brightness control and automatic shut-off for status LEDs and displays.</li>
+                                <li><strong>Communication Interface Optimization:</strong> Properly configure I2C, SPI, and UART interfaces to minimize power during idle periods.</li>
+                                <li><strong>Analog Circuit Considerations:</strong> Design analog front-ends with low-power op-amps and consider duty-cycling for measurement circuits.</li>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>ULP Coprocessor Programming</h2>
+                            <p>Leverage the Ultra Low Power coprocessor for autonomous operation:</p>
+                            
+                            <div class="application-grid">
+                                <div class="application-item">
+                                    <h4>Sensor Monitoring</h4>
+                                    <p>Program ULP to periodically read ADC values, compare thresholds, and wake main CPU only when action is required.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>Digital I/O Control</h4>
+                                    <p>Control GPIO pins, monitor button presses, and manage simple state machines without main CPU involvement.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>Data Buffering</h4>
+                                    <p>Collect and buffer sensor readings in RTC memory, reducing wake-up frequency for data transmission.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>Simple Algorithms</h4>
+                                    <p>Implement basic filtering, averaging, and threshold detection algorithms directly on the ULP coprocessor.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Power Consumption Measurement</h2>
+                            <p>Accurate measurement is essential for power optimization validation:</p>
+                            
+                            <div class="support-resources">
+                                <div class="resource-item">
+                                    <h4>Measurement Equipment</h4>
+                                    <p>Use precision ammeters, oscilloscopes with current probes, or dedicated power analyzers for accurate current measurement.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Measurement Techniques</h4>
+                                    <p>Implement shunt resistor measurement, current sense amplifiers, or INA226-style integrated current sensors.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Software Profiling</h4>
+                                    <p>Use ESP-IDF power management APIs and logging to profile power consumption in different application states.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Battery Life Calculation</h4>
+                                    <p>Calculate theoretical and practical battery life considering duty cycles, temperature effects, and battery self-discharge.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Real-World Power Optimization Examples</h2>
+                            <p>Practical applications demonstrating significant power savings:</p>
+                            
+                            <div class="specs-comparison">
+                                <div class="spec-category">
+                                    <h3>Application Power Consumption Examples</h3>
+                                    <table class="specs-table">
+                                        <thead>
+                                            <tr><th>Application</th><th>Average Current</th><th>Battery Life (2000mAh)</th><th>Key Techniques</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td><strong>Environmental Sensor</strong></td><td>15 μA</td><td>15+ years</td><td>Deep sleep, ULP monitoring, 1-hour intervals</td></tr>
+                                            <tr><td><strong>Door/Window Sensor</strong></td><td>8 μA</td><td>25+ years</td><td>GPIO wake-up, minimal processing, event-driven</td></tr>
+                                            <tr><td><strong>Smart Thermostat</strong></td><td>150 μA</td><td>18 months</td><td>Display management, Wi-Fi optimization, schedules</td></tr>
+                                            <tr><td><strong>Asset Tracker</strong></td><td>2 mA</td><td>6 weeks</td><td>Cellular/GPS duty cycling, motion detection wake-up</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Common Power Optimization Pitfalls</h2>
+                            <p>Avoid these common mistakes that can dramatically increase power consumption:</p>
+                            
+                            <div class="technical-advantages">
+                                <li><strong>Floating GPIO Pins:</strong> Always configure unused GPIO pins as inputs with pull-up/pull-down or outputs with defined states.</li>
+                                <li><strong>Incomplete Peripheral Shutdown:</strong> Ensure all unused peripherals are properly disabled, not just set to low power modes.</li>
+                                <li><strong>Inefficient Wake-up Logic:</strong> Minimize processing time after wake-up by preparing data structures and optimizing initialization code.</li>
+                                <li><strong>External Component Leakage:</strong> Account for leakage currents in external components, sensors, and level shifters.</li>
+                                <li><strong>Inadequate Power Supply Design:</strong> Poor power supply efficiency can negate all software optimization efforts.</li>
+                                <li><strong>Ignoring Temperature Effects:</strong> Power consumption and battery capacity vary significantly with temperature changes.</li>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>ESP32 Variant Power Comparison</h2>
+                            <p>Different ESP32 variants offer varying power characteristics:</p>
+                            
+                            <div class="market-opportunities">
+                                <div class="opportunity-card">
+                                    <h4>ESP32-C3</h4>
+                                    <p>Excellent power efficiency with RISC-V architecture, deep sleep current as low as 5 μA, ideal for battery applications.</p>
+                                </div>
+                                <div class="opportunity-card">
+                                    <h4>ESP32-S3</h4>
+                                    <p>Higher power consumption due to dual-core and AI features, but better power management than original ESP32.</p>
+                                </div>
+                                <div class="opportunity-card">
+                                    <h4>ESP32-C6</h4>
+                                    <p>Advanced power management with Wi-Fi 6 efficiency improvements and optimized sleep modes for Thread applications.</p>
+                                </div>
+                                <div class="opportunity-card">
+                                    <h4>ESP8266</h4>
+                                    <p>Mature low-power implementation with well-understood characteristics, limited to basic Wi-Fi applications.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Power Optimization Workflow</h2>
+                            <p>Systematic approach to achieving optimal power consumption:</p>
+                            
+                            <ol class="technical-advantages">
+                                <li><strong>Baseline Measurement:</strong> Measure initial power consumption to establish optimization targets and identify major power consumers.</li>
+                                <li><strong>Application Analysis:</strong> Analyze duty cycles, identify periods of inactivity, and determine minimum wake-up frequency requirements.</li>
+                                <li><strong>Sleep Mode Selection:</strong> Choose appropriate sleep modes based on wake-up latency requirements and data persistence needs.</li>
+                                <li><strong>Peripheral Optimization:</strong> Systematically disable unused peripherals and optimize active peripheral configurations.</li>
+                                <li><strong>Hardware Review:</strong> Evaluate power supply efficiency, external component power consumption, and PCB design considerations.</li>
+                                <li><strong>Software Optimization:</strong> Optimize wake-up routines, minimize processing time, and implement efficient algorithms.</li>
+                                <li><strong>Validation and Testing:</strong> Measure power consumption under various conditions and validate battery life projections.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="article-footer">
+                        <div class="article-tags">
+                            <span class="tag">Low Power</span>
+                            <span class="tag">ESP32</span>
+                            <span class="tag">Sleep Modes</span>
+                            <span class="tag">Battery Life</span>
+                            <span class="tag">Power Management</span>
+                            <span class="tag">ULP</span>
+                        </div>
+                        
+                        <div class="article-share">
+                            <h4>Share this guide</h4>
+                            <div class="share-buttons">
+                                <a href="#" class="share-btn">LinkedIn</a>
+                                <a href="#" class="share-btn">Twitter</a>
+                                <a href="#" class="share-btn">Email</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <section class="section-padding">
-            <div class="container content-layout">
-                <article class="main-content">
-                    <h1>Smart Plug with Energy Monitoring Solution</h1>
-                    <h2>Solution Overview</h2>
-                    <p>This solution provides a cost-effective and highly reliable design for a mass-market smart plug. Using the proven ESP8266EX for ultimate cost-effectiveness or the modern ESP32-C3 for enhanced features and security, it offers simple Wi-Fi control via a mobile app or cloud service. An optional energy monitoring feature can be added using a dedicated metering IC, providing users with valuable insight into their power consumption and enabling smart energy-saving automations.</p>
-                    <h2>Solution Block Diagram</h2>
-                    <div class="block-diagram">
-                        <img src="assets/images/solutions/block-diagram-generic.png" alt="Block diagram of a Smart Plug using ESP32-C3.">
-                    </div>
-                    <h2>Core Advantages</h2>
-                    <ul class="advantages-list">
-                        <li><strong>Highly Cost-Effective:</strong> The design is optimized for a low BOM cost, making it suitable for high-volume consumer products.</li>
-                        <li><strong>Flexible Core Options:</strong> Choose the ultra-low-cost <a href="product-detail-esp8266.html">ESP8266EX</a> or the secure, feature-rich <a href="product-detail-esp32c3.html">ESP32-C3</a> with BLE.</li>
-                        <li><strong>Optional Energy Monitoring:</strong> Easily add value by integrating a metering IC to provide users with real-time power data (W, V, A).</li>
-                        <li><strong>Compact and Safe:</strong> The design prioritizes a small form factor and includes considerations for electrical safety and compliance.</li>
-                    </ul>
-                    <h2>Recommended Bill of Materials (BOM)</h2>
-                    <table class="specs-table">
-                         <thead>
-                            <tr><th>Part Number</th><th>Description</th><th>Role in Solution</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><a href="product-detail-esp32c3.html">ESP32-C3-MINI-1</a></td>
-                                <td>Modern RISC-V Wi-Fi & BLE Module</td>
-                                <td>Recommended core for new designs, offering better security and BLE.</td>
-                            </tr>
-                            <tr>
-                                <td><a href="product-detail-esp8266.html">ESP8266EX (SoC)</a></td>
-                                <td>Ultra Low-Cost Wi-Fi SoC</td>
-                                <td>The most cost-effective option for simple Wi-Fi control.</td>
-                            </tr>
-                            <tr><td>(External IC)</td><td>Metering IC (e.g., BL0937)</td><td>Measures voltage, current, and power, communicating data via a UART interface.</td></tr>
-                            <tr><td>(Component)</td><td>High-Power Relay (10A/16A)</td><td>Safely switches the high-voltage load on and off.</td></tr>
-                        </tbody>
-                    </table>
-                    <h2>Application Scenarios</h2>
-                    <ul>
-                        <li>Consumer Smart Plugs</li>
-                        <li>Smart Power Strips</li>
-                        <li>In-wall Smart Outlets</li>
-                        <li>Appliance Control Modules</li>
-                    </ul>
-                </article>
-                <aside class="sidebar"><!-- ... Sidebar code ... --></aside>
+
+        <!-- Related Resources -->
+        <section class="section-padding section-bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Related Power Management Resources</h2>
+                    <p>Additional guides for ESP32 development and optimization</p>
+                </div>
+                
+                <div class="grid-3">
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Selection Guide</span>
+                            <time datetime="2025-01-15">January 15, 2025</time>
+                        </div>
+                        <h3>Choosing the Right ESP32 SoC</h3>
+                        <p>Comprehensive guide to selecting the optimal ESP32 variant for your power and performance requirements.</p>
+                        <a href="/support-article-choosing-soc.html" class="button button-small">Read Guide</a>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Development Guide</span>
+                            <time datetime="2025-01-12">January 12, 2025</time>
+                        </div>
+                        <h3>ESP-IDF Programming Guide</h3>
+                        <p>Master ESP-IDF framework including power management APIs and advanced development techniques.</p>
+                        <a href="/support-article-esp-idf.html" class="button button-small">Learn More</a>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Troubleshooting</span>
+                            <time datetime="2025-01-10">January 10, 2025</time>
+                        </div>
+                        <h3>ESP32 Troubleshooting Guide</h3>
+                        <p>Diagnose and solve common issues including power-related problems and connectivity challenges.</p>
+                        <a href="/support-article-troubleshooting.html" class="button button-small">Get Help</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Need Power Optimization Assistance?</h2>
+                <p>Our power management experts can help you achieve optimal battery life and power efficiency in your ESP32 applications through hardware and software optimization.</p>
+                <div class="cta-buttons">
+                    <a href="/contact.html" class="button button-primary button-lg">Consult Power Experts</a>
+                    <a href="/support.html" class="button button-outline">More Resources</a>
+                </div>
             </div>
         </section>
     </main>
-    <footer class="site-footer"><!-- ... Paste Final Footer Code Here ... --></footer>
-    <script src="assets/js/main.js"></script>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>LiTong Technology</h4>
+                    <p><strong>Official Authorized Distributor of Espressif Systems</strong></p>
+                    <p>Your trusted partner for IoT components and solutions.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/products.html">Products</a></li>
+                        <li><a href="/solutions.html">Solutions</a></li>
+                        <li><a href="/support.html">Technical Support</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Email: hk@litong-group.com</li>
+                        <li>Phone: +852-24248227</li>
+                        <li>Address: Hong Kong Science Park</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> LiTong Technology. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
