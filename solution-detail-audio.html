@@ -1,25 +1,371 @@
-<header class="site-header">
-    <div class="container">
-        <div class="header-content">
-            <a href="index.html" class="logo">
-                <img src="assets/icons/logo.svg" alt="LiTong Technology Logo">
-                <span>LiTong Technology</span>
-            </a>
-            <nav class="main-nav" id="main-nav">
-                <ul>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="solutions.html">Solutions</a></li>
-                    <li><a href="support.html">Technical Support</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html" class="button button-secondary">Contact</a></li>
-                </ul>
-            </nav>
-            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open Menu">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Solutions | ESP32 Audio Processing & Streaming | LiTong</title>
+    <meta name="description" content="Advanced audio solutions powered by ESP32. Build voice assistants, audio streaming devices, and smart speakers with high-quality audio processing capabilities.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="assets/icons/logo.svg" alt="LiTong Technology Logo">
+                    <span>LiTong Technology</span>
+                </a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/products.html">Products</a></li>
+                        <li><a href="/solutions.html" class="active">Solutions</a></li>
+                        <li><a href="/support.html">Technical Support</a></li>
+                        <li><a href="/news.html">News</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/contact.html" class="button button-secondary">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Audio Solutions</h1>
+                <p>Advanced audio processing and streaming capabilities powered by ESP32</p>
+                <nav class="breadcrumbs">
+                    <a href="/">Home</a> <span class="separator">/</span> 
+                    <a href="/solutions.html">Solutions</a> <span class="separator">/</span> 
+                    <span>Audio Solutions</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Solution Overview -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="solution-hero">
+                    <div class="product-overview">
+                        <h2>High-Quality Audio Processing</h2>
+                        <p>Create next-generation audio devices with ESP32's powerful audio processing capabilities. From voice assistants to high-fidelity streaming systems, our solutions enable superior audio quality with wireless connectivity and AI integration.</p>
+                        
+                        <div class="product-highlights">
+                            <div class="feature-highlight">
+                                <img src="assets/icons/cpu.svg" alt="Audio Processing" class="feature-icon-small">
+                                <span>Advanced Audio DSP</span>
+                            </div>
+                            <div class="feature-highlight">
+                                <img src="assets/icons/wifi.svg" alt="Wireless Streaming" class="feature-icon-small">
+                                <span>Wireless Audio Streaming</span>
+                            </div>
+                            <div class="feature-highlight">
+                                <img src="assets/icons/shield-check.svg" alt="Voice Recognition" class="feature-icon-small">
+                                <span>Voice Recognition & AI</span>
+                            </div>
+                            <div class="feature-highlight">
+                                <img src="assets/icons/check-circle.svg" alt="Multi-Format" class="feature-icon-small">
+                                <span>Multi-Format Support</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-image-section">
+                        <img src="assets/images/solutions/solution-audio.jpg" alt="Audio Solution" style="width: 100%; max-width: 400px; border-radius: var(--border-radius);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Audio Architecture -->
+        <section class="section-padding section-bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Audio System Architecture</h2>
+                    <p>Comprehensive audio processing and streaming capabilities</p>
+                </div>
+                
+                <div class="grid-2">
+                    <div class="spec-category">
+                        <h3>Audio Processing Features</h3>
+                        <table class="specs-table">
+                            <tbody>
+                                <tr><td>Digital Signal Processing</td><td>Real-time audio filtering and effects</td></tr>
+                                <tr><td>Audio Codecs</td><td>MP3, AAC, FLAC, WAV support</td></tr>
+                                <tr><td>Voice Processing</td><td>Noise cancellation and echo reduction</td></tr>
+                                <tr><td>Multi-channel Audio</td><td>Stereo and surround sound support</td></tr>
+                                <tr><td>Audio Mixing</td><td>Multiple source mixing and routing</td></tr>
+                                <tr><td>Equalizer</td><td>Hardware and software EQ controls</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="spec-category">
+                        <h3>Connectivity & Interfaces</h3>
+                        <table class="specs-table">
+                            <tbody>
+                                <tr><td>Wi-Fi Streaming</td><td>High-quality wireless audio transmission</td></tr>
+                                <tr><td>Bluetooth Audio</td><td>A2DP, aptX, and LDAC support</td></tr>
+                                <tr><td>I2S Interface</td><td>High-resolution digital audio</td></tr>
+                                <tr><td>Analog Audio</td><td>Line in/out and microphone inputs</td></tr>
+                                <tr><td>USB Audio</td><td>USB audio device and host support</td></tr>
+                                <tr><td>Network Protocols</td><td>AirPlay, DLNA, Chromecast compatibility</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Audio Applications -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Audio Applications</h2>
+                    <p>Comprehensive solutions for modern audio devices and systems</p>
+                </div>
+                
+                <div class="grid-3">
+                    <div class="feature-card">
+                        <img src="assets/icons/cpu.svg" alt="Smart Speakers" class="feature-icon">
+                        <h3>Smart Speakers & Voice Assistants</h3>
+                        <p>Build intelligent speakers with voice recognition, natural language processing, and cloud connectivity for smart home control.</p>
+                        <ul>
+                            <li>Wake word detection</li>
+                            <li>Far-field voice recognition</li>
+                            <li>Multi-room audio sync</li>
+                            <li>Voice command processing</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <img src="assets/icons/wifi.svg" alt="Wireless Audio" class="feature-icon">
+                        <h3>Wireless Audio Streaming</h3>
+                        <p>High-fidelity wireless audio systems with multi-protocol support for seamless streaming from various sources.</p>
+                        <ul>
+                            <li>Wi-Fi and Bluetooth streaming</li>
+                            <li>Multi-source audio switching</li>
+                            <li>Synchronized playback</li>
+                            <li>Low-latency transmission</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <img src="assets/icons/shield-check.svg" alt="Audio Effects" class="feature-icon">
+                        <h3>Audio Effects & Processing</h3>
+                        <p>Professional audio processing with real-time effects, noise reduction, and sound enhancement capabilities.</p>
+                        <ul>
+                            <li>Real-time audio effects</li>
+                            <li>Noise cancellation</li>
+                            <li>Audio enhancement</li>
+                            <li>Dynamic range control</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Implementation -->
+        <section class="section-padding section-bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Technical Implementation</h2>
+                    <p>Recommended ESP32 products and development frameworks for audio applications</p>
+                </div>
+                
+                <div class="grid-2">
+                    <div class="spec-category">
+                        <h3>Recommended ESP32 Products</h3>
+                        <table class="specs-table">
+                            <tbody>
+                                <tr><td><strong>ESP32-S3</strong></td><td>AI voice processing, multi-channel audio</td></tr>
+                                <tr><td><strong>ESP32-A1S</strong></td><td>Audio-optimized with integrated codecs</td></tr>
+                                <tr><td><strong>ESP32-C6</strong></td><td>Wi-Fi 6 streaming, low-latency audio</td></tr>
+                                <tr><td><strong>ESP32</strong></td><td>Dual-core processing for complex audio tasks</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="spec-category">
+                        <h3>Audio Development Framework</h3>
+                        <table class="specs-table">
+                            <tbody>
+                                <tr><td>ESP-ADF</td><td>Audio Development Framework</td></tr>
+                                <tr><td>ESP-SR</td><td>Speech recognition library</td></tr>
+                                <tr><td>Audio Pipeline</td><td>Modular audio processing</td></tr>
+                                <tr><td>Cloud Integration</td><td>Voice service APIs and streaming</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Audio Specifications -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Audio Performance Specifications</h2>
+                    <p>High-quality audio capabilities and technical specifications</p>
+                </div>
+                
+                <div class="grid-2">
+                    <div class="spec-category">
+                        <h3>Audio Quality Specifications</h3>
+                        <table class="specs-table">
+                            <tbody>
+                                <tr><td>Sample Rate</td><td>8 kHz to 48 kHz</td></tr>
+                                <tr><td>Bit Depth</td><td>16-bit and 24-bit support</td></tr>
+                                <tr><td>THD+N</td><td>&lt; 0.1% (typical)</td></tr>
+                                <tr><td>SNR</td><td>&gt; 90 dB</td></tr>
+                                <tr><td>Frequency Response</td><td>20 Hz - 20 kHz (±1 dB)</td></tr>
+                                <tr><td>Channels</td><td>Mono, Stereo, Multi-channel</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="spec-category">
+                        <h3>Voice Processing Capabilities</h3>
+                        <table class="specs-table">
+                            <tbody>
+                                <tr><td>Wake Word Detection</td><td>Offline, always-listening</td></tr>
+                                <tr><td>Voice Recognition</td><td>Multi-language support</td></tr>
+                                <tr><td>Noise Suppression</td><td>Advanced noise reduction algorithms</td></tr>
+                                <tr><td>Echo Cancellation</td><td>Full-duplex communication</td></tr>
+                                <tr><td>Beam Forming</td><td>Directional microphone arrays</td></tr>
+                                <tr><td>Voice Activity Detection</td><td>Automatic voice detection</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases -->
+        <section class="section-padding section-bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Audio Solution Use Cases</h2>
+                    <p>Diverse applications across consumer and professional markets</p>
+                </div>
+                
+                <div class="grid-4">
+                    <div class="use-case-card">
+                        <h4>Smart Home Audio</h4>
+                        <p>Voice-controlled smart speakers and multi-room audio systems for home automation and entertainment.</p>
+                    </div>
+                    <div class="use-case-card">
+                        <h4>Professional Audio</h4>
+                        <p>Audio mixing consoles, effects processors, and recording equipment for professional audio applications.</p>
+                    </div>
+                    <div class="use-case-card">
+                        <h4>Automotive Audio</h4>
+                        <p>In-vehicle entertainment systems, hands-free calling, and voice navigation with road noise cancellation.</p>
+                    </div>
+                    <div class="use-case-card">
+                        <h4>Conferencing Systems</h4>
+                        <p>High-quality audio conferencing with noise suppression and echo cancellation for business communications.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Development Resources -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Audio Development Resources</h2>
+                    <p>Comprehensive tools and resources for audio application development</p>
+                </div>
+                
+                <div class="grid-3">
+                    <div class="feature-card">
+                        <img src="assets/icons/cpu.svg" alt="Development Kits" class="feature-icon">
+                        <h3>Audio Development Kits</h3>
+                        <p>Complete development platforms with audio codecs, microphones, and speakers for rapid prototyping.</p>
+                        <ul>
+                            <li>ESP32-LyraT development board</li>
+                            <li>ESP32-Korvo voice assistant kit</li>
+                            <li>Audio codec evaluation boards</li>
+                            <li>Microphone array solutions</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <img src="assets/icons/wifi.svg" alt="Software Libraries" class="feature-icon">
+                        <h3>Audio Software Libraries</h3>
+                        <p>Rich set of audio processing libraries and algorithms for implementing advanced audio features.</p>
+                        <ul>
+                            <li>Audio codec libraries</li>
+                            <li>DSP algorithm implementations</li>
+                            <li>Voice recognition engines</li>
+                            <li>Streaming protocol stacks</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <img src="assets/icons/shield-check.svg" alt="Reference Designs" class="feature-icon">
+                        <h3>Reference Designs</h3>
+                        <p>Proven hardware designs and schematics for various audio applications and form factors.</p>
+                        <ul>
+                            <li>Smart speaker reference designs</li>
+                            <li>Audio streaming modules</li>
+                            <li>Voice assistant prototypes</li>
+                            <li>Professional audio interfaces</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Build Your Audio Solution?</h2>
+                <p>Leverage our audio expertise to create innovative audio products. From concept to production, we provide comprehensive support for your audio development projects.</p>
+                <div class="cta-buttons">
+                    <a href="/contact.html" class="button button-primary button-lg">Start Your Audio Project</a>
+                    <a href="/support.html" class="button button-outline">Technical Resources</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>LiTong Technology</h4>
+                    <p><strong>Official Authorized Distributor of Espressif Systems</strong></p>
+                    <p>Your trusted partner for IoT components and solutions.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/products.html">Products</a></li>
+                        <li><a href="/solutions.html">Solutions</a></li>
+                        <li><a href="/support.html">Technical Support</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Email: hk@litong-group.com</li>
+                        <li>Phone: +852-24248227</li>
+                        <li>Address: Hong Kong Science Park</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> LiTong Technology. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

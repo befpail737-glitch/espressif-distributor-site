@@ -3,48 +3,359 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Understanding Matter with the ESP32-C6 | LiTong</title>
-    <meta name="description" content="An in-depth technical look at the Matter protocol, its architecture, and how the Espressif ESP32-C6 is the ideal chip for building Matter-over-Thread devices.">
+    <title>Understanding Matter Protocol with ESP32-C6 | Technical Guide | LiTong</title>
+    <meta name="description" content="Comprehensive technical guide to Matter protocol implementation with ESP32-C6. Learn about Thread, Wi-Fi 6, commissioning, and interoperability in smart home devices.">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
 </head>
 <body>
-    <header class="site-header"><!-- ... Final Header Code ... --></header>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="assets/icons/logo.svg" alt="LiTong Technology Logo">
+                    <span>LiTong Technology</span>
+                </a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/products.html">Products</a></li>
+                        <li><a href="/solutions.html">Solutions</a></li>
+                        <li><a href="/support.html" class="active">Technical Support</a></li>
+                        <li><a href="/news.html">News</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/contact.html" class="button button-secondary">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
     <main>
+        <!-- Page Header -->
         <section class="page-header">
             <div class="container">
-                <div class="breadcrumbs">
-                    <a href="index.html">Home</a> &raquo; <a href="support.html">Technical Support</a> &raquo; <span>Understanding Matter</span>
+                <h1>Understanding Matter Protocol with ESP32-C6</h1>
+                <p>Comprehensive technical guide to building interoperable smart home devices</p>
+                <nav class="breadcrumbs">
+                    <a href="/">Home</a> <span class="separator">/</span> 
+                    <a href="/support.html">Technical Support</a> <span class="separator">/</span> 
+                    <span>Matter Protocol Guide</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Article Content -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="news-article">
+                    <div class="article-header">
+                        <div class="article-meta">
+                            <span class="article-category">Technical Guide</span>
+                            <time datetime="2025-01-15">Updated January 15, 2025</time>
+                            <span class="article-read-time">12 min read</span>
+                        </div>
+                        <img src="assets/images/solutions/solution-gateway.jpg" alt="Matter Protocol Architecture" class="article-hero-image">
+                    </div>
+
+                    <div class="article-content">
+                        <div class="lead-paragraph">
+                            <p>Matter is an industry-unifying standard that promises to solve the interoperability problem in the smart home ecosystem. Built as an application layer protocol running on existing network technologies, Matter enables devices from different manufacturers to work seamlessly together across major platforms like Apple HomeKit, Google Home, Amazon Alexa, and Samsung SmartThings.</p>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>What is Matter?</h2>
+                            <p>Matter (formerly Project CHIP - Connected Home over IP) is an open-source connectivity standard developed by the Connectivity Standards Alliance (CSA). Rather than being a new wireless protocol, Matter operates as an application layer that runs on top of existing network protocols like Wi-Fi, Thread, and Ethernet.</p>
+                            
+                            <div class="feature-highlights">
+                                <div class="feature-highlight">
+                                    <img src="assets/icons/shield-check.svg" alt="Interoperable" class="feature-icon-small">
+                                    <span>Universal Interoperability</span>
+                                </div>
+                                <div class="feature-highlight">
+                                    <img src="assets/icons/wifi.svg" alt="Local Network" class="feature-icon-small">
+                                    <span>Local Network Communication</span>
+                                </div>
+                                <div class="feature-highlight">
+                                    <img src="assets/icons/check-circle.svg" alt="Secure" class="feature-icon-small">
+                                    <span>Enhanced Security & Privacy</span>
+                                </div>
+                                <div class="feature-highlight">
+                                    <img src="assets/icons/cpu.svg" alt="Open Source" class="feature-icon-small">
+                                    <span>Open Source Implementation</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Key Matter Concepts</h2>
+                            <p>Understanding these fundamental concepts is essential for implementing Matter devices:</p>
+                            
+                            <div class="specs-comparison">
+                                <div class="spec-category">
+                                    <h3>Core Architecture Components</h3>
+                                    <table class="specs-table">
+                                        <tbody>
+                                            <tr><td><strong>Fabric</strong></td><td>A secure network of devices that can communicate with each other</td></tr>
+                                            <tr><td><strong>Controller</strong></td><td>Device that manages and controls other Matter devices (smartphones, hubs)</td></tr>
+                                            <tr><td><strong>Thread Border Router</strong></td><td>Bridge between Thread mesh network and Wi-Fi/Ethernet infrastructure</td></tr>
+                                            <tr><td><strong>End Device</strong></td><td>Smart devices like lights, sensors, locks that provide functionality</td></tr>
+                                            <tr><td><strong>Commissioning</strong></td><td>Process of securely adding devices to the Matter network</td></tr>
+                                            <tr><td><strong>Multi-Admin</strong></td><td>Ability for devices to be controlled by multiple ecosystems simultaneously</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>ESP32-C6: The Ideal Matter Platform</h2>
+                            <p>The ESP32-C6 is uniquely positioned as the optimal solution for Matter device development, integrating all required connectivity technologies on a single chip:</p>
+                            
+                            <div class="market-opportunities">
+                                <div class="opportunity-card">
+                                    <h4>Wi-Fi 6 (802.11ax)</h4>
+                                    <p>High-bandwidth connectivity for devices requiring fast data transmission, cloud connectivity, or serving as border routers. Wi-Fi 6 efficiency improvements reduce power consumption.</p>
+                                </div>
+                                <div class="opportunity-card">
+                                    <h4>Thread (IEEE 802.15.4)</h4>
+                                    <p>Low-power mesh networking ideal for battery-operated devices. Thread provides self-healing mesh capabilities and extended range through multi-hop communication.</p>
+                                </div>
+                                <div class="opportunity-card">
+                                    <h4>Bluetooth 5.0 LE</h4>
+                                    <p>Essential for Matter device commissioning process. BLE enables secure initial setup and configuration of devices before joining the main network.</p>
+                                </div>
+                                <div class="opportunity-card">
+                                    <h4>RISC-V Architecture</h4>
+                                    <p>Future-proof open-source processor architecture with hardware security features, secure boot, and efficient power management for IoT applications.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Matter Device Types and ESP32-C6 Implementation</h2>
+                            <p>Different Matter device categories require different connectivity approaches, all supported by ESP32-C6:</p>
+                            
+                            <div class="technical-advantages">
+                                <li><strong>Thread End Devices:</strong> Battery-powered sensors, switches, and simple actuators using Thread for low-power mesh networking with years of battery life.</li>
+                                <li><strong>Wi-Fi End Devices:</strong> Mains-powered devices requiring high bandwidth such as cameras, displays, or devices with complex user interfaces.</li>
+                                <li><strong>Thread Border Routers:</strong> Devices that bridge Thread networks to IP networks, combining Wi-Fi and Thread radios for comprehensive connectivity.</li>
+                                <li><strong>Hybrid Devices:</strong> Advanced implementations that can switch between Wi-Fi and Thread based on power state, connectivity requirements, or network conditions.</li>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Matter Commissioning Process</h2>
+                            <p>The commissioning process is critical for Matter device adoption. Here's how ESP32-C6 enables a smooth user experience:</p>
+                            
+                            <div class="application-grid">
+                                <div class="application-item">
+                                    <h4>1. Device Discovery</h4>
+                                    <p>User scans QR code or NFC tag containing device setup information and commissioning credentials.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>2. BLE Connection</h4>
+                                    <p>Smartphone establishes secure BLE connection with the device for initial configuration and credential exchange.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>3. Network Configuration</h4>
+                                    <p>Device receives network credentials and configuration parameters for Thread or Wi-Fi network access.</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>4. Fabric Joining</h4>
+                                    <p>Device joins the Matter fabric and becomes available for control by all authorized controllers in the network.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Security and Privacy in Matter</h2>
+                            <p>Matter implements comprehensive security measures, fully supported by ESP32-C6's hardware security features:</p>
+                            
+                            <div class="support-resources">
+                                <div class="resource-item">
+                                    <h4>Hardware Root of Trust</h4>
+                                    <p>ESP32-C6's secure boot and hardware security module provide foundation for Matter's security architecture.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Certificate-Based Authentication</h4>
+                                    <p>Device authentication using X.509 certificates with hardware-backed private key storage and cryptographic operations.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Local Network Communication</h4>
+                                    <p>All device communication happens locally, reducing privacy concerns and improving response times for smart home controls.</p>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Multi-Admin Security</h4>
+                                    <p>Secure sharing of device control across multiple ecosystems without compromising individual platform security models.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Development with ESP-Matter SDK</h2>
+                            <p>Espressif provides comprehensive development tools for Matter implementation:</p>
+                            
+                            <div class="specs-comparison">
+                                <div class="spec-category">
+                                    <h3>ESP-Matter Development Tools</h3>
+                                    <table class="specs-table">
+                                        <tbody>
+                                            <tr><td>ESP-Matter SDK</td><td>Complete Matter implementation with examples and tools</td></tr>
+                                            <tr><td>Device Type Libraries</td><td>Pre-built implementations for common device types</td></tr>
+                                            <tr><td>Certification Tools</td><td>Testing and validation tools for Matter compliance</td></tr>
+                                            <tr><td>OTA Support</td><td>Over-the-air update mechanisms for deployed devices</td></tr>
+                                            <tr><td>Debugging Tools</td><td>Network analysis and debugging utilities</td></tr>
+                                            <tr><td>Reference Designs</td><td>Complete hardware and software reference implementations</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Best Practices for Matter Implementation</h2>
+                            <p>Key recommendations for successful Matter device development with ESP32-C6:</p>
+                            
+                            <div class="technical-advantages">
+                                <li><strong>Power Management:</strong> Implement efficient sleep modes and optimize power consumption for battery-operated Thread devices to achieve years of operation.</li>
+                                <li><strong>Network Resilience:</strong> Design robust network reconnection logic and handle network topology changes gracefully in mesh environments.</li>
+                                <li><strong>User Experience:</strong> Implement clear status indicators and simple commissioning flows to ensure positive user experience during setup.</li>
+                                <li><strong>OTA Strategy:</strong> Plan for secure over-the-air updates to maintain device security and add new features throughout product lifecycle.</li>
+                                <li><strong>Interoperability Testing:</strong> Test with multiple Matter controllers and ecosystems to ensure broad compatibility and optimal user experience.</li>
+                            </div>
+                        </div>
+
+                        <div class="content-section">
+                            <h2>Getting Started with Matter Development</h2>
+                            <p>Begin your Matter development journey with these essential steps:</p>
+                            
+                            <ol class="technical-advantages">
+                                <li><strong>Set up ESP-IDF Environment:</strong> Install the latest ESP-IDF development framework with Matter support and configure your development environment.</li>
+                                <li><strong>Download ESP-Matter SDK:</strong> Clone the ESP-Matter repository and familiarize yourself with the provided examples and documentation.</li>
+                                <li><strong>Choose Device Type:</strong> Select appropriate Matter device type based on your application requirements and connectivity needs.</li>
+                                <li><strong>Implement Core Functionality:</strong> Develop device-specific features while integrating Matter protocol stack and commissioning support.</li>
+                                <li><strong>Test and Validate:</strong> Use Matter test tools and multiple controllers to validate interoperability and compliance.</li>
+                                <li><strong>Prepare for Certification:</strong> Submit device for Matter certification through authorized test labs to ensure market readiness.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="article-footer">
+                        <div class="article-tags">
+                            <span class="tag">Matter</span>
+                            <span class="tag">ESP32-C6</span>
+                            <span class="tag">Thread</span>
+                            <span class="tag">Wi-Fi 6</span>
+                            <span class="tag">Smart Home</span>
+                            <span class="tag">Interoperability</span>
+                        </div>
+                        
+                        <div class="article-share">
+                            <h4>Share this guide</h4>
+                            <div class="share-buttons">
+                                <a href="#" class="share-btn">LinkedIn</a>
+                                <a href="#" class="share-btn">Twitter</a>
+                                <a href="#" class="share-btn">Email</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <section class="section-padding">
-            <div class="container content-layout">
-                <article class="main-content">
-                    <h1>Understanding the Matter Protocol with the ESP32-C6</h1>
-                    <div class="article-meta"><!-- ... Author Info & Tags ... --></div>
-                    <p>Matter is an industry-unifying standard that promises to solve the interoperability problem in the smart home. It is not a new wireless protocol itself, but rather an application layer that runs on top of existing network protocols like Wi-Fi and Thread. This guide provides a technical overview of how it works and why the ESP32-C6 is a perfect fit.</p>
-                    <h2>Key Concepts in Matter</h2>
-                    <ul>
-                        <li><strong>Fabric:</strong> A "fabric" is a secure local network of devices that can communicate with each other. A device can be commissioned into one or more fabrics, allowing it to be controlled by multiple ecosystems (e.g., Apple Home and Google Home) simultaneously.</li>
-                        <li><strong>Controller:</strong> A device that can control other Matter devices. Examples include smartphone apps, smart speakers, or smart displays.</li>
-                        <li><strong>Thread Border Router:</strong> A special device (often built into a smart speaker or router) that bridges a low-power Thread mesh network to the home's main Wi-Fi/Ethernet network.</li>
-                        <li><strong>End Device:</strong> The actual smart device, like a light bulb, sensor, or lock.</li>
-                    </ul>
-                    <h2>How the ESP32-C6 Enables Matter</h2>
-                    <p>The <a href="product-detail-esp32c6.html">ESP32-C6</a> is perfectly suited for building Matter devices because it has built-in support for the key underlying technologies:</p>
-                    <ol>
-                        <li><strong>IEEE 802.15.4 (Thread):</strong> For low-power, reliable mesh networking, ideal for battery-powered sensors or light bulbs. The ESP32-C6 can act as a Thread end-device.</li>
-                        <li><strong>Wi-Fi 6:</strong> For high-bandwidth devices or devices that may also serve as a controller. The efficiency of Wi-Fi 6 is a major benefit.</li>
-                        <li><strong>Bluetooth Low Energy (BLE):</strong> Matter uses BLE for the initial commissioning process. When you add a new device, your phone finds and configures it securely over BLE before it joins the main Thread or Wi-Fi network.</li>
-                    </ol>
-                    <p>By integrating all three radios onto a single chip, the ESP32-C6 drastically simplifies hardware design and allows developers to create versatile, future-proof products that can seamlessly join the new, interoperable smart home ecosystem.</p>
-                </article>
-                <aside class="sidebar"><!-- ... Sidebar code ... --></aside>
+
+        <!-- Related Resources -->
+        <section class="section-padding section-bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Related Resources</h2>
+                    <p>Additional technical guides and development resources</p>
+                </div>
+                
+                <div class="grid-3">
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Development Guide</span>
+                            <time datetime="2025-01-12">January 12, 2025</time>
+                        </div>
+                        <h3>ESP-IDF Programming Guide</h3>
+                        <p>Comprehensive guide to ESP-IDF framework for professional ESP32 development with APIs and libraries.</p>
+                        <a href="/support-article-esp-idf.html" class="button button-small">Read Guide</a>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Product Guide</span>
+                            <time datetime="2025-01-10">January 10, 2025</time>
+                        </div>
+                        <h3>ESP32-C6 Product Details</h3>
+                        <p>Complete technical specifications and features of ESP32-C6 for Wi-Fi 6 and Thread applications.</p>
+                        <a href="/product-detail-esp32c6.html" class="button button-small">View Product</a>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="news-card-header">
+                            <span class="news-category">Solution Guide</span>
+                            <time datetime="2025-01-08">January 8, 2025</time>
+                        </div>
+                        <h3>Smart Home Solutions</h3>
+                        <p>Comprehensive smart home and Matter solution implementation guide with ESP32 products.</p>
+                        <a href="/solution-detail-smart-home.html" class="button button-small">Explore Solutions</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Need Matter Development Support?</h2>
+                <p>Our technical experts provide comprehensive Matter development support, from initial planning to certification and production deployment.</p>
+                <div class="cta-buttons">
+                    <a href="/contact.html" class="button button-primary button-lg">Contact Technical Support</a>
+                    <a href="/support.html" class="button button-outline">More Resources</a>
+                </div>
             </div>
         </section>
     </main>
-    <footer class="site-footer"><!-- ... Final Footer Code ... --></footer>
-    <script src="assets/js/main.js"></script>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>LiTong Technology</h4>
+                    <p><strong>Official Authorized Distributor of Espressif Systems</strong></p>
+                    <p>Your trusted partner for IoT components and solutions.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/products.html">Products</a></li>
+                        <li><a href="/solutions.html">Solutions</a></li>
+                        <li><a href="/support.html">Technical Support</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Email: hk@litong-group.com</li>
+                        <li>Phone: +852-24248227</li>
+                        <li>Address: Hong Kong Science Park</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> LiTong Technology. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
