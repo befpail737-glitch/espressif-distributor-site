@@ -1014,6 +1014,79 @@ p { margin-bottom: 1rem; color: var(--text-light); }
     background-color: var(--primary-color);
 }
 
+/* --- Instant Contact Widget --- */
+.instant-contact-widget {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.instant-contact-item {
+    background: var(--white);
+    border-radius: 25px;
+    padding: 12px 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-width: 200px;
+}
+
+.instant-contact-item:hover {
+    transform: translateX(-5px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-icon svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+}
+
+.whatsapp-icon {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
+.wechat-icon {
+    background: linear-gradient(135deg, #09B83E, #07A238);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.contact-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+.contact-number {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-weight: 500;
+    font-family: 'Courier New', monospace;
+}
+
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
     h1 { font-size: 2.5rem; }
@@ -1054,5 +1127,29 @@ p { margin-bottom: 1rem; color: var(--text-light); }
     .hero-cta .button {
         margin: 10px 0 0;
         width: 100%;
+    }
+    
+    /* Instant Contact Widget Mobile */
+    .instant-contact-widget {
+        right: 10px;
+        gap: 10px;
+    }
+    .instant-contact-item {
+        min-width: 160px;
+        padding: 10px 12px;
+    }
+    .contact-icon {
+        width: 35px;
+        height: 35px;
+    }
+    .contact-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+    .contact-label {
+        font-size: 0.8rem;
+    }
+    .contact-number {
+        font-size: 0.75rem;
     }
 }
