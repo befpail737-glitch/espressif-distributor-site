@@ -2,43 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://espressif.elec-distributor.com/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://espressif.elec-distributor.com/about.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://espressif.elec-distributor.com/contact.html</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://espressif.elec-distributor.com/products.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://espressif.elec-distributor.com/solutions.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://espressif.elec-distributor.com/support.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://espressif.elec-distributor.com/news.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -46,31 +46,31 @@
   <!-- Product Detail Pages -->
   <url>
     <loc>https://espressif.elec-distributor.com/product-detail-esp32s3.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://espressif.elec-distributor.com/product-detail-esp32c3.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://espressif.elec-distributor.com/product-detail-esp32c6.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://espressif.elec-distributor.com/product-detail-esp32h2.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://espressif.elec-distributor.com/product-detail-esp8266.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -78,43 +78,43 @@
   <!-- Solution Detail Pages -->
   <url>
     <loc>https://espressif.elec-distributor.com/solution-detail-smart-home.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://espressif.elec-distributor.com/solution-detail-iiot.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://espressif.elec-distributor.com/solution-detail-audio.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://espressif.elec-distributor.com/solution-detail-consumer.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://espressif.elec-distributor.com/solution-detail-lighting.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://espressif.elec-distributor.com/solution-detail-plug.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://espressif.elec-distributor.com/solution-detail-wearable.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -122,37 +122,37 @@
   <!-- Support Article Pages -->
   <url>
     <loc>https://espressif.elec-distributor.com/support-article-choosing-soc.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.65</priority>
   </url>
   <url>
     <loc>https://espressif.elec-distributor.com/support-article-esp-idf.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.65</priority>
   </url>
   <url>
     <loc>https://espressif.elec-distributor.com/support-article-low-power.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://espressif.elec-distributor.com/support-article-matter.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.65</priority>
   </url>
   <url>
     <loc>https://espressif.elec-distributor.com/support-article-quick-start.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.65</priority>
   </url>
   <url>
     <loc>https://espressif.elec-distributor.com/support-article-troubleshooting.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -160,31 +160,31 @@
   <!-- News Detail Pages -->
   <url>
     <loc>https://espressif.elec-distributor.com/news-detail-advantages.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://espressif.elec-distributor.com/news-detail-choosing-distributor.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.55</priority>
   </url>
   <url>
     <loc>https://espressif.elec-distributor.com/news-detail-matter-impact.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.55</priority>
   </url>
   <url>
     <loc>https://espressif.elec-distributor.com/news-detail-partner.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.55</priority>
   </url>
   <url>
     <loc>https://espressif.elec-distributor.com/news-detail-riscv-future.html</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-01-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
