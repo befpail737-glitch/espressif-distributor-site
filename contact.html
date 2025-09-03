@@ -64,14 +64,16 @@
         .office-detail strong {
             color: #374151;
             font-weight: 600;
-            display: block;
-            margin-bottom: 0.25rem;
+            display: inline-block;
+            margin-right: 0.5rem;
+            min-width: 80px;
         }
         
         .office-detail p, .office-detail span {
             color: #6b7280;
             margin: 0;
             line-height: 1.5;
+            display: inline;
         }
         
         .office-detail a {
@@ -83,6 +85,18 @@
         .office-detail a:hover {
             color: #1d4ed8;
             text-decoration: underline;
+        }
+        
+        .contact-info-line {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+        
+        .contact-info-item {
+            flex: 1;
+            min-width: 200px;
         }
         
         .region-section {
@@ -261,13 +275,15 @@
                                 <span class="office-type">Headquarters</span>
                             </div>
                             <div class="office-details">
-                                <div class="office-detail">
-                                    <strong>Address:</strong>
-                                    <p>5/F, Green 18, 7 Science Park East Avenue, Hong Kong Science Park, Shatin, Hong Kong</p>
-                                </div>
-                                <div class="office-detail">
-                                    <strong>Email:</strong>
-                                    <a href="mailto:hk@elec-distributor.com">hk@elec-distributor.com</a>
+                                <div class="contact-info-line">
+                                    <div class="contact-info-item">
+                                        <strong>Address:</strong>
+                                        <span>5/F, Green 18, 7 Science Park East Avenue, Hong Kong Science Park, Shatin, Hong Kong</span>
+                                    </div>
+                                    <div class="contact-info-item">
+                                        <strong>Email:</strong>
+                                        <a href="mailto:hk@elec-distributor.com">hk@elec-distributor.com</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -277,13 +293,15 @@
                                 <h3 class="office-title">Beijing Office</h3>
                             </div>
                             <div class="office-details">
-                                <div class="office-detail">
-                                    <strong>Address:</strong>
-                                    <p>Room 101-215, 2/F, Building 19, Yard 6, Hengye North 7th Street, Tongzhou District, Beijing</p>
-                                </div>
-                                <div class="office-detail">
-                                    <strong>Email:</strong>
-                                    <a href="mailto:bj@elec-distributor.com">bj@elec-distributor.com</a>
+                                <div class="contact-info-line">
+                                    <div class="contact-info-item">
+                                        <strong>Address:</strong>
+                                        <span>Room 101-215, 2/F, Building 19, Yard 6, Hengye North 7th Street, Tongzhou District, Beijing</span>
+                                    </div>
+                                    <div class="contact-info-item">
+                                        <strong>Email:</strong>
+                                        <a href="mailto:bj@elec-distributor.com">bj@elec-distributor.com</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -293,13 +311,15 @@
                                 <h3 class="office-title">Shanghai Office</h3>
                             </div>
                             <div class="office-details">
-                                <div class="office-detail">
-                                    <strong>Address:</strong>
-                                    <p>Room 705-706, Baokuang Intercontinental Business Center, 100 Yutong Road, Shanghai</p>
-                                </div>
-                                <div class="office-detail">
-                                    <strong>Email:</strong>
-                                    <a href="mailto:sh@elec-distributor.com">sh@elec-distributor.com</a>
+                                <div class="contact-info-line">
+                                    <div class="contact-info-item">
+                                        <strong>Address:</strong>
+                                        <span>Room 705-706, Baokuang Intercontinental Business Center, 100 Yutong Road, Shanghai</span>
+                                    </div>
+                                    <div class="contact-info-item">
+                                        <strong>Email:</strong>
+                                        <a href="mailto:sh@elec-distributor.com">sh@elec-distributor.com</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -309,13 +329,15 @@
                                 <h3 class="office-title">Shenzhen Office</h3>
                             </div>
                             <div class="office-details">
-                                <div class="office-detail">
-                                    <strong>Address:</strong>
-                                    <p>Room 306-308, Changping Business Building, 6 Honghua Road, Futian Free Trade Zone, Shenzhen</p>
-                                </div>
-                                <div class="office-detail">
-                                    <strong>Email:</strong>
-                                    <a href="mailto:sz@elec-distributor.com">sz@elec-distributor.com</a>
+                                <div class="contact-info-line">
+                                    <div class="contact-info-item">
+                                        <strong>Address:</strong>
+                                        <span>Room 306-308, Changping Business Building, 6 Honghua Road, Futian Free Trade Zone, Shenzhen</span>
+                                    </div>
+                                    <div class="contact-info-item">
+                                        <strong>Email:</strong>
+                                        <a href="mailto:sz@elec-distributor.com">sz@elec-distributor.com</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -331,13 +353,15 @@
                                 <h3 class="office-title">United States</h3>
                             </div>
                             <div class="office-details">
-                                <div class="office-detail">
-                                    <strong>Address:</strong>
-                                    <p>1776 K St NW, Washington, D.C. 20006, USA</p>
-                                </div>
-                                <div class="office-detail">
-                                    <strong>Email:</strong>
-                                    <a href="mailto:john.smith@elec-distributor.com">john.smith@elec-distributor.com</a>
+                                <div class="contact-info-line">
+                                    <div class="contact-info-item">
+                                        <strong>Address:</strong>
+                                        <span>1776 K St NW, Washington, D.C. 20006, USA</span>
+                                    </div>
+                                    <div class="contact-info-item">
+                                        <strong>Email:</strong>
+                                        <a href="mailto:john.smith@elec-distributor.com">john.smith@elec-distributor.com</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
