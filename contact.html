@@ -88,15 +88,25 @@
         }
         
         .contact-info-line {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: 1fr auto;
             gap: 2rem;
-            align-items: flex-start;
+            align-items: start;
         }
         
         .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+        
+        .contact-info-item strong {
+            flex-shrink: 0;
+        }
+        
+        .contact-info-item span, .contact-info-item a {
             flex: 1;
-            min-width: 200px;
+            line-height: 1.4;
         }
         
         .region-section {
