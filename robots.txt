@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://espressif.elec-distributor.com/sitemap.xml
+
+# Important pages
+Allow: /products.html
+Allow: /solutions.html
+Allow: /support.html
+Allow: /contact.html
+Allow: /about.html
+Allow: /news.html
+
+# Product detail pages
+Allow: /product-detail-*.html
+
+# Solution detail pages  
+Allow: /solution-detail-*.html
+
+# Support articles
+Allow: /support-article-*.html
+
+# News articles
+Allow: /news-detail-*.html
+
+# Block any admin or temp files if they exist
+Disallow: /admin/
+Disallow: /*.tmp
+Disallow: /temp/
